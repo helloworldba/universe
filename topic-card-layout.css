@@ -1,0 +1,264 @@
+/* Match the Earth destination tray and reading panel. Topic artwork, copy,
+   controls and the phone's existing sheet interactions remain independent. */
+body :is(.black-hole-dock, .black-hole-card) { --ui-surface-accent: #7bd1ff; }
+body #black-hole-destinations button[aria-pressed="true"] { color: #d5eefc; }
+.constellation-card-action { display:none; }
+:is(#toggle-facts,#toggle-black-hole-card) .card-fold-action { display:none; }
+
+/* The same card state now controls desktop folding and its accessible toggle. */
+@media (min-width:761px) {
+  body:not(.mobile-workspace) #open-constellation-library {
+    border:1px solid rgba(137,181,213,.18);padding:11px 14px;min-height:45px;
+  }
+  body:not(.mobile-workspace) :is(#toggle-facts,#toggle-black-hole-card,#toggle-constellation-card) {
+    display:inline-flex;align-items:center;justify-content:flex-start;gap:6px;
+    min-height:32px;padding:5px 0;white-space:nowrap;font-size:10px!important;letter-spacing:.6px;
+  }
+  body:not(.mobile-workspace) :is(#toggle-facts,#toggle-black-hole-card) .card-fold-action {display:inline;}
+  body:not(.mobile-workspace) #toggle-facts .card-toggle-label>svg {display:none;}
+  body:not(.mobile-workspace) #toggle-facts .facts-chevron {transform:rotate(-90deg);}
+  body:not(.mobile-workspace) #toggle-facts[aria-expanded="false"] .facts-chevron {transform:rotate(90deg);}
+  body:not(.mobile-workspace) :is(#facts-panel.collapsed,#black-hole-explorer .black-hole-card.is-collapsed) {
+    width:160px;bottom:auto;max-height:none;
+  }
+  body:not(.mobile-workspace) :is(#facts-panel.collapsed .facts-toolbar,#black-hole-explorer .black-hole-card.is-collapsed .black-hole-card-toolbar) {
+    min-height:52px;padding:8px 16px;
+  }
+  body:not(.mobile-workspace) .black-hole-card.is-collapsed #black-hole-narrate {display:none;}
+  body:not(.mobile-workspace) #constellation-explorer .constellation-card-toggle {
+    display:inline-flex;align-items:center;gap:6px;pointer-events:auto;cursor:pointer!important;
+  }
+  body:not(.mobile-workspace) #constellation-explorer .constellation-card-action { display:inline; }
+  body:not(.mobile-workspace) #constellation-explorer .constellation-card-chevron { display:inline;transform:none; }
+  body:not(.mobile-workspace) #constellation-explorer:not(.constellation-card-open) .constellation-card {
+    bottom:auto;width:160px;max-height:none;padding:0;
+  }
+  body:not(.mobile-workspace) #constellation-explorer:not(.constellation-card-open) .constellation-card-toolbar {
+    min-height:52px;padding:8px 16px;
+  }
+  body:not(.mobile-workspace) #constellation-explorer:not(.constellation-card-open) :is(.constellation-card-content,.constellation-narrate) { display:none; }
+  body:not(.mobile-workspace) #constellation-explorer:not(.constellation-card-open) .constellation-card-chevron { transform:rotate(180deg); }
+}
+
+@media (min-width:761px) and (min-height:601px) {
+  /* Compact all desktop trays while retaining icon and two-line name slots.
+     The recovered height leaves a clear gap beneath the reading panels. */
+  body:not(.mobile-workspace) .destination-dock {
+    --dock-tile-height: 92px;
+  }
+  body:not(.mobile-workspace) .destination-dock:not(.dock-collapsed) {
+    padding-block: 6px 4px;
+  }
+  body:not(.mobile-workspace) .destination-dock:not(.dock-collapsed) .dock-heading {
+    padding-bottom: 3px;
+  }
+  body:not(.mobile-workspace) .destination-dock .destination-list {
+    height: calc(var(--dock-tile-height) + 12px);
+    padding-bottom: 3px;
+  }
+  body:not(.mobile-workspace) .destination-dock .destination-list button {
+    gap: 3px;
+    padding-block: 6px 4px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-explorer, .black-hole-explorer) {
+    --topic-panel-width: 330px;
+    --topic-panel-right: 40px;
+    --topic-panel-padding: 22px;
+    --topic-panel-title: 28px;
+    --topic-panel-summary: 14px;
+    --topic-panel-bottom: calc(250px + env(safe-area-inset-bottom, 0px));
+    --topic-tile-width: 94px;
+  }
+
+  body:not(.mobile-workspace) :is(.constellation-dock, .black-hole-dock) {
+    left: 50%;
+    right: auto;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    width: min(90vw, 1800px);
+    max-width: calc(100vw - 24px);
+    padding: 6px 14px 4px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-dock-heading, .black-hole-dock-heading) {
+    min-height: 41px;
+    margin: 0;
+    padding: 0 3px 3px;
+    gap: 14px;
+    color: #b2c6c8;
+    font-size: 11px;
+    letter-spacing: .3px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-dock-list, #black-hole-destinations) {
+    width: 100%;
+    height: 104px;
+    gap: 7px;
+    padding: 1px 0 3px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #365a6c transparent;
+    scroll-padding-inline: 4px;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+  }
+  body:not(.mobile-workspace) :is(.constellation-destination, #black-hole-destinations button) {
+    flex: 0 0 var(--topic-tile-width);
+    min-width: 0;
+    height: 92px;
+    min-height: 92px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 44px 33px;
+    align-content: start;
+    justify-items: center;
+    gap: 3px;
+    padding: 6px 5px 4px;
+    font-size: 11px !important;
+    line-height: 1.5;
+    scroll-snap-align: start;
+  }
+  body:not(.mobile-workspace) .constellation-destination .constellation-mini-map {
+    height: 44px;
+    align-self: center;
+  }
+  body:not(.mobile-workspace) .constellation-destination > span { align-self: start; }
+  /* Keep the black-hole subtype visible within the same 92px tile. */
+  body:not(.mobile-workspace) #black-hole-destinations button {
+    grid-template-rows: 32px 30px 14px;
+    gap: 3px;
+    padding-block: 4px 2px;
+  }
+  body:not(.mobile-workspace) #black-hole-destinations .black-hole-thumb { align-self: center; }
+  body:not(.mobile-workspace) #black-hole-destinations strong {
+    align-self: center;
+    font-size: 11px;
+    line-height: 15px;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+  body:not(.mobile-workspace) #black-hole-destinations small {
+    display: block;
+    font-size: 8px;
+    line-height: 14px;
+    white-space: nowrap;
+    color: #829eae;
+  }
+  body:not(.mobile-workspace) :is(#black-hole-dock-toggle, #black-hole-catalog) {
+    min-height: 32px;
+    padding: 5px 10px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  body:not(.mobile-workspace) :is(.constellation-dock.constellation-dock-collapsed, .black-hole-dock.is-collapsed) {
+    width: min(430px, calc(100vw - 24px));
+    padding: 7px 12px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-dock-collapsed .constellation-dock-heading, .black-hole-dock.is-collapsed .black-hole-dock-heading) {
+    min-height: 32px;
+    padding: 0;
+    gap: 14px;
+  }
+  body:not(.mobile-workspace) .black-hole-dock.is-collapsed .black-hole-dock-heading small { display: none; }
+
+  body:not(.mobile-workspace) :is(.constellation-card, .black-hole-card) {
+    top: var(--header-height);
+    right: var(--topic-panel-right);
+    bottom: var(--topic-panel-bottom);
+    width: var(--topic-panel-width);
+    max-height: calc(100dvh - var(--header-height) - var(--topic-panel-bottom));
+    padding: 0;
+    overflow: hidden;
+    color: #e4edf9;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-toolbar, .black-hole-card-toolbar) {
+    min-height: 64px;
+    padding: 16px var(--topic-panel-padding) 8px;
+    gap: 10px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-toggle, #toggle-black-hole-card) {
+    min-height: 32px;
+    padding: 5px 0;
+    color: #809bb8;
+    font-size: 10px !important;
+    letter-spacing: .6px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-narrate, #black-hole-narrate) {
+    min-height: 34px;
+    padding: 7px 11px;
+    font-size: 12px !important;
+    line-height: 1.4;
+    color: #c8ecff;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-content, #black-hole-card-content) {
+    padding: 3px var(--topic-panel-padding) 19px;
+    scrollbar-width: thin;
+    scrollbar-color: #345371 transparent;
+  }
+  body:not(.mobile-workspace) .constellation-card-identity { margin: 0 0 20px; }
+  body:not(.mobile-workspace) :is(.constellation-card-category, .black-hole-context) {
+    color: #68d8fc;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-identity h2, #black-hole-card-content h2) {
+    font-size: var(--topic-panel-title);
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #f0f5ff;
+  }
+  body:not(.mobile-workspace) .black-hole-summary {
+    font-size: var(--topic-panel-summary);
+    color: #dbe6f5;
+    line-height: 1.85;
+    margin: 20px 0;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-body h3, #black-hole-card-content section h3, .black-hole-section-title) {
+    font-size: 13px !important;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #9edbed !important;
+  }
+  body:not(.mobile-workspace) :is(.constellation-card-body p, #black-hole-card-content section p) {
+    font-size: 13px;
+    line-height: 1.95;
+    color: #c2d3e5;
+  }
+  body:not(.mobile-workspace) .black-hole-card.is-collapsed { bottom: auto; }
+  body:not(.mobile-workspace).blackholes-active .view-tools {
+    right: calc(var(--topic-panel-right, 40px) + var(--topic-panel-width, 330px) + 16px) !important;
+  }
+  body:not(.mobile-workspace) .black-hole-caption { bottom: 262px; }
+  body:not(.mobile-workspace) .black-hole-dock-folded .black-hole-caption { bottom: 145px; }
+  body:not(.mobile-workspace) .constellation-scene-hint { bottom: 262px; }
+  body:not(.mobile-workspace) .constellation-explorer:has(.constellation-dock-collapsed) .constellation-scene-hint { bottom: 132px; }
+}
+@media (min-width:1550px) and (min-height:601px) {
+  body:not(.mobile-workspace) :is(.constellation-explorer, .black-hole-explorer) {
+    --topic-panel-width: 340px;
+    --topic-panel-right: 50px;
+    --topic-panel-summary: 15px;
+  }
+  body:not(.mobile-workspace).blackholes-active .view-tools { right: 406px !important; }
+}
+@media (min-width:761px) and (max-width:1300px) and (min-height:601px) {
+  body:not(.mobile-workspace) :is(.constellation-explorer, .black-hole-explorer) {
+    --topic-panel-width: 290px;
+    --topic-panel-right: 28px;
+    --topic-panel-padding: 18px;
+    --topic-panel-title: 25px;
+    --topic-panel-summary: 13px;
+  }
+  body:not(.mobile-workspace).blackholes-active .view-tools { right: 334px !important; }
+}
+@media (min-width:761px) and (max-width:1100px) and (min-height:601px) {
+  body:not(.mobile-workspace) :is(.constellation-explorer, .black-hole-explorer) {
+    --topic-panel-width: 280px;
+    --topic-panel-right: 22px;
+    --topic-panel-bottom: calc(290px + env(safe-area-inset-bottom, 0px));
+    --topic-tile-width: 90px;
+  }
+  body:not(.mobile-workspace) :is(.constellation-dock, .black-hole-dock) { width: calc(100vw - 48px); padding-inline: 12px; }
+  body:not(.mobile-workspace).blackholes-active .view-tools { right: 318px !important; }
+}

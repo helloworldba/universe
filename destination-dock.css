@@ -1,0 +1,296 @@
+/* Shared destination tray: stay near the playback bar and out of the scene. */
+.destination-dock {
+  --dock-tile-height: 100px;
+  --dock-icon-row: 44px;
+  --dock-name-row: 33px;
+  position: fixed;
+  left: 50%;
+  right: auto;
+  bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(90vw, 1800px);
+  max-width: calc(100vw - 24px);
+  padding: 10px 14px 8px;
+  border-radius: 14px;
+  background: linear-gradient(115deg, rgba(13, 24, 42, .91), rgba(7, 17, 30, .88));
+}
+.destination-dock .dock-heading {
+  display: grid;
+  grid-template-columns: minmax(125px, 1fr) auto minmax(300px, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 0 3px 9px;
+  min-width: 0;
+  letter-spacing: .3px;
+}
+.destination-dock .dock-heading > span { min-width: 0; gap: 12px; }
+.destination-dock .catalog-entry { flex-shrink: 0; white-space: nowrap; font-size: 11px; letter-spacing: .3px; }
+.destination-dock .dock-context { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-left: 0; }
+.destination-dock .dock-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid rgba(143, 187, 216, .15);
+  border-radius: 8px;
+  background: rgba(4, 13, 26, .48);
+}
+.destination-dock .dock-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 5px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #91b0c4;
+  background: transparent;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.destination-dock .dock-tabs button:hover { color: #ddf2ff; background: rgba(113, 176, 212, .09); }
+.destination-dock .dock-tabs button[aria-pressed="true"] {
+  color: #d1edf9;
+  border-color: rgba(137, 202, 232, .27);
+  background: rgba(88, 153, 190, .2);
+}
+.destination-dock .dock-category-count { font-size: 9px; color: #799bac; font-variant-numeric: tabular-nums; }
+.destination-dock .dock-tabs button[aria-pressed="true"] .dock-category-count { color: #b5d8e9; }
+.destination-dock .dock-tools { display: flex; align-items: center; justify-content: flex-end; gap: 9px; min-width: 0; }
+.destination-dock .destination-search {
+  flex: 0 1 172px;
+  min-width: 70px;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid rgba(129, 178, 205, .15);
+  border-radius: 6px;
+  background: rgba(2, 11, 22, .25);
+}
+.destination-dock .destination-search input { width: 100%; font-size: 10px; line-height: 1.6; }
+.destination-dock .dock-scroll-controls { margin-left: 0; gap: 4px; flex-shrink: 0; }
+.destination-dock .dock-scroll-controls button { width: 30px; height: 31px; }
+.destination-dock .dock-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 65px;
+  min-height: 32px;
+  padding: 5px 10px;
+  flex-shrink: 0;
+  border: 1px solid rgba(145, 204, 230, .22);
+  border-radius: 6px;
+  color: #bad9e8;
+  background: rgba(87, 137, 162, .09);
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.destination-dock .dock-collapse::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.destination-dock .dock-collapse[aria-expanded="false"]::after { transform: rotate(225deg); margin-top: 3px; }
+.destination-dock .dock-collapse:hover { background: rgba(130, 198, 226, .16); color: #e1f4ff; }
+.destination-dock .destination-list {
+  width: 100%;
+  height: calc(var(--dock-tile-height) + 16px);
+  min-height: 79px;
+  overflow-y: hidden;
+  gap: 7px;
+  padding: 1px 0 5px;
+  scroll-padding-inline: 4px;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+.destination-dock .destination-list::-webkit-scrollbar { display: block; height: 4px; }
+.destination-dock .destination-list::-webkit-scrollbar-thumb { background: #365a6c; border-radius: 4px; }
+.destination-dock .destination-list button {
+  flex: 0 0 94px;
+  height: var(--dock-tile-height);
+  min-height: 78px;
+  display: grid;
+  grid-template-rows: var(--dock-icon-row) var(--dock-name-row);
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  justify-items: center;
+  gap: 7px;
+  padding: 8px 5px 6px;
+  font-size: 11px;
+  scroll-snap-align: start;
+}
+/* Reserve identical portrait and two-line name slots in every category.
+   The list also reserves scrollbar space, even when only Earth and Moon fit. */
+.destination-dock .destination-list button > .destination-icon {
+  grid-row: 1;
+  align-self: center;
+  margin-block: 0;
+}
+.destination-dock .destination-list button > span:last-child {
+  grid-row: 2;
+  align-self: start;
+  width: 100%;
+  min-width: 0;
+}
+.destination-dock .destination-list .destination-name {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.destination-dock.dock-collapsed { width: min(430px, calc(100vw - 24px)); padding: 7px 12px; }
+.destination-dock.dock-collapsed .dock-heading { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; padding: 0; }
+.destination-dock.dock-collapsed .dock-tools { grid-column: 2; grid-row: 1; }
+.destination-dock.dock-collapsed .dock-heading > span { grid-column: 1; grid-row: 1; }
+.destination-dock.dock-collapsed :is(.dock-tabs, .destination-search, .dock-scroll-controls, .destination-list) { display: none; }
+
+@media (max-width: 1100px) {
+  .destination-dock { width: calc(100vw - 48px); padding-inline: 12px; }
+  .destination-dock .dock-heading { grid-template-columns: minmax(0, 1fr) auto; gap: 7px 12px; }
+  .destination-dock .dock-heading > span { grid-column: 1; grid-row: 1; }
+  .destination-dock .dock-tools { grid-column: 2; grid-row: 1; }
+  .destination-dock .dock-tabs { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+  .destination-dock .destination-search { flex-basis: 156px; }
+  .destination-dock .dock-context { display: none; }
+  .destination-dock .destination-list button { flex-basis: 90px; }
+}
+@media (max-width: 760px) {
+  .destination-dock { --dock-icon-row: 38px; --dock-name-row: 36px; width: calc(100vw - 24px); padding: 8px 9px 6px; border-radius: 11px; }
+  .destination-dock .dock-heading { padding: 0 1px 7px; gap: 6px 8px; }
+  .destination-dock .catalog-entry { font-size: 10px; }
+  .destination-dock .dock-tools { gap: 6px; }
+  .destination-dock .destination-search { flex-basis: 126px; min-width: 80px; padding: 5px 6px; }
+  .destination-dock .destination-search svg { width: 11px; height: 11px; }
+  .destination-dock .destination-search input { font-size: 10px; }
+  .destination-dock .dock-scroll-controls { display: none; }
+  .destination-dock .dock-collapse { min-width: 58px; min-height: 33px; padding-inline: 8px; font-size: 10px; gap: 8px; }
+  .destination-dock .dock-tabs { width: 100%; gap: 3px; padding: 2px; }
+  .destination-dock .dock-tabs button { flex: 1; padding: 5px 7px; min-height: 31px; font-size: 10px; }
+  .destination-dock .destination-list { min-height: 74px; gap: 5px; padding-bottom: 3px; }
+  .destination-dock .destination-list button { flex-basis: 96px; min-height: 72px; padding: 7px 4px 5px; font-size: 10px; gap: 7px; }
+  .destination-dock.dock-collapsed { width: min(350px, calc(100vw - 24px)); padding: 6px 10px; }
+}
+@media (max-width: 370px) {
+  .destination-dock .destination-search { flex-basis: 99px; }
+  .destination-dock .dock-tools { gap: 4px; }
+  .destination-dock .dock-collapse { min-width: 53px; padding-inline: 6px; }
+  .destination-dock .dock-heading { column-gap: 5px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .destination-dock { --dock-tile-height: 84px; --dock-icon-row: 30px; left: 50%; right: auto; bottom: 66px; width: calc(100vw - 32px); padding: 6px 10px 5px; }
+  .destination-dock .dock-heading { grid-template-columns: minmax(80px, 1fr) auto minmax(62px, 1fr); gap: 7px; padding-bottom: 5px; }
+  .destination-dock .dock-heading > span { grid-column: 1; grid-row: 1; }
+  .destination-dock .dock-tabs { grid-column: 2; grid-row: 1; width: auto; padding: 2px; }
+  .destination-dock .dock-tabs button { min-height: 26px; padding: 3px 8px; font-size: 10px; }
+  .destination-dock .dock-tools { grid-column: 3; grid-row: 1; }
+  .destination-dock .destination-search, .destination-dock .dock-scroll-controls, .destination-dock .dock-context { display: none; }
+  .destination-dock .dock-collapse { min-height: 30px; }
+  .destination-dock .destination-list { min-height: 57px; gap: 4px; padding-bottom: 2px; }
+  .destination-dock .destination-list button { flex-basis: 96px; min-height: 56px; gap: 3px; padding: 3px; font-size: 10px; }
+  .destination-dock .destination-list .destination-icon { width: 33px; height: 30px; }
+  .destination-dock .destination-list .craft-thumbnail { margin-block: 0; }
+  .destination-dock.dock-collapsed .dock-heading { grid-template-columns: minmax(0, 1fr) auto; padding: 0; }
+  .destination-dock.dock-collapsed .dock-tools { grid-column: 2; }
+}
+
+/* The independent constellation tray follows the same width and collapse rules. */
+.constellation-dock {
+  left: 50%;
+  right: auto;
+  bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(90vw, 1800px);
+  max-width: calc(100vw - 24px);
+  padding: 10px 14px 8px;
+}
+.constellation-dock-heading { display: flex; min-height: 32px; gap: 8px; padding: 0 3px 8px; }
+.constellation-dock-heading > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.constellation-dock-heading > span:nth-child(2) { white-space: nowrap; }
+.constellation-dock .constellation-dock-scroll { width: 30px; height: 31px; flex-shrink: 0; }
+.constellation-dock .constellation-dock-list { gap: 7px; padding-bottom: 4px; }
+.constellation-dock .constellation-destination { flex: 0 0 110px; min-width: 0; min-height: 78px; padding: 5px 4px 6px; }
+.constellation-dock .constellation-mini-map { width: 100%; height: 45px; }
+.constellation-dock-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 65px;
+  min-height: 32px;
+  padding: 5px 10px;
+  flex-shrink: 0;
+  border: 1px solid rgba(145, 204, 230, .22);
+  border-radius: 6px;
+  color: #bad9e8;
+  background: rgba(87, 137, 162, .09);
+  font-size: 11px !important;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.constellation-dock-collapse::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.constellation-dock-collapse[aria-expanded="false"]::after { transform: rotate(225deg); margin-top: 3px; }
+.constellation-dock-collapse:hover { background: rgba(130, 198, 226, .16); color: #e1f4ff; }
+.constellation-dock.constellation-dock-collapsed { width: min(430px, calc(100vw - 24px)); padding: 7px 12px; }
+.constellation-dock-collapsed .constellation-dock-heading { justify-content: space-between; gap: 14px; padding: 0; }
+.constellation-dock-collapsed .constellation-dock-heading > span:nth-child(2),
+.constellation-dock-collapsed .constellation-dock-scroll,
+.constellation-dock-collapsed .constellation-dock-list { display: none; }
+.constellation-dock-collapsed .constellation-dock-collapse { margin-left: auto; }
+@media (max-width: 1100px) {
+  .constellation-dock { width: calc(100vw - 48px); padding-inline: 12px; }
+  .constellation-dock .constellation-destination { flex-basis: 100px; }
+}
+@media (max-width: 759px) {
+  .constellation-dock { width: calc(100vw - 24px); bottom: calc(60px + env(safe-area-inset-bottom, 0px)); padding: 7px 9px 5px; }
+  .constellation-dock-heading { gap: 6px; padding: 0 1px 6px; min-height: 33px; font-size: 10px; }
+  .constellation-dock-heading > span:nth-child(2), .constellation-dock .constellation-dock-scroll { display: none; }
+  .constellation-dock-collapse { margin-left: auto; min-height: 33px; min-width: 58px; padding-inline: 8px; font-size: 10px !important; }
+  .constellation-dock .constellation-dock-list { gap: 5px; padding-bottom: 2px; }
+  .constellation-dock .constellation-destination { flex-basis: 84px; min-height: 64px; padding: 3px 3px 5px; }
+  .constellation-dock .constellation-mini-map { height: 35px; }
+  .constellation-dock.constellation-dock-collapsed { width: min(350px, calc(100vw - 24px)); padding: 6px 10px; }
+  .constellation-card { bottom: calc(186px + env(safe-area-inset-bottom, 0px)); }
+  .constellation-explorer:not(.constellation-card-open):has(.constellation-dock-collapsed) .constellation-card { bottom: calc(121px + env(safe-area-inset-bottom, 0px)); }
+  .constellation-card-open .constellation-card { bottom: 58px; }
+}
+@media (max-width: 759px) and (max-height: 720px) {
+  .constellation-dock .constellation-destination { min-height: 56px; }
+  .constellation-dock .constellation-mini-map { height: 29px; }
+  .constellation-card { bottom: calc(178px + env(safe-area-inset-bottom, 0px)); }
+  .constellation-card-open .constellation-card { bottom: 58px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .constellation-dock { left: 50%; right: auto; width: calc(100vw - 32px); bottom: 66px; padding: 5px 10px; }
+  .constellation-dock-heading { display: flex; min-height: 30px; padding-bottom: 4px; }
+  .constellation-dock-heading > span:nth-child(2), .constellation-dock .constellation-dock-scroll { display: none; }
+  .constellation-dock-collapse { min-height: 30px; margin-left: auto; }
+  .constellation-dock .constellation-destination { flex-basis: 83px; min-height: 52px; padding: 2px 3px 3px; }
+  .constellation-dock .constellation-mini-map { height: 29px; }
+  .constellation-card { bottom: auto; max-height: calc(100dvh - 260px); }
+  .constellation-explorer:has(.constellation-dock-collapsed) .constellation-card { bottom: auto; max-height: calc(100dvh - 205px); }
+}
+
+/* Keep the scale disclaimer in the footer, below the lowered destination tray. */
+@media (min-width: 761px) {
+  body:not(.guide-active) .scene-disclaimer { position: fixed; left: 30px; bottom: 58px; transform: none; }
+}
+@media (min-width: 1550px) {
+  body:not(.guide-active) .scene-disclaimer { left: 50px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  body:not(.guide-active) .scene-disclaimer { position: fixed; left: 25px; bottom: 18px; transform: none; font-size: 8px; }
+}

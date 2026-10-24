@@ -1,0 +1,52 @@
+/* Keep the atlas window, scrollbar gutter and result cards stable across filters. */
+body #catalog-dialog {
+  --catalog-card-height: 104px;
+}
+body #catalog-dialog .catalog-grid {
+  align-content: start;
+  grid-auto-rows: var(--catalog-card-height);
+  scrollbar-gutter: stable;
+}
+body #catalog-dialog .catalog-card {
+  height: var(--catalog-card-height);
+  min-height: var(--catalog-card-height);
+  min-width: 0;
+}
+body #catalog-dialog .catalog-card-copy { overflow-wrap: anywhere; }
+body #catalog-dialog .catalog-grid > .search-empty { grid-column: 1 / -1; }
+
+@media (min-width:761px) {
+  body:not(.mobile-workspace) #catalog-dialog[open] {
+    display: flex;
+    flex-direction: column;
+    height: min(calc(47dvh + 330px), calc(100dvh - 64px));
+    overflow: hidden;
+  }
+  body:not(.mobile-workspace) #catalog-dialog > :not(.catalog-grid) { flex-shrink: 0; }
+  body:not(.mobile-workspace) #catalog-dialog .catalog-grid {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+}
+@media (min-width:761px) and (max-width:1900px) {
+  .header-actions .guide-entry { padding-inline: 10px; gap: 6px; font-size: 11px; letter-spacing: .4px; }
+  .header-actions .guide-entry-arrow { display: none; }
+  #mode-nav button { padding-inline: 11px; }
+}
+@media (min-width:761px) and (max-width:1340px) {
+  .header-actions { position: absolute; top: 66px; right: 22px; margin: 0; gap: 6px; }
+  .header-actions .guide-entry { min-height: 30px; padding: 5px 9px; font-size: 10px; }
+  .display-tools .music-label { display: none; }
+}
+@media (min-width:1101px) and (max-width:1450px) {
+  #mode-nav .mode-index { display: none; }
+  #mode-nav button { padding-inline: 9px; }
+}
+/* The phone retains its existing full-height sheet and More menu. */
+body.mobile-workspace #catalog-dialog { --catalog-card-height: 128px; }
+@media (max-height:600px) and (min-width:761px) {
+  body:not(.mobile-workspace) #catalog-dialog[open] { height: calc(100dvh - 32px); max-height: calc(100dvh - 32px); }
+}

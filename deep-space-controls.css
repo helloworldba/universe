@@ -1,0 +1,77 @@
+/* The overview controls reuse the existing footer and measured destination tray. */
+.deep-space-toggle[hidden],.deep-space-legend[hidden] { display:none!important; }
+.playback-controls.deep-space-playback-controls { max-width:calc(100vw - 24px); flex-wrap:wrap; justify-content:center; }
+.playback-controls .deep-space-toggle { font-size:11px; letter-spacing:.2px; }
+.playback-controls .deep-space-toggle[aria-pressed="true"] { color:#d4e9ee; background:rgba(126,190,219,.13); }
+.playback-controls .deep-space-toggle:focus-visible { outline:2px solid #a6dbef; outline-offset:2px; }
+.deep-space-legend {
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:4px 20px;
+  margin-top:4px; padding:7px 4px 1px; border-top:1px solid rgba(133,183,209,.1);
+  color:#a5bdca; font-size:12px; line-height:1.6; letter-spacing:.1px; pointer-events:none;
+}
+.deep-space-legend-keys { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px 18px; }
+.deep-space-legend-key { display:inline-flex; align-items:center; gap:7px; white-space:nowrap; }
+.deep-space-legend-key i { display:inline-block; width:20px; height:0; border-top:2px solid currentColor; }
+.deep-space-legend-webb { color:#e4c681; }
+.deep-space-legend-webb i { border-top-style:dashed; }
+.deep-space-legend-voyager { color:#90d9e8; }
+.deep-space-legend-roman { color:#c6b1ee; }
+.deep-space-legend-roman i { border-top-style:dashed; }
+.deep-space-legend-note { color:#92adbf; white-space:normal; text-align:center; }
+.destination-dock.dock-collapsed .deep-space-legend { margin-top:6px; padding-top:5px; gap:2px 14px; }
+.destination-dock.dock-collapsed .deep-space-legend-keys { display:none; }
+
+/* High-priority scene labels remain legible without impersonating source links. */
+#label-layer .deep-space-label {
+  margin-left:0; padding:6px 9px; font-size:13px; line-height:1.5; letter-spacing:.2px;
+  color:#d4e5ed; border-color:rgba(140,196,219,.28); background:rgba(5,16,31,.85);
+  white-space:nowrap; text-decoration:none; max-width:calc(100vw - 24px);
+}
+#label-layer .deep-space-label:hover { color:#eff9ff; background:rgba(21,45,65,.95); }
+#label-layer .deep-space-label:focus-visible { outline:2px solid #b3e5f8; outline-offset:2px; }
+#label-layer .deep-space-label { z-index:1; }
+#label-layer .deep-space-label-leader {
+  position:absolute; left:0; top:0; height:1px; transform-origin:0 50%;
+  background:var(--label-color,#a5c9dc); opacity:.42; pointer-events:none;
+}
+#label-layer .deep-space-label-leader[hidden] { display:none; }
+#label-layer .deep-space-annotation {
+  margin-left:0; padding:4px 6px; font-size:11px; line-height:1.5; letter-spacing:.1px;
+  color:#aac3d1; border:1px solid rgba(142,191,216,.1); background:rgba(6,16,29,.64);
+  white-space:nowrap; pointer-events:none; cursor:default; text-decoration:none;
+}
+#label-layer .deep-space-annotation::before { display:none; }
+
+/* This legend is in normal dock flow, so reserve its extra height in the
+   fixed-height reading card as well as in the measured scene composition. */
+@media (min-width:761px) and (min-height:601px) {
+  body:has(.deep-space-legend:not([hidden])) .explorer .facts-panel:not(.collapsed) {
+    max-height:calc(100dvh - var(--header-height) - 286px - env(safe-area-inset-bottom,0px));
+  }
+}
+@media (min-width:761px) and (max-width:1100px) and (min-height:601px) {
+  body:has(.deep-space-legend:not([hidden])) .explorer .facts-panel:not(.collapsed) {
+    max-height:calc(100dvh - var(--header-height) - 326px - env(safe-area-inset-bottom,0px));
+  }
+}
+@media (min-width:761px) and (max-width:1100px) {
+  .control-footer.deep-space-controls-visible .gesture-hint { display:none; }
+  .control-footer.deep-space-controls-visible .scale-readout>div { max-width:calc(50vw - 240px); }
+}
+@media (max-width:760px) {
+  .playback-controls.deep-space-playback-controls { gap:1px; padding:4px; }
+  .playback-controls.deep-space-playback-controls button { padding-inline:6px; }
+  .playback-controls .deep-space-toggle { gap:4px; font-size:10px; }
+  .playback-controls .deep-space-toggle svg { width:13px; height:13px; }
+  .deep-space-legend { gap:3px 12px; margin-top:2px; padding-top:6px; font-size:11px; }
+  .deep-space-legend-keys { gap:6px 15px; max-width:100%; }
+  .deep-space-legend-key { white-space:normal; text-align:center; }
+  .deep-space-legend-key i { flex-shrink:0; }
+  .deep-space-legend-note { flex-basis:100%; font-size:10px; }
+  #label-layer .deep-space-label { padding:5px 7px; font-size:11px; }
+  #label-layer .deep-space-annotation { padding:3px 5px; font-size:10px; }
+}
+@media (max-height:500px) and (orientation:landscape) {
+  .deep-space-legend { margin-top:1px; padding-top:3px; font-size:10px; gap:3px 14px; }
+  .deep-space-legend-note { flex-basis:auto; }
+}

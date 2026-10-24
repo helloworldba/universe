@@ -1,0 +1,11 @@
+/* Cards use their original shared and responsive corner styles again.
+   Keep the independent video-window overrides unchanged. */
+
+/* Video windows have no decorative border or inset highlight. Keep keyboard
+   focus feedback and the playback controls in their original styles. */
+html body :is(.cinema-dialog, .topic-video-dialog, .cinema-player, .topic-video-screen) {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+html body #cinema-video { border-radius: 0 !important; }

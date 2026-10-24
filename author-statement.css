@@ -1,0 +1,42 @@
+.author-statement-button {
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  min-height:32px;padding:7px 10px;border:1px solid var(--ui-surface-line,rgba(123,209,255,.28));
+  border-radius:8px;background:rgba(4,16,37,.7);color:inherit;font:inherit;
+  font-size:11px;white-space:nowrap;cursor:pointer;
+}
+.author-statement-button svg {width:16px;height:16px;flex-shrink:0;}
+#author-statement-dialog[open] {
+  display:flex;flex-direction:column;box-sizing:border-box;
+  width:min(880px,calc(100vw - 24px));max-width:none;
+  max-height:calc(100vh - 24px);
+  max-height:calc(100dvh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+  margin:auto;padding:26px 28px;overflow:hidden;
+}
+#author-statement-dialog .author-statement-heading {display:flex;align-items:center;justify-content:space-between;gap:16px;flex:0 0 auto;}
+#author-statement-title {margin:0;color:#d4b574;font:400 clamp(24px,4vw,32px)/1.4 "Songti SC",SimSun,serif;letter-spacing:2px;}
+#author-statement-dialog .dialog-close {position:static;inset:auto;width:40px;height:40px;flex:0 0 40px;}
+#author-statement-dialog .author-statement-copy {
+  flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  margin:22px 0 0;padding:0 4px 0 1.65em;color:#dce6e8;font-size:17px;line-height:1.95;
+}
+.author-statement-copy li {padding-left:4px;}
+.author-statement-copy li+li {margin-top:18px;}
+.author-statement-copy li::marker {color:#d4b574;}
+.author-statement-license {flex:0 0 auto;margin:18px 0 0;padding-top:16px;border-top:1px solid rgba(123,209,255,.18);color:#b7d6ed;font-size:15px;line-height:1.8;}
+.author-statement-contact {flex:0 0 auto;margin:20px 0 0;padding-top:16px;border-top:1px solid rgba(123,209,255,.18);color:#dce6e8;font-size:15px;line-height:1.8;overflow-wrap:anywhere;}
+.author-statement-contact a {color:inherit;text-underline-offset:3px;}
+.author-statement-signature {display:flex;align-items:center;gap:14px;flex:0 0 auto;margin-top:16px;}
+.author-brand-mark {position:relative;width:48px;height:48px;flex-shrink:0;overflow:hidden;border-radius:50%;}
+.author-brand-mark img {position:absolute;left:50%;top:50%;width:140%;height:140%;max-width:none;transform:translate(-50%,-50%);object-fit:cover;display:block;}
+.author-brand-type {display:grid;grid-template-columns:max-content;min-width:0;}
+.author-brand-en {margin:0;color:#e6edf3;font-size:clamp(11px,3.5vw,18px);font-weight:700;line-height:1.3;letter-spacing:1.2px;white-space:nowrap;}
+.author-brand-cn {margin:5px 0 0;color:#b7cbd4;font-size:clamp(11px,3.5vw,16px);font-weight:500;line-height:1.3;letter-spacing:0;text-align:justify;text-align-last:justify;}
+body.mobile-layout #mobile-tools-panel #author-statement-button {grid-column:1/-1;}
+@media(max-width:760px) {
+  #author-statement-dialog[open] {padding:18px 16px;border-radius:16px;}
+  #author-statement-dialog .author-statement-copy {margin-top:16px;font-size:15px;line-height:1.9;}
+  .author-statement-copy li+li {margin-top:14px;}
+  .author-statement-signature {gap:10px;margin-top:14px;}
+  .author-brand-mark {width:40px;height:40px;}
+  .author-brand-en {letter-spacing:.7px;}
+}

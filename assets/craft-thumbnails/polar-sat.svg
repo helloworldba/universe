@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -5 72 58" width="64" height="48">
+  <title>极轨卫星：双长太阳翼与对地观测仪器</title>
+  <g transform="rotate(28 32 24)" stroke-linejoin="round">
+    <path d="M31 4v40" stroke="#d6e6eb" stroke-width="1.5"/>
+    <path d="M17 1h28v12H17zm0 34h28v12H17z" fill="#336d9f" stroke="#b6cee0" stroke-width=".65"/>
+    <path d="M24 1v12m7-12v12m7-12v12M17 7h28M24 34v13m7-13v13m7-13v13M17 40h28" stroke="#96bbd5" stroke-width=".6"/>
+    <path d="m23 18 9-4 10 6v11l-10 5-9-5Z" fill="#b4c5ce" stroke="#e4edf2" stroke-width=".7"/><path d="m23 18 9 6 10-4M32 24v12" fill="none" stroke="#667f95"/>
+    <path d="m17 21 8 3v8l-8-4Z" fill="#d5aa63" stroke="#f1cf94" stroke-width=".7"/><circle cx="36" cy="27" r="3.5" fill="#0d2941" stroke="#79bad0" stroke-width=".8"/>
+    <path d="M42 21h10m-2-6 5 6-5 6" stroke="#d5e0e7" stroke-width="1.2" fill="none"/>
+  </g>
+</svg>

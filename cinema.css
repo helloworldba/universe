@@ -1,0 +1,84 @@
+.header-actions { display:flex; align-items:center; gap:9px; margin-right:158px; }
+.header-actions .guide-entry { position:static; margin:0; white-space:nowrap; }
+@media (min-width:1600px) { .header-actions { margin-right:230px; } }
+.cinema-entry:focus-visible { outline:2px solid #9ddae6; outline-offset:3px; }
+body.guide-active .header-actions { display:none; }
+.cinema-dialog { width:min(1120px,calc(100vw - 64px)); max-width:none; max-height:calc(100dvh - 48px); margin:auto; padding:0; overflow:auto; color:#dcecf7; background:transparent; border:0; border-radius:0; box-shadow:none; }
+.cinema-dialog::backdrop { background:rgba(1,6,16,.78); backdrop-filter:blur(8px); }
+.cinema-heading { display:flex; align-items:center; justify-content:flex-end; padding:4px 4px 12px; background:transparent; }
+.cinema-heading .icon-button { width:38px; height:38px; color:#dcecf7; border:1px solid #9dcce640; background:rgba(18,40,59,.45); backdrop-filter:blur(8px); }
+.cinema-heading .icon-button:hover { background:rgba(36,67,86,.8); border-color:#bce7ff80; }
+.cinema-heading .icon-button:focus-visible { outline-offset:2px; }
+.cinema-player { position:relative; overflow:hidden; background:#000; border:1px solid #9dcce63d; border-radius:14px; }
+.cinema-player:focus-visible { outline:2px solid #9ddae6; outline-offset:2px; }
+#cinema-video { display:block; width:100%; max-height:calc(100dvh - 164px); aspect-ratio:16/9; object-fit:contain; background:#000; cursor:pointer; }
+.cinema-controls { position:absolute; z-index:1; inset:auto 0 0; display:flex; align-items:center; flex-wrap:wrap; gap:0 8px; padding:28px 16px 8px; background:linear-gradient(transparent,rgba(0,0,0,.55) 36%,rgba(0,0,0,.82)); color:#fff; opacity:1; transition:opacity .2s ease; }
+.cinema-controls-idle .cinema-controls { opacity:0; pointer-events:none; }
+.cinema-controls-idle #cinema-video { cursor:none; }
+.cinema-controls button { display:grid; place-items:center; width:38px; height:38px; padding:7px; border:0; border-radius:6px; color:inherit; background:transparent; cursor:pointer; }
+.cinema-controls button:hover { background:#ffffff17; }
+.cinema-controls button:focus-visible,.cinema-controls input:focus-visible { outline:2px solid #9ddae6; outline-offset:2px; }
+.cinema-controls svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+#cinema-play[aria-pressed="false"] svg { fill:currentColor; stroke:none; }
+#cinema-play[aria-pressed="true"] svg { stroke-width:3; }
+.cinema-time { font-size:13px; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.cinema-control-spacer { flex:1; }
+.cinema-controls input { -webkit-appearance:none; appearance:none; cursor:pointer; margin:0; padding:0; border:0; border-radius:0; height:24px; background:transparent; accent-color:#fff; }
+.cinema-volume-controls { display:flex; align-items:center; gap:0; }
+.cinema-volume { width:72px; min-width:0; --video-progress:100%; }
+.cinema-seek { flex:0 0 100%; width:100%; }
+.cinema-controls input::-webkit-slider-runnable-track { height:4px; border:0; border-radius:3px; background:linear-gradient(to right,#fff 0 var(--video-progress,0%),rgba(255,255,255,.36) var(--video-progress,0%) 100%); }
+.cinema-controls input::-webkit-slider-thumb { -webkit-appearance:none; width:10px; height:10px; margin-top:-3px; border:0; border-radius:50%; background:#fff; }
+.cinema-controls input::-moz-range-track { height:4px; border:0; border-radius:3px; background:rgba(255,255,255,.36); }
+.cinema-controls input::-moz-range-progress { height:4px; border-radius:3px; background:#fff; }
+.cinema-controls input::-moz-range-thumb { width:10px; height:10px; border:0; border-radius:50%; background:#fff; }
+.cinema-controls input:disabled { opacity:.45; cursor:default; }
+@media (hover:hover) and (pointer:fine) {
+  .cinema-volume { width:0; opacity:0; pointer-events:none; transition:width .15s ease,opacity .15s ease; }
+  .cinema-volume-controls:is(:hover,:focus-within) .cinema-volume { width:72px; opacity:1; pointer-events:auto; margin-right:6px; }
+  .cinema-seek::-webkit-slider-thumb { opacity:0; }
+  .cinema-seek::-moz-range-thumb { opacity:0; }
+  .cinema-seek:is(:hover,:focus-visible)::-webkit-slider-thumb { opacity:1; }
+  .cinema-seek:is(:hover,:focus-visible)::-moz-range-thumb { opacity:1; }
+}
+.cinema-controls [hidden] { display:none; }
+.cinema-player:fullscreen { display:flex; align-items:center; justify-content:center; width:100%; height:100%; border:0; border-radius:0; }
+.cinema-player:fullscreen #cinema-video { height:100%; min-height:0; max-height:100%; aspect-ratio:auto; }
+.cinema-player:fullscreen .cinema-controls { padding-bottom:max(8px,env(safe-area-inset-bottom,0px)); }
+.cinema-unmute { display:block; margin:12px auto 4px; padding:9px 18px; min-height:38px; border:1px solid #9dcce64d; border-radius:8px; color:#dcecf7; background:rgba(18,40,59,.85); font-size:13px; }
+.cinema-unmute:hover { background:#244356; }
+.cinema-status { margin:10px 0 0; padding:13px 20px; border-radius:8px; background:rgba(8,21,35,.85); font-size:12px; line-height:1.7; color:#e3cc9d; }
+@media (min-width:761px) and (max-width:1250px) {
+  .header-actions { gap:7px; }
+  .header-actions #enter-guide>span,.header-actions .guide-entry-arrow { display:none; }
+  .header-actions #enter-guide { padding-inline:10px; }
+}
+@media (min-width:761px) and (max-width:850px) {
+  .brand-en { font-size:9px; letter-spacing:.3px; }
+  .mode-nav:has([data-mode="constellation"]) { left:46%; }
+  .mode-nav:has([data-mode="constellation"]) button { font-size:10px; padding-inline:6px; }
+  .header-actions .guide-entry { padding-inline:7px; gap:5px; font-size:9px; }
+}
+@media (max-width:760px) {
+  .header-actions { position:absolute; right:150px; margin:0; gap:5px; }
+  .header-actions .guide-entry { padding-inline:7px; min-height:33px; }
+  .header-actions .cinema-entry>span { display:block; }
+  .header-actions .cinema-entry>svg:first-child { display:none; }
+  .cinema-dialog { width:calc(100vw - 24px); max-height:calc(100dvh - 24px); }
+  .cinema-heading { padding:4px 4px 10px; }
+  .cinema-player { border-radius:11px; }
+  #cinema-video { max-height:calc(100dvh - 144px); }
+  .cinema-controls { gap:0 4px; padding:20px 8px 4px; }
+  .cinema-controls button { width:44px; height:44px; }
+  .cinema-controls input { height:28px; }
+  .cinema-volume { width:58px; }
+  .cinema-time { font-size:12px; }
+  .cinema-status { padding:10px 12px; }
+}
+@media (max-width:480px) {
+  .brand-en { display:none; }
+  .wordmark .brand-cn { margin-top:0; }
+}
+@media (max-width:370px) {
+  .header-actions { right:128px; }
+}

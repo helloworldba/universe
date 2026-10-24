@@ -1,0 +1,4052 @@
+{
+  "title": "地点目录数据来源与整理说明",
+  "retrievedAt": "2026-10-21",
+  "scope": "本文件记录中国内地 333 个地级行政区（293 地级市、30 自治州、7 地区、3 盟）及 4 个直辖市、2 个特别行政区，共 339 处。台湾城市、世界城市、自然地标的后续扩充另见 world-place-sources.json。",
+  "source": {
+    "name": "阿里云 DataV GeoAtlas",
+    "url": "https://datav.aliyun.com/portal?tool=atlas",
+    "documentation": "https://help.aliyun.com/zh/datav/datav-7-0/user-guide/custom-region-underdrilling-4-0",
+    "extraction": "从省级 GeoJSON 的 properties 提取 adcode、name、center，不收录边界。排除省直管县级行政单位。公开接口未提供统一版本日期，整理日期不等于官方区划更新日期。"
+  },
+  "tibetCheck": {
+    "name": "西藏自治区投资促进局·投资西藏",
+    "url": "https://tzcjj.xizang.gov.cn/tzxz/",
+    "note": "据其 6 市、1 地区说明补齐原提交名单遗漏的拉萨、日喀则、昌都、林芝、山南、那曲。"
+  },
+  "coordinates": "新增 306 处采用 GeoAtlas center 作为近似城市中心或行政驻地定位点。33 处重合地点保留原项目坐标、名称和 ID；原有 68 处坐标来自项目既有离线目录，未在本次逐条重新溯源。不是边界、精密导航或实时设备位置。",
+  "sources": [
+    {
+      "province": "河北省",
+      "provinceCode": "130000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "c7e8f6d81bf815b309e081b17325f73134bfa6929332e1c135398e82216f70f7"
+    },
+    {
+      "province": "山西省",
+      "provinceCode": "140000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "5da8144cc2d3a6ab6be40a63fd2ed099a33f1deae8e727214542e73f410ff607"
+    },
+    {
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "9a4a3b95d903b064c8e815b78d4f80f391b4bdafd3b52dabd854755457385660"
+    },
+    {
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "679ec739045413f4de0898a9d6a7957f6ffc551809f3f52c786a30d6242b02c5"
+    },
+    {
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "828be8771e676322a81f560611821230d66e1e1dca87308efd7865b27423e605"
+    },
+    {
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "f8d3bdbee4068811237efd23fe349a4c6e3bc99334079f9746f19e7df5ea4854"
+    },
+    {
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "6af17f07a3c83bad7d4d552efdd7f59ba8f7574363d1a686f59bc1d0f91733e7"
+    },
+    {
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "f87241d47687264861aa619b8dc37ffeb61a2be5d6018a8c01ec0ce0acb5cb38"
+    },
+    {
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "7ca3290e0458f34086df4d61fa9804e2c624d55dfe5f8f6a841844b5dcd43207"
+    },
+    {
+      "province": "福建省",
+      "provinceCode": "350000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "0c749acd0048a5042a5ee701ddd5a87c17ff91afb9b728d23b7253799135b58f"
+    },
+    {
+      "province": "江西省",
+      "provinceCode": "360000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "ee9696faaca6e644fb0f1aebfc0bd800beb938dd2eb1737fcb8b244072405d9e"
+    },
+    {
+      "province": "山东省",
+      "provinceCode": "370000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "04d600e257db17869aa7fabcfcd6a87a7236791a7f02dd891636f5f58da0133f"
+    },
+    {
+      "province": "河南省",
+      "provinceCode": "410000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "34119256db754324763c8484122d71524818c9cec974207bd27a9aafe2d8ad63"
+    },
+    {
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "0acb559fcfe2ab2c5d2707c2477e60facdf4328ad89b8ab7d9126c5166675502"
+    },
+    {
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "091cb4e77e2bc73fb37c8a9b3b174db9b2008db5f544a7156f5a8ad34e77dd66"
+    },
+    {
+      "province": "广东省",
+      "provinceCode": "440000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "209ad617a296b154c4fd0828180b2a9ab2b270044990ab34e72a344ce913c8c7"
+    },
+    {
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "5bdcaa8808d78065be4a496718b449c5b97d1ef27900bbfcd2407f69c5f6c041"
+    },
+    {
+      "province": "海南省",
+      "provinceCode": "460000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/460000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "ae44b392cf32ff7f7df5466ca16fa7f1b70b9fb9c36f00f54d6f142d011c65e4"
+    },
+    {
+      "province": "四川省",
+      "provinceCode": "510000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "e8e3a3820d97ca3453c18c6335703f4e4f93df95ba394a1259eebab59e7072b1"
+    },
+    {
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "3336ddee76a8d33a5841f928c764ec4e4bb33988ec59d08efc75000251af1cf6"
+    },
+    {
+      "province": "云南省",
+      "provinceCode": "530000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "c11c7adf7581fc53e965bf0fd2b3217213f118c59ebddf4cab929c51ee00aa6e"
+    },
+    {
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "ba95ab3f6b9183942c183d66d1258ac710dcdf9cb49c51f79915532379747c81"
+    },
+    {
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "969ca94cc865bf3a37c22e30d7c0125196fd22175f7c212953185f7c67921682"
+    },
+    {
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "5252d2ce49a7b6f721d5ca9404a2960b428fab09b6f62256fe62db0218d1123e"
+    },
+    {
+      "province": "青海省",
+      "provinceCode": "630000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "42caf689c3c37630aa725bac2351153bac00fb626a01fbe5f141c3a279706936"
+    },
+    {
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "99e03114c3f7dff3fad5b87a88ddf2fb08687d117c62bf999236191ca29d78f9"
+    },
+    {
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json",
+      "retrieved": "2026-10-21",
+      "sha256": "587b5069eddcad4b5a2f784380351f756f0ba955211721091b85a6528ae74745"
+    }
+  ],
+  "nationalSource": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json",
+  "records": [
+    {
+      "adcode": "110000",
+      "fullName": "北京市",
+      "province": "北京市",
+      "provinceCode": "110000",
+      "adminType": "直辖市",
+      "lon": 116.405285,
+      "lat": 39.904989,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    },
+    {
+      "adcode": "120000",
+      "fullName": "天津市",
+      "province": "天津市",
+      "provinceCode": "120000",
+      "adminType": "直辖市",
+      "lon": 117.190182,
+      "lat": 39.125596,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    },
+    {
+      "adcode": "130100",
+      "fullName": "石家庄市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 114.502461,
+      "lat": 38.045474,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130200",
+      "fullName": "唐山市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 118.175393,
+      "lat": 39.635113,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130300",
+      "fullName": "秦皇岛市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 119.586579,
+      "lat": 39.942531,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130400",
+      "fullName": "邯郸市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 114.490686,
+      "lat": 36.612273,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130500",
+      "fullName": "邢台市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 114.508851,
+      "lat": 37.0682,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130600",
+      "fullName": "保定市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 115.482331,
+      "lat": 38.867657,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130700",
+      "fullName": "张家口市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 114.884091,
+      "lat": 40.811901,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130800",
+      "fullName": "承德市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 117.939152,
+      "lat": 40.976204,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "130900",
+      "fullName": "沧州市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 116.857461,
+      "lat": 38.310582,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "131000",
+      "fullName": "廊坊市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 116.704441,
+      "lat": 39.523927,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "131100",
+      "fullName": "衡水市",
+      "province": "河北省",
+      "provinceCode": "130000",
+      "adminType": "地级市",
+      "lon": 115.665993,
+      "lat": 37.735097,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/130000_full.json"
+    },
+    {
+      "adcode": "140100",
+      "fullName": "太原市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 112.549248,
+      "lat": 37.857014,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140200",
+      "fullName": "大同市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 113.295259,
+      "lat": 40.09031,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140300",
+      "fullName": "阳泉市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 113.583285,
+      "lat": 37.861188,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140400",
+      "fullName": "长治市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 113.113556,
+      "lat": 36.191112,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140500",
+      "fullName": "晋城市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 112.851274,
+      "lat": 35.497553,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140600",
+      "fullName": "朔州市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 112.433387,
+      "lat": 39.331261,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140700",
+      "fullName": "晋中市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 112.736465,
+      "lat": 37.696495,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140800",
+      "fullName": "运城市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 111.003957,
+      "lat": 35.022778,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "140900",
+      "fullName": "忻州市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 112.733538,
+      "lat": 38.41769,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "141000",
+      "fullName": "临汾市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 111.517973,
+      "lat": 36.08415,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "141100",
+      "fullName": "吕梁市",
+      "province": "山西省",
+      "provinceCode": "140000",
+      "adminType": "地级市",
+      "lon": 111.134335,
+      "lat": 37.524366,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/140000_full.json"
+    },
+    {
+      "adcode": "150100",
+      "fullName": "呼和浩特市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 111.670801,
+      "lat": 40.818311,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150200",
+      "fullName": "包头市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 109.840405,
+      "lat": 40.658168,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150300",
+      "fullName": "乌海市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 106.825563,
+      "lat": 39.673734,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150400",
+      "fullName": "赤峰市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 118.956806,
+      "lat": 42.275317,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150500",
+      "fullName": "通辽市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 122.263119,
+      "lat": 43.617429,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150600",
+      "fullName": "鄂尔多斯市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 109.99029,
+      "lat": 39.817179,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150700",
+      "fullName": "呼伦贝尔市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 119.758168,
+      "lat": 49.215333,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150800",
+      "fullName": "巴彦淖尔市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 107.416959,
+      "lat": 40.757402,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "150900",
+      "fullName": "乌兰察布市",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "地级市",
+      "lon": 113.114543,
+      "lat": 41.034126,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "152200",
+      "fullName": "兴安盟",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "盟",
+      "lon": 122.070317,
+      "lat": 46.076268,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "152500",
+      "fullName": "锡林郭勒盟",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "盟",
+      "lon": 116.090996,
+      "lat": 43.944018,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "152900",
+      "fullName": "阿拉善盟",
+      "province": "内蒙古自治区",
+      "provinceCode": "150000",
+      "adminType": "盟",
+      "lon": 105.706422,
+      "lat": 38.844814,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/150000_full.json"
+    },
+    {
+      "adcode": "210100",
+      "fullName": "沈阳市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 123.429096,
+      "lat": 41.796767,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210200",
+      "fullName": "大连市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 121.618622,
+      "lat": 38.91459,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210300",
+      "fullName": "鞍山市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 122.995632,
+      "lat": 41.110626,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210400",
+      "fullName": "抚顺市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 123.921109,
+      "lat": 41.875956,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210500",
+      "fullName": "本溪市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 123.770519,
+      "lat": 41.297909,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210600",
+      "fullName": "丹东市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 124.383044,
+      "lat": 40.124296,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210700",
+      "fullName": "锦州市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 121.135742,
+      "lat": 41.119269,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210800",
+      "fullName": "营口市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 122.235151,
+      "lat": 40.667432,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "210900",
+      "fullName": "阜新市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 121.648962,
+      "lat": 42.011796,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "211000",
+      "fullName": "辽阳市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 123.18152,
+      "lat": 41.269402,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "211100",
+      "fullName": "盘锦市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 122.06957,
+      "lat": 41.124484,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "211200",
+      "fullName": "铁岭市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 123.844279,
+      "lat": 42.290585,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "211300",
+      "fullName": "朝阳市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 120.451176,
+      "lat": 41.576758,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "211400",
+      "fullName": "葫芦岛市",
+      "province": "辽宁省",
+      "provinceCode": "210000",
+      "adminType": "地级市",
+      "lon": 120.856394,
+      "lat": 40.755572,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/210000_full.json"
+    },
+    {
+      "adcode": "220100",
+      "fullName": "长春市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 125.3245,
+      "lat": 43.886841,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220200",
+      "fullName": "吉林市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 126.55302,
+      "lat": 43.843577,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220300",
+      "fullName": "四平市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 124.370785,
+      "lat": 43.170344,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220400",
+      "fullName": "辽源市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 125.145349,
+      "lat": 42.902692,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220500",
+      "fullName": "通化市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 125.936501,
+      "lat": 41.721177,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220600",
+      "fullName": "白山市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 126.427839,
+      "lat": 41.942505,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220700",
+      "fullName": "松原市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 124.823608,
+      "lat": 45.118243,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "220800",
+      "fullName": "白城市",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "地级市",
+      "lon": 122.841114,
+      "lat": 45.619026,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "222400",
+      "fullName": "延边朝鲜族自治州",
+      "province": "吉林省",
+      "provinceCode": "220000",
+      "adminType": "自治州",
+      "lon": 129.513228,
+      "lat": 42.904823,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/220000_full.json"
+    },
+    {
+      "adcode": "230100",
+      "fullName": "哈尔滨市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 126.642464,
+      "lat": 45.756967,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230200",
+      "fullName": "齐齐哈尔市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 123.95792,
+      "lat": 47.342081,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230300",
+      "fullName": "鸡西市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 130.975966,
+      "lat": 45.300046,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230400",
+      "fullName": "鹤岗市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 130.277487,
+      "lat": 47.332085,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230500",
+      "fullName": "双鸭山市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 131.157304,
+      "lat": 46.643442,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230600",
+      "fullName": "大庆市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 125.11272,
+      "lat": 46.590734,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230700",
+      "fullName": "伊春市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 128.899396,
+      "lat": 47.724775,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230800",
+      "fullName": "佳木斯市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 130.361634,
+      "lat": 46.809606,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "230900",
+      "fullName": "七台河市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 131.015584,
+      "lat": 45.771266,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "231000",
+      "fullName": "牡丹江市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 129.618602,
+      "lat": 44.582962,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "231100",
+      "fullName": "黑河市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 127.499023,
+      "lat": 50.249585,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "231200",
+      "fullName": "绥化市",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地级市",
+      "lon": 126.99293,
+      "lat": 46.637393,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "232700",
+      "fullName": "大兴安岭地区",
+      "province": "黑龙江省",
+      "provinceCode": "230000",
+      "adminType": "地区",
+      "lon": 124.711526,
+      "lat": 52.335262,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/230000_full.json"
+    },
+    {
+      "adcode": "310000",
+      "fullName": "上海市",
+      "province": "上海市",
+      "provinceCode": "310000",
+      "adminType": "直辖市",
+      "lon": 121.472644,
+      "lat": 31.231706,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    },
+    {
+      "adcode": "320100",
+      "fullName": "南京市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 118.767413,
+      "lat": 32.041544,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320200",
+      "fullName": "无锡市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 120.301663,
+      "lat": 31.574729,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320300",
+      "fullName": "徐州市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 117.184811,
+      "lat": 34.261792,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320400",
+      "fullName": "常州市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.946973,
+      "lat": 31.772752,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320500",
+      "fullName": "苏州市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 120.619585,
+      "lat": 31.299379,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320600",
+      "fullName": "南通市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 120.864608,
+      "lat": 32.016212,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320700",
+      "fullName": "连云港市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.178821,
+      "lat": 34.600018,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320800",
+      "fullName": "淮安市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.021265,
+      "lat": 33.597506,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "320900",
+      "fullName": "盐城市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 120.139998,
+      "lat": 33.377631,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "321000",
+      "fullName": "扬州市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.421003,
+      "lat": 32.393159,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "321100",
+      "fullName": "镇江市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.452753,
+      "lat": 32.204402,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "321200",
+      "fullName": "泰州市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 119.915176,
+      "lat": 32.484882,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "321300",
+      "fullName": "宿迁市",
+      "province": "江苏省",
+      "provinceCode": "320000",
+      "adminType": "地级市",
+      "lon": 118.275162,
+      "lat": 33.963008,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/320000_full.json"
+    },
+    {
+      "adcode": "330100",
+      "fullName": "杭州市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 120.153576,
+      "lat": 30.287459,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330200",
+      "fullName": "宁波市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 121.549792,
+      "lat": 29.868388,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330300",
+      "fullName": "温州市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 120.672111,
+      "lat": 28.000575,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330400",
+      "fullName": "嘉兴市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 120.750865,
+      "lat": 30.762653,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330500",
+      "fullName": "湖州市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 120.102398,
+      "lat": 30.867198,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330600",
+      "fullName": "绍兴市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 120.582112,
+      "lat": 29.997117,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330700",
+      "fullName": "金华市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 119.649506,
+      "lat": 29.089524,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330800",
+      "fullName": "衢州市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 118.87263,
+      "lat": 28.941708,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "330900",
+      "fullName": "舟山市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 122.106863,
+      "lat": 30.016028,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "331000",
+      "fullName": "台州市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 121.428599,
+      "lat": 28.661378,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "331100",
+      "fullName": "丽水市",
+      "province": "浙江省",
+      "provinceCode": "330000",
+      "adminType": "地级市",
+      "lon": 119.921786,
+      "lat": 28.451993,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.json"
+    },
+    {
+      "adcode": "340100",
+      "fullName": "合肥市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.283042,
+      "lat": 31.86119,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340200",
+      "fullName": "芜湖市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 118.376451,
+      "lat": 31.326319,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340300",
+      "fullName": "蚌埠市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.363228,
+      "lat": 32.939667,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340400",
+      "fullName": "淮南市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.018329,
+      "lat": 32.647574,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340500",
+      "fullName": "马鞍山市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 118.507906,
+      "lat": 31.689362,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340600",
+      "fullName": "淮北市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 116.794664,
+      "lat": 33.971707,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340700",
+      "fullName": "铜陵市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.816576,
+      "lat": 30.929935,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "340800",
+      "fullName": "安庆市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.043551,
+      "lat": 30.50883,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341000",
+      "fullName": "黄山市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 118.317325,
+      "lat": 29.709239,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341100",
+      "fullName": "滁州市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 118.316264,
+      "lat": 32.303627,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341200",
+      "fullName": "阜阳市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 115.819729,
+      "lat": 32.896969,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341300",
+      "fullName": "宿州市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 116.984084,
+      "lat": 33.633891,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341500",
+      "fullName": "六安市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 116.507676,
+      "lat": 31.752889,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341600",
+      "fullName": "亳州市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 115.782939,
+      "lat": 33.869338,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341700",
+      "fullName": "池州市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 117.489157,
+      "lat": 30.656037,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "341800",
+      "fullName": "宣城市",
+      "province": "安徽省",
+      "provinceCode": "340000",
+      "adminType": "地级市",
+      "lon": 118.757995,
+      "lat": 30.945667,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/340000_full.json"
+    },
+    {
+      "adcode": "350100",
+      "fullName": "福州市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 119.306239,
+      "lat": 26.075302,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350200",
+      "fullName": "厦门市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 118.11022,
+      "lat": 24.490474,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350300",
+      "fullName": "莆田市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 119.007558,
+      "lat": 25.431011,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350400",
+      "fullName": "三明市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 117.635001,
+      "lat": 26.265444,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350500",
+      "fullName": "泉州市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 118.589421,
+      "lat": 24.908853,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350600",
+      "fullName": "漳州市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 117.661801,
+      "lat": 24.510897,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350700",
+      "fullName": "南平市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 118.178459,
+      "lat": 26.635627,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350800",
+      "fullName": "龙岩市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 117.02978,
+      "lat": 25.091603,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "350900",
+      "fullName": "宁德市",
+      "province": "福建省",
+      "provinceCode": "350000",
+      "adminType": "地级市",
+      "lon": 119.527082,
+      "lat": 26.65924,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/350000_full.json"
+    },
+    {
+      "adcode": "360100",
+      "fullName": "南昌市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 115.892151,
+      "lat": 28.676493,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360200",
+      "fullName": "景德镇市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 117.214664,
+      "lat": 29.29256,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360300",
+      "fullName": "萍乡市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 113.852186,
+      "lat": 27.622946,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360400",
+      "fullName": "九江市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 115.992811,
+      "lat": 29.712034,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360500",
+      "fullName": "新余市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 114.930835,
+      "lat": 27.810834,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360600",
+      "fullName": "鹰潭市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 117.033838,
+      "lat": 28.238638,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360700",
+      "fullName": "赣州市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 114.940278,
+      "lat": 25.85097,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360800",
+      "fullName": "吉安市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 114.986373,
+      "lat": 27.111699,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "360900",
+      "fullName": "宜春市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 114.391136,
+      "lat": 27.8043,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "361000",
+      "fullName": "抚州市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 116.358351,
+      "lat": 27.98385,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "361100",
+      "fullName": "上饶市",
+      "province": "江西省",
+      "provinceCode": "360000",
+      "adminType": "地级市",
+      "lon": 117.971185,
+      "lat": 28.44442,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/360000_full.json"
+    },
+    {
+      "adcode": "370100",
+      "fullName": "济南市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 117.000923,
+      "lat": 36.675807,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370200",
+      "fullName": "青岛市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 120.355173,
+      "lat": 36.082982,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370300",
+      "fullName": "淄博市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 118.047648,
+      "lat": 36.814939,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370400",
+      "fullName": "枣庄市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 117.557964,
+      "lat": 34.856424,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370500",
+      "fullName": "东营市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 118.66471,
+      "lat": 37.434564,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370600",
+      "fullName": "烟台市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 121.391382,
+      "lat": 37.539297,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370700",
+      "fullName": "潍坊市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 119.107078,
+      "lat": 36.70925,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370800",
+      "fullName": "济宁市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 116.587245,
+      "lat": 35.415393,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "370900",
+      "fullName": "泰安市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 117.129063,
+      "lat": 36.194968,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371000",
+      "fullName": "威海市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 122.116394,
+      "lat": 37.509691,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371100",
+      "fullName": "日照市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 119.461208,
+      "lat": 35.428588,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371300",
+      "fullName": "临沂市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 118.326443,
+      "lat": 35.065282,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371400",
+      "fullName": "德州市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 116.307428,
+      "lat": 37.453968,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371500",
+      "fullName": "聊城市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 115.980367,
+      "lat": 36.456013,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371600",
+      "fullName": "滨州市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 118.016974,
+      "lat": 37.383542,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "371700",
+      "fullName": "菏泽市",
+      "province": "山东省",
+      "provinceCode": "370000",
+      "adminType": "地级市",
+      "lon": 115.469381,
+      "lat": 35.246531,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/370000_full.json"
+    },
+    {
+      "adcode": "410100",
+      "fullName": "郑州市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 113.665412,
+      "lat": 34.757975,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410200",
+      "fullName": "开封市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.341447,
+      "lat": 34.797049,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410300",
+      "fullName": "洛阳市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 112.434468,
+      "lat": 34.663041,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410400",
+      "fullName": "平顶山市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 113.307718,
+      "lat": 33.735241,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410500",
+      "fullName": "安阳市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.352482,
+      "lat": 36.103442,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410600",
+      "fullName": "鹤壁市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.295444,
+      "lat": 35.748236,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410700",
+      "fullName": "新乡市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 113.883991,
+      "lat": 35.302616,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410800",
+      "fullName": "焦作市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 113.238266,
+      "lat": 35.23904,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "410900",
+      "fullName": "濮阳市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 115.041299,
+      "lat": 35.768234,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411000",
+      "fullName": "许昌市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 113.826063,
+      "lat": 34.022956,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411100",
+      "fullName": "漯河市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.026405,
+      "lat": 33.575855,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411200",
+      "fullName": "三门峡市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 111.194099,
+      "lat": 34.777338,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411300",
+      "fullName": "南阳市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 112.540918,
+      "lat": 32.999082,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411400",
+      "fullName": "商丘市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 115.650497,
+      "lat": 34.437054,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411500",
+      "fullName": "信阳市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.075031,
+      "lat": 32.123274,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411600",
+      "fullName": "周口市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.649653,
+      "lat": 33.620357,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "411700",
+      "fullName": "驻马店市",
+      "province": "河南省",
+      "provinceCode": "410000",
+      "adminType": "地级市",
+      "lon": 114.024736,
+      "lat": 32.980169,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/410000_full.json"
+    },
+    {
+      "adcode": "420100",
+      "fullName": "武汉市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 114.298572,
+      "lat": 30.584355,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420200",
+      "fullName": "黄石市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 115.077048,
+      "lat": 30.220074,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420300",
+      "fullName": "十堰市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 110.787916,
+      "lat": 32.646907,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420500",
+      "fullName": "宜昌市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 111.290843,
+      "lat": 30.702636,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420600",
+      "fullName": "襄阳市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 112.144146,
+      "lat": 32.042426,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420700",
+      "fullName": "鄂州市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 114.890593,
+      "lat": 30.396536,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420800",
+      "fullName": "荆门市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 112.204251,
+      "lat": 31.03542,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "420900",
+      "fullName": "孝感市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 113.926655,
+      "lat": 30.926423,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "421000",
+      "fullName": "荆州市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 112.23813,
+      "lat": 30.326857,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "421100",
+      "fullName": "黄冈市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 114.879365,
+      "lat": 30.447711,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "421200",
+      "fullName": "咸宁市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 114.328963,
+      "lat": 29.832798,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "421300",
+      "fullName": "随州市",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "地级市",
+      "lon": 113.37377,
+      "lat": 31.717497,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "422800",
+      "fullName": "恩施土家族苗族自治州",
+      "province": "湖北省",
+      "provinceCode": "420000",
+      "adminType": "自治州",
+      "lon": 109.48699,
+      "lat": 30.283114,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json"
+    },
+    {
+      "adcode": "430100",
+      "fullName": "长沙市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 112.982279,
+      "lat": 28.19409,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430200",
+      "fullName": "株洲市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 113.151737,
+      "lat": 27.835806,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430300",
+      "fullName": "湘潭市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 112.944052,
+      "lat": 27.82973,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430400",
+      "fullName": "衡阳市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 112.607693,
+      "lat": 26.900358,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430500",
+      "fullName": "邵阳市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 111.46923,
+      "lat": 27.237842,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430600",
+      "fullName": "岳阳市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 113.132855,
+      "lat": 29.37029,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430700",
+      "fullName": "常德市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 111.691347,
+      "lat": 29.040225,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430800",
+      "fullName": "张家界市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 110.479921,
+      "lat": 29.127401,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "430900",
+      "fullName": "益阳市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 112.355042,
+      "lat": 28.570066,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "431000",
+      "fullName": "郴州市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 113.032067,
+      "lat": 25.793589,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "431100",
+      "fullName": "永州市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 111.608019,
+      "lat": 26.434516,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "431200",
+      "fullName": "怀化市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 109.97824,
+      "lat": 27.550082,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "431300",
+      "fullName": "娄底市",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "地级市",
+      "lon": 112.008497,
+      "lat": 27.728136,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "433100",
+      "fullName": "湘西土家族苗族自治州",
+      "province": "湖南省",
+      "provinceCode": "430000",
+      "adminType": "自治州",
+      "lon": 109.739735,
+      "lat": 28.314296,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/430000_full.json"
+    },
+    {
+      "adcode": "440100",
+      "fullName": "广州市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.280637,
+      "lat": 23.125178,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440200",
+      "fullName": "韶关市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.591544,
+      "lat": 24.801322,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440300",
+      "fullName": "深圳市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 114.085947,
+      "lat": 22.547,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440400",
+      "fullName": "珠海市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.553986,
+      "lat": 22.224979,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440500",
+      "fullName": "汕头市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 116.708463,
+      "lat": 23.37102,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440600",
+      "fullName": "佛山市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.122717,
+      "lat": 23.028762,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440700",
+      "fullName": "江门市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.094942,
+      "lat": 22.590431,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440800",
+      "fullName": "湛江市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 110.364977,
+      "lat": 21.274898,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "440900",
+      "fullName": "茂名市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 110.919229,
+      "lat": 21.659751,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441200",
+      "fullName": "肇庆市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 112.472529,
+      "lat": 23.051546,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441300",
+      "fullName": "惠州市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 114.412599,
+      "lat": 23.079404,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441400",
+      "fullName": "梅州市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 116.117582,
+      "lat": 24.299112,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441500",
+      "fullName": "汕尾市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 115.364238,
+      "lat": 22.774485,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441600",
+      "fullName": "河源市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 114.697802,
+      "lat": 23.746266,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441700",
+      "fullName": "阳江市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 111.975107,
+      "lat": 21.859222,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441800",
+      "fullName": "清远市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.051227,
+      "lat": 23.685022,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "441900",
+      "fullName": "东莞市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.746262,
+      "lat": 23.046237,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "442000",
+      "fullName": "中山市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 113.382391,
+      "lat": 22.521113,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "445100",
+      "fullName": "潮州市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 116.632301,
+      "lat": 23.661701,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "445200",
+      "fullName": "揭阳市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 116.355733,
+      "lat": 23.543778,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "445300",
+      "fullName": "云浮市",
+      "province": "广东省",
+      "provinceCode": "440000",
+      "adminType": "地级市",
+      "lon": 112.044439,
+      "lat": 22.929801,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/440000_full.json"
+    },
+    {
+      "adcode": "450100",
+      "fullName": "南宁市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 108.320004,
+      "lat": 22.82402,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450200",
+      "fullName": "柳州市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 109.411703,
+      "lat": 24.314617,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450300",
+      "fullName": "桂林市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 110.299121,
+      "lat": 25.274215,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450400",
+      "fullName": "梧州市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 111.297604,
+      "lat": 23.474803,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450500",
+      "fullName": "北海市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 109.119254,
+      "lat": 21.473343,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450600",
+      "fullName": "防城港市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 108.345478,
+      "lat": 21.614631,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450700",
+      "fullName": "钦州市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 108.624175,
+      "lat": 21.967127,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450800",
+      "fullName": "贵港市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 109.602146,
+      "lat": 23.0936,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "450900",
+      "fullName": "玉林市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 110.154393,
+      "lat": 22.63136,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "451000",
+      "fullName": "百色市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 106.616285,
+      "lat": 23.897742,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "451100",
+      "fullName": "贺州市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 111.552056,
+      "lat": 24.414141,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "451200",
+      "fullName": "河池市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 108.062105,
+      "lat": 24.695899,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "451300",
+      "fullName": "来宾市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 109.229772,
+      "lat": 23.733766,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "451400",
+      "fullName": "崇左市",
+      "province": "广西壮族自治区",
+      "provinceCode": "450000",
+      "adminType": "地级市",
+      "lon": 107.353926,
+      "lat": 22.404108,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/450000_full.json"
+    },
+    {
+      "adcode": "460100",
+      "fullName": "海口市",
+      "province": "海南省",
+      "provinceCode": "460000",
+      "adminType": "地级市",
+      "lon": 110.33119,
+      "lat": 20.031971,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/460000_full.json"
+    },
+    {
+      "adcode": "460200",
+      "fullName": "三亚市",
+      "province": "海南省",
+      "provinceCode": "460000",
+      "adminType": "地级市",
+      "lon": 109.508268,
+      "lat": 18.247872,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/460000_full.json"
+    },
+    {
+      "adcode": "460300",
+      "fullName": "三沙市",
+      "province": "海南省",
+      "provinceCode": "460000",
+      "adminType": "地级市",
+      "lon": 112.34882,
+      "lat": 16.831039,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/460000_full.json"
+    },
+    {
+      "adcode": "460400",
+      "fullName": "儋州市",
+      "province": "海南省",
+      "provinceCode": "460000",
+      "adminType": "地级市",
+      "lon": 109.576782,
+      "lat": 19.517486,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/460000_full.json"
+    },
+    {
+      "adcode": "500000",
+      "fullName": "重庆市",
+      "province": "重庆市",
+      "provinceCode": "500000",
+      "adminType": "直辖市",
+      "lon": 106.504962,
+      "lat": 29.533155,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    },
+    {
+      "adcode": "510100",
+      "fullName": "成都市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.065735,
+      "lat": 30.659462,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510300",
+      "fullName": "自贡市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.773447,
+      "lat": 29.352765,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510400",
+      "fullName": "攀枝花市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 101.716007,
+      "lat": 26.580446,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510500",
+      "fullName": "泸州市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 105.443348,
+      "lat": 28.889138,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510600",
+      "fullName": "德阳市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.398651,
+      "lat": 31.127991,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510700",
+      "fullName": "绵阳市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.741722,
+      "lat": 31.46402,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510800",
+      "fullName": "广元市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 105.829757,
+      "lat": 32.433668,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "510900",
+      "fullName": "遂宁市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 105.571331,
+      "lat": 30.513311,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511000",
+      "fullName": "内江市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 105.066138,
+      "lat": 29.58708,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511100",
+      "fullName": "乐山市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 103.761263,
+      "lat": 29.582024,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511300",
+      "fullName": "南充市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 106.082974,
+      "lat": 30.795281,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511400",
+      "fullName": "眉山市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 103.831788,
+      "lat": 30.048318,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511500",
+      "fullName": "宜宾市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.630825,
+      "lat": 28.760189,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511600",
+      "fullName": "广安市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 106.633369,
+      "lat": 30.456398,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511700",
+      "fullName": "达州市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 107.502262,
+      "lat": 31.209484,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511800",
+      "fullName": "雅安市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 103.001033,
+      "lat": 29.987722,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "511900",
+      "fullName": "巴中市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 106.753669,
+      "lat": 31.858809,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "512000",
+      "fullName": "资阳市",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "地级市",
+      "lon": 104.641917,
+      "lat": 30.122211,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "513200",
+      "fullName": "阿坝藏族羌族自治州",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "自治州",
+      "lon": 102.221374,
+      "lat": 31.899792,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "513300",
+      "fullName": "甘孜藏族自治州",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "自治州",
+      "lon": 101.963815,
+      "lat": 30.050663,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "513400",
+      "fullName": "凉山彝族自治州",
+      "province": "四川省",
+      "provinceCode": "510000",
+      "adminType": "自治州",
+      "lon": 102.258746,
+      "lat": 27.886762,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/510000_full.json"
+    },
+    {
+      "adcode": "520100",
+      "fullName": "贵阳市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 106.713478,
+      "lat": 26.578343,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "520200",
+      "fullName": "六盘水市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 104.846743,
+      "lat": 26.584643,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "520300",
+      "fullName": "遵义市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 106.937265,
+      "lat": 27.706626,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "520400",
+      "fullName": "安顺市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 105.932188,
+      "lat": 26.245544,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "520500",
+      "fullName": "毕节市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 105.28501,
+      "lat": 27.301693,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "520600",
+      "fullName": "铜仁市",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "地级市",
+      "lon": 109.191555,
+      "lat": 27.718346,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "522300",
+      "fullName": "黔西南布依族苗族自治州",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "自治州",
+      "lon": 104.897971,
+      "lat": 25.08812,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "522600",
+      "fullName": "黔东南苗族侗族自治州",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "自治州",
+      "lon": 107.977488,
+      "lat": 26.583352,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "522700",
+      "fullName": "黔南布依族苗族自治州",
+      "province": "贵州省",
+      "provinceCode": "520000",
+      "adminType": "自治州",
+      "lon": 107.517156,
+      "lat": 26.258219,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/520000_full.json"
+    },
+    {
+      "adcode": "530100",
+      "fullName": "昆明市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 102.712251,
+      "lat": 25.040609,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530300",
+      "fullName": "曲靖市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 103.797851,
+      "lat": 25.501557,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530400",
+      "fullName": "玉溪市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 102.543907,
+      "lat": 24.350461,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530500",
+      "fullName": "保山市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 99.167133,
+      "lat": 25.111802,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530600",
+      "fullName": "昭通市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 103.717216,
+      "lat": 27.336999,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530700",
+      "fullName": "丽江市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 100.233026,
+      "lat": 26.872108,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530800",
+      "fullName": "普洱市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 100.972344,
+      "lat": 22.777321,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "530900",
+      "fullName": "临沧市",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "地级市",
+      "lon": 100.08697,
+      "lat": 23.886567,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "532300",
+      "fullName": "楚雄彝族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 101.546046,
+      "lat": 25.041988,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "532500",
+      "fullName": "红河哈尼族彝族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 103.384182,
+      "lat": 23.366775,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "532600",
+      "fullName": "文山壮族苗族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 104.24401,
+      "lat": 23.36951,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "532800",
+      "fullName": "西双版纳傣族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 100.797941,
+      "lat": 22.001724,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "532900",
+      "fullName": "大理白族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 100.225668,
+      "lat": 25.589449,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "533100",
+      "fullName": "德宏傣族景颇族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 98.578363,
+      "lat": 24.436694,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "533300",
+      "fullName": "怒江傈僳族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 98.854304,
+      "lat": 25.850949,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "533400",
+      "fullName": "迪庆藏族自治州",
+      "province": "云南省",
+      "provinceCode": "530000",
+      "adminType": "自治州",
+      "lon": 99.706463,
+      "lat": 27.826853,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/530000_full.json"
+    },
+    {
+      "adcode": "540100",
+      "fullName": "拉萨市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 91.132212,
+      "lat": 29.660361,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "540200",
+      "fullName": "日喀则市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 88.885148,
+      "lat": 29.267519,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "540300",
+      "fullName": "昌都市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 97.178452,
+      "lat": 31.136875,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "540400",
+      "fullName": "林芝市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 94.362348,
+      "lat": 29.654693,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "540500",
+      "fullName": "山南市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 91.766529,
+      "lat": 29.236023,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "540600",
+      "fullName": "那曲市",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地级市",
+      "lon": 92.060214,
+      "lat": 31.476004,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "542500",
+      "fullName": "阿里地区",
+      "province": "西藏自治区",
+      "provinceCode": "540000",
+      "adminType": "地区",
+      "lon": 80.105498,
+      "lat": 32.503187,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/540000_full.json"
+    },
+    {
+      "adcode": "610100",
+      "fullName": "西安市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 108.948024,
+      "lat": 34.263161,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610200",
+      "fullName": "铜川市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 108.979608,
+      "lat": 34.916582,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610300",
+      "fullName": "宝鸡市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 107.14487,
+      "lat": 34.369315,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610400",
+      "fullName": "咸阳市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 108.705117,
+      "lat": 34.333439,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610500",
+      "fullName": "渭南市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 109.502882,
+      "lat": 34.499381,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610600",
+      "fullName": "延安市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 109.49081,
+      "lat": 36.596537,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610700",
+      "fullName": "汉中市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 107.028621,
+      "lat": 33.077668,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610800",
+      "fullName": "榆林市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 109.741193,
+      "lat": 38.290162,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "610900",
+      "fullName": "安康市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 109.029273,
+      "lat": 32.6903,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "611000",
+      "fullName": "商洛市",
+      "province": "陕西省",
+      "provinceCode": "610000",
+      "adminType": "地级市",
+      "lon": 109.939776,
+      "lat": 33.868319,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/610000_full.json"
+    },
+    {
+      "adcode": "620100",
+      "fullName": "兰州市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 103.823557,
+      "lat": 36.058039,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620200",
+      "fullName": "嘉峪关市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 98.277304,
+      "lat": 39.786529,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620300",
+      "fullName": "金昌市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 102.187888,
+      "lat": 38.514238,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620400",
+      "fullName": "白银市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 104.173606,
+      "lat": 36.54568,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620500",
+      "fullName": "天水市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 105.724998,
+      "lat": 34.578529,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620600",
+      "fullName": "武威市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 102.634697,
+      "lat": 37.929996,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620700",
+      "fullName": "张掖市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 100.455472,
+      "lat": 38.932897,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620800",
+      "fullName": "平凉市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 106.684691,
+      "lat": 35.54279,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "620900",
+      "fullName": "酒泉市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 98.510795,
+      "lat": 39.744023,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "621000",
+      "fullName": "庆阳市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 107.638372,
+      "lat": 35.734218,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "621100",
+      "fullName": "定西市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 104.626294,
+      "lat": 35.579578,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "621200",
+      "fullName": "陇南市",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "地级市",
+      "lon": 104.929379,
+      "lat": 33.388598,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "622900",
+      "fullName": "临夏回族自治州",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "自治州",
+      "lon": 103.212006,
+      "lat": 35.599446,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "623000",
+      "fullName": "甘南藏族自治州",
+      "province": "甘肃省",
+      "provinceCode": "620000",
+      "adminType": "自治州",
+      "lon": 102.911008,
+      "lat": 34.986354,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/620000_full.json"
+    },
+    {
+      "adcode": "630100",
+      "fullName": "西宁市",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "地级市",
+      "lon": 101.778916,
+      "lat": 36.623178,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "630200",
+      "fullName": "海东市",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "地级市",
+      "lon": 102.10327,
+      "lat": 36.502916,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632200",
+      "fullName": "海北藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 100.901059,
+      "lat": 36.959435,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632300",
+      "fullName": "黄南藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 102.019988,
+      "lat": 35.517744,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632500",
+      "fullName": "海南藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 100.619542,
+      "lat": 36.280353,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632600",
+      "fullName": "果洛藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 100.242143,
+      "lat": 34.4736,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632700",
+      "fullName": "玉树藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 97.008522,
+      "lat": 33.004049,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "632800",
+      "fullName": "海西蒙古族藏族自治州",
+      "province": "青海省",
+      "provinceCode": "630000",
+      "adminType": "自治州",
+      "lon": 97.370785,
+      "lat": 37.374663,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/630000_full.json"
+    },
+    {
+      "adcode": "640100",
+      "fullName": "银川市",
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "adminType": "地级市",
+      "lon": 106.278179,
+      "lat": 38.46637,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json"
+    },
+    {
+      "adcode": "640200",
+      "fullName": "石嘴山市",
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "adminType": "地级市",
+      "lon": 106.376173,
+      "lat": 39.01333,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json"
+    },
+    {
+      "adcode": "640300",
+      "fullName": "吴忠市",
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "adminType": "地级市",
+      "lon": 106.199409,
+      "lat": 37.986165,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json"
+    },
+    {
+      "adcode": "640400",
+      "fullName": "固原市",
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "adminType": "地级市",
+      "lon": 106.285241,
+      "lat": 36.004561,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json"
+    },
+    {
+      "adcode": "640500",
+      "fullName": "中卫市",
+      "province": "宁夏回族自治区",
+      "provinceCode": "640000",
+      "adminType": "地级市",
+      "lon": 105.189568,
+      "lat": 37.514951,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/640000_full.json"
+    },
+    {
+      "adcode": "650100",
+      "fullName": "乌鲁木齐市",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地级市",
+      "lon": 87.617733,
+      "lat": 43.792818,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "650200",
+      "fullName": "克拉玛依市",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地级市",
+      "lon": 84.873946,
+      "lat": 45.595886,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "650400",
+      "fullName": "吐鲁番市",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地级市",
+      "lon": 89.184078,
+      "lat": 42.947613,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "650500",
+      "fullName": "哈密市",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地级市",
+      "lon": 93.51316,
+      "lat": 42.833248,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "652300",
+      "fullName": "昌吉回族自治州",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "自治州",
+      "lon": 87.304012,
+      "lat": 44.014577,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "652700",
+      "fullName": "博尔塔拉蒙古自治州",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "自治州",
+      "lon": 82.074778,
+      "lat": 44.903258,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "652800",
+      "fullName": "巴音郭楞蒙古自治州",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "自治州",
+      "lon": 86.150969,
+      "lat": 41.768552,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "652900",
+      "fullName": "阿克苏地区",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地区",
+      "lon": 80.265068,
+      "lat": 41.170712,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "653000",
+      "fullName": "克孜勒苏柯尔克孜自治州",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "自治州",
+      "lon": 76.172825,
+      "lat": 39.713431,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "653100",
+      "fullName": "喀什地区",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地区",
+      "lon": 75.989138,
+      "lat": 39.467664,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "653200",
+      "fullName": "和田地区",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地区",
+      "lon": 79.92533,
+      "lat": 37.110687,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "654000",
+      "fullName": "伊犁哈萨克自治州",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "自治州",
+      "lon": 81.317946,
+      "lat": 43.92186,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "654200",
+      "fullName": "塔城地区",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地区",
+      "lon": 82.985732,
+      "lat": 46.746301,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "654300",
+      "fullName": "阿勒泰地区",
+      "province": "新疆维吾尔自治区",
+      "provinceCode": "650000",
+      "adminType": "地区",
+      "lon": 88.13963,
+      "lat": 47.848393,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/650000_full.json"
+    },
+    {
+      "adcode": "810000",
+      "fullName": "香港特别行政区",
+      "province": "香港特别行政区",
+      "provinceCode": "810000",
+      "adminType": "特别行政区",
+      "lon": 114.173355,
+      "lat": 22.320048,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    },
+    {
+      "adcode": "820000",
+      "fullName": "澳门特别行政区",
+      "province": "澳门特别行政区",
+      "provinceCode": "820000",
+      "adminType": "特别行政区",
+      "lon": 113.54909,
+      "lat": 22.198951,
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+    }
+  ],
+  "legacyReferences": {
+    "note": "原项目 README 记录的前批中国城市与台北参考；本次未逐条重新核对，不作为其余原有地点的来源。",
+    "urls": [
+      "https://github.com/siliushi/geocoord",
+      "https://scweb.cwa.gov.tw/zh-tw/pws/info_d/6"
+    ]
+  },
+  "retainedOriginalCoordinates": [
+    {
+      "id": "beijing",
+      "name": "北京",
+      "adcode": "110000",
+      "lat": 39.9042,
+      "lon": 116.4074
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "adcode": "310000",
+      "lat": 31.2304,
+      "lon": 121.4737
+    },
+    {
+      "id": "guangzhou",
+      "name": "广州",
+      "adcode": "440100",
+      "lat": 23.1291,
+      "lon": 113.2644
+    },
+    {
+      "id": "shenzhen",
+      "name": "深圳",
+      "adcode": "440300",
+      "lat": 22.5431,
+      "lon": 114.0579
+    },
+    {
+      "id": "chengdu",
+      "name": "成都",
+      "adcode": "510100",
+      "lat": 30.5728,
+      "lon": 104.0668
+    },
+    {
+      "id": "chongqing",
+      "name": "重庆",
+      "adcode": "500000",
+      "lat": 29.563,
+      "lon": 106.5516
+    },
+    {
+      "id": "wuhan",
+      "name": "武汉",
+      "adcode": "420100",
+      "lat": 30.5928,
+      "lon": 114.3055
+    },
+    {
+      "id": "xian",
+      "name": "西安",
+      "adcode": "610100",
+      "lat": 34.3416,
+      "lon": 108.9398
+    },
+    {
+      "id": "hangzhou",
+      "name": "杭州",
+      "adcode": "330100",
+      "lat": 30.2741,
+      "lon": 120.1551
+    },
+    {
+      "id": "nanjing",
+      "name": "南京",
+      "adcode": "320100",
+      "lat": 32.0603,
+      "lon": 118.7969
+    },
+    {
+      "id": "harbin",
+      "name": "哈尔滨",
+      "adcode": "230100",
+      "lat": 45.8038,
+      "lon": 126.535
+    },
+    {
+      "id": "urumqi",
+      "name": "乌鲁木齐",
+      "adcode": "650100",
+      "lat": 43.8256,
+      "lon": 87.6168
+    },
+    {
+      "id": "lhasa",
+      "name": "拉萨",
+      "adcode": "540100",
+      "lat": 29.652,
+      "lon": 91.1721
+    },
+    {
+      "id": "hongkong",
+      "name": "香港",
+      "adcode": "810000",
+      "lat": 22.3193,
+      "lon": 114.1694
+    },
+    {
+      "id": "shijiazhuang",
+      "name": "石家庄",
+      "adcode": "130100",
+      "lat": 38.03,
+      "lon": 114.48
+    },
+    {
+      "id": "taiyuan",
+      "name": "太原",
+      "adcode": "140100",
+      "lat": 37.87,
+      "lon": 112.53
+    },
+    {
+      "id": "shenyang",
+      "name": "沈阳",
+      "adcode": "210100",
+      "lat": 41.8,
+      "lon": 123.38
+    },
+    {
+      "id": "changchun",
+      "name": "长春",
+      "adcode": "220100",
+      "lat": 43.88,
+      "lon": 125.35
+    },
+    {
+      "id": "hefei",
+      "name": "合肥",
+      "adcode": "340100",
+      "lat": 31.86,
+      "lon": 117.27
+    },
+    {
+      "id": "fuzhou",
+      "name": "福州",
+      "adcode": "350100",
+      "lat": 26.08,
+      "lon": 119.3
+    },
+    {
+      "id": "nanchang",
+      "name": "南昌",
+      "adcode": "360100",
+      "lat": 28.68,
+      "lon": 115.89
+    },
+    {
+      "id": "jinan",
+      "name": "济南",
+      "adcode": "370100",
+      "lat": 36.65,
+      "lon": 117
+    },
+    {
+      "id": "zhengzhou",
+      "name": "郑州",
+      "adcode": "410100",
+      "lat": 34.76,
+      "lon": 113.65
+    },
+    {
+      "id": "changsha",
+      "name": "长沙",
+      "adcode": "430100",
+      "lat": 28.21,
+      "lon": 113
+    },
+    {
+      "id": "haikou",
+      "name": "海口",
+      "adcode": "460100",
+      "lat": 20.02,
+      "lon": 110.35
+    },
+    {
+      "id": "guiyang",
+      "name": "贵阳",
+      "adcode": "520100",
+      "lat": 26.57,
+      "lon": 106.71
+    },
+    {
+      "id": "kunming",
+      "name": "昆明",
+      "adcode": "530100",
+      "lat": 25.04,
+      "lon": 102.73
+    },
+    {
+      "id": "lanzhou",
+      "name": "兰州",
+      "adcode": "620100",
+      "lat": 36.03,
+      "lon": 103.73
+    },
+    {
+      "id": "xining",
+      "name": "西宁",
+      "adcode": "630100",
+      "lat": 36.56,
+      "lon": 101.74
+    },
+    {
+      "id": "hohhot",
+      "name": "呼和浩特",
+      "adcode": "150100",
+      "lat": 40.82,
+      "lon": 111.65
+    },
+    {
+      "id": "nanning",
+      "name": "南宁",
+      "adcode": "450100",
+      "lat": 22.84,
+      "lon": 108.33
+    },
+    {
+      "id": "yinchuan",
+      "name": "银川",
+      "adcode": "640100",
+      "lat": 38.47,
+      "lon": 106.27
+    },
+    {
+      "id": "taiwan",
+      "name": "台北市",
+      "lat": 25.038,
+      "lon": 121.514
+    },
+    {
+      "id": "macau",
+      "name": "澳门",
+      "adcode": "820000",
+      "lat": 22.19,
+      "lon": 113.54
+    },
+    {
+      "id": "tokyo",
+      "name": "东京",
+      "lat": 35.6762,
+      "lon": 139.6503
+    },
+    {
+      "id": "seoul",
+      "name": "首尔",
+      "lat": 37.5665,
+      "lon": 126.978
+    },
+    {
+      "id": "singapore",
+      "name": "新加坡",
+      "lat": 1.3521,
+      "lon": 103.8198
+    },
+    {
+      "id": "bangkok",
+      "name": "曼谷",
+      "lat": 13.7563,
+      "lon": 100.5018
+    },
+    {
+      "id": "newdelhi",
+      "name": "新德里",
+      "lat": 28.6139,
+      "lon": 77.209
+    },
+    {
+      "id": "dubai",
+      "name": "迪拜",
+      "lat": 25.2048,
+      "lon": 55.2708
+    },
+    {
+      "id": "london",
+      "name": "伦敦",
+      "lat": 51.5074,
+      "lon": -0.1278
+    },
+    {
+      "id": "paris",
+      "name": "巴黎",
+      "lat": 48.8566,
+      "lon": 2.3522
+    },
+    {
+      "id": "berlin",
+      "name": "柏林",
+      "lat": 52.52,
+      "lon": 13.405
+    },
+    {
+      "id": "rome",
+      "name": "罗马",
+      "lat": 41.9028,
+      "lon": 12.4964
+    },
+    {
+      "id": "moscow",
+      "name": "莫斯科",
+      "lat": 55.7558,
+      "lon": 37.6173
+    },
+    {
+      "id": "reykjavik",
+      "name": "雷克雅未克",
+      "lat": 64.1466,
+      "lon": -21.9426
+    },
+    {
+      "id": "newyork",
+      "name": "纽约",
+      "lat": 40.7128,
+      "lon": -74.006
+    },
+    {
+      "id": "losangeles",
+      "name": "洛杉矶",
+      "lat": 34.0522,
+      "lon": -118.2437
+    },
+    {
+      "id": "sanfrancisco",
+      "name": "旧金山",
+      "lat": 37.7749,
+      "lon": -122.4194
+    },
+    {
+      "id": "toronto",
+      "name": "多伦多",
+      "lat": 43.6532,
+      "lon": -79.3832
+    },
+    {
+      "id": "mexicocity",
+      "name": "墨西哥城",
+      "lat": 19.4326,
+      "lon": -99.1332
+    },
+    {
+      "id": "riodejaneiro",
+      "name": "里约热内卢",
+      "lat": -22.9068,
+      "lon": -43.1729
+    },
+    {
+      "id": "buenosaires",
+      "name": "布宜诺斯艾利斯",
+      "lat": -34.6037,
+      "lon": -58.3816
+    },
+    {
+      "id": "lima",
+      "name": "利马",
+      "lat": -12.0464,
+      "lon": -77.0428
+    },
+    {
+      "id": "cairo",
+      "name": "开罗",
+      "lat": 30.0444,
+      "lon": 31.2357
+    },
+    {
+      "id": "nairobi",
+      "name": "内罗毕",
+      "lat": -1.2921,
+      "lon": 36.8219
+    },
+    {
+      "id": "capetown",
+      "name": "开普敦",
+      "lat": -33.9249,
+      "lon": 18.4241
+    },
+    {
+      "id": "sydney",
+      "name": "悉尼",
+      "lat": -33.8688,
+      "lon": 151.2093
+    },
+    {
+      "id": "melbourne",
+      "name": "墨尔本",
+      "lat": -37.8136,
+      "lon": 144.9631
+    },
+    {
+      "id": "auckland",
+      "name": "奥克兰",
+      "lat": -36.8485,
+      "lon": 174.7633
+    },
+    {
+      "id": "everest",
+      "name": "珠穆朗玛峰",
+      "lat": 27.9881,
+      "lon": 86.925
+    },
+    {
+      "id": "sahara",
+      "name": "撒哈拉沙漠",
+      "lat": 23.4,
+      "lon": 13
+    },
+    {
+      "id": "amazon",
+      "name": "亚马孙雨林",
+      "lat": -3.4653,
+      "lon": -62.2159
+    },
+    {
+      "id": "greatbarrierreef",
+      "name": "大堡礁",
+      "lat": -18.2871,
+      "lon": 147.6992
+    },
+    {
+      "id": "greenwich",
+      "name": "格林尼治",
+      "lat": 51.4779,
+      "lon": 0
+    },
+    {
+      "id": "northpole",
+      "name": "北极点",
+      "lat": 90,
+      "lon": 0
+    },
+    {
+      "id": "southpole",
+      "name": "南极点",
+      "lat": -90,
+      "lon": 0
+    },
+    {
+      "id": "equator-zero",
+      "name": "赤道与本初子午线交点",
+      "lat": 0,
+      "lon": 0
+    }
+  ],
+  "recordsNote": "records 保存 GeoAtlas 的 339 条原始中心点；retainedOriginalCoordinates 为实际沿用的原项目坐标，重合条目以沿用坐标为准。"
+}

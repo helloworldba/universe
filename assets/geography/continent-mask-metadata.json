@@ -1,0 +1,51 @@
+{
+  "title": "Seven-continent teaching region mask",
+  "width": 2048,
+  "height": 1024,
+  "encoding": "base64 little-endian uint16 run length followed by uint8 region code; south-to-north rows",
+  "codes": {
+    "asia": 1,
+    "europe": 2,
+    "africa": 3,
+    "north-america": 4,
+    "south-america": 5,
+    "oceania": 6,
+    "antarctica": 7
+  },
+  "license": "Natural Earth data are public domain; derived mask is provided on the same basis.",
+  "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "sources": [
+    {
+      "name": "ne_50m_land.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
+      "sha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b"
+    },
+    {
+      "name": "ne_50m_geography_regions_polys.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_geography_regions_polys.geojson",
+      "sha256": "33396643d8f0eed408e80bf5ca43dcdb7993f790fdc4eadae311660f8b91fe76"
+    }
+  ],
+  "method": "Rasterize Natural Earth 1:50m physical continent/island/island-group/isthmus regions, intersect with 1:50m land, reconcile adjacent land-only subpixel coastline gaps. No administrative country boundaries used.",
+  "notes": [
+    "Geographical teaching regions, not tectonic plates, political boundaries or survey data.",
+    "Europe and Asia use the Natural Earth physical geography partition, separating European Russia from Siberia and European Thrace from Anatolia.",
+    "Oceania includes Australia, New Zealand, New Guinea, Melanesia, Micronesia and Polynesia, including Hawaii. Pacific geometry wraps the date line.",
+    "Greenland is grouped with North America. Antarctica includes the south-pole cap.",
+    "Simplification and the 2048x1024 mask omit some small islands and subpolar islands; coastlines are approximate at this display scale."
+  ],
+  "landPixels": 713339,
+  "representedLandPixels": 712743,
+  "unassignedLandPixels": 596,
+  "pixelCounts": {
+    "asia": 175775,
+    "europe": 49803,
+    "africa": 83746,
+    "north-america": 126207,
+    "south-america": 50842,
+    "oceania": 27991,
+    "antarctica": 198379
+  },
+  "decodedSha256": "de1d498c0d54c90e2a25f94d93aed3aeb2fb274dc73de8b9a94f084e71119538",
+  "rleBytes": 50463
+}

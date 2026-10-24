@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#060b10">
+  <meta name="description" content="探索宇宙 EXPLORE THE UNIVERSE，一场从蓝色星球出发的交互宇宙漫游。">
+  <title>探索宇宙 · EXPLORE THE UNIVERSE</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./explorer-expansion.css">
+  <link rel="stylesheet" href="./earthsense.css">
+  <link rel="stylesheet" href="./facts-card.css">
+  <link rel="stylesheet" href="./craft-position-diagram.css">
+  <link rel="stylesheet" href="./earth-environment.css">
+  <link rel="stylesheet" href="./earth-layout.css?v=20261023-about-brand">
+  <link rel="stylesheet" href="./earth-navigation.css">
+  <link rel="stylesheet" href="./moon-phases.css">
+  <link rel="stylesheet" href="./earth-experience.css">
+  <link rel="stylesheet" href="./constellation.css">
+  <link rel="stylesheet" href="./planet-thumbnails.css">
+  <link rel="stylesheet" href="./solar-navigation.css">
+  <link rel="stylesheet" href="./solar-experience.css">
+  <link rel="stylesheet" href="./destination-dock.css">
+  <link rel="stylesheet" href="./explorer-layout.css?v=20261023-desktop-cards">
+  <link rel="stylesheet" href="./deep-space-controls.css">
+  <link rel="stylesheet" href="./background-music.css">
+  <link rel="stylesheet" href="./cinema.css">
+  <link rel="stylesheet" href="./mobile-layout.css?v=20261020-phone-2" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./mobile-sheets.css?v=20261020-phone-2" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./mobile-learning.css?v=20261020-phone-2" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./learning-reading.css">
+  <link rel="stylesheet" href="./mobile-workspace.css?v=20261024-phone-landscape-startup" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./black-hole.css">
+  <link rel="stylesheet" href="./topic-video.css">
+  <link rel="stylesheet" href="./ui-surfaces.css?v=20261022-nav-text">
+  <link rel="stylesheet" href="./mobile-compact.css?v=20261021" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./card-corners.css?v=20261022-rounded-cards">
+  <link rel="stylesheet" href="./topic-card-layout.css?v=20261023-card-fold-labels">
+  <link rel="stylesheet" href="./catalog-layout.css?v=20261023">
+  <link rel="stylesheet" href="./mobile-reading.css?v=20261024-keyboard-layout" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
+  <link rel="stylesheet" href="./author-statement.css?v=20261024-seven-items">
+  <meta name="app-version" content="20261020-phone-2">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="11" ry="5.5" transform="rotate(-35 12 12)"/><path d="m18 3 2 1"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-night" viewBox="0 0 24 24"><path d="M20.2 14.7A8.7 8.7 0 0 1 9.3 3.8 8.8 8.8 0 1 0 20.2 14.7Z"/><path d="M17 3v4m-2-2h4"/></symbol>
+    <symbol id="i-station" viewBox="0 0 24 24"><path d="m9 8 7 7-3 3-7-7zM13 9l4-4m-2 0 4 4M5 13l-3 3 4 4 3-3m6-11 3-3 4 4-3 3M2 22l4-4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-label" viewBox="0 0 24 24"><path d="M4 6h16M12 6v13m-4 0h8"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 .7 6M4 4v6h6"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.1"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v15m0-15C9 3 5 3 2 4v15c4-1 7-1 10 1m0-15c3-2 7-2 10-1v15c-4-1-7-1-10 1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm4 4a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-muted" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4Zm5 5 6 6m0-6-6 6"/></symbol>
+  </defs></svg>
+
+  <div class="space-background" aria-hidden="true"><div class="space-stars"></div><div class="space-nebula space-nebula-one"></div><div class="space-nebula space-nebula-two"></div></div>
+  <canvas id="universe" aria-label="可交互的三维宇宙，拖动旋转，滚动缩放；也可以使用页面按钮导航。" tabindex="0"></canvas>
+  <div class="scene-vignette" aria-hidden="true"></div>
+  <div class="scene-grain" aria-hidden="true"></div>
+  <div id="label-layer" aria-label="场景中的天体标记"></div>
+
+  <header class="site-header interface">
+    <a class="wordmark" href="./" aria-label="探索宇宙科普 EXPLORE THE UNIVERSE 首页"><span class="brand-mark" aria-hidden="true"><img src="./assets/explore-universe-logo.png" width="2048" height="2048" alt="" decoding="async" draggable="false"></span><span class="brand-type"><span class="brand-en" lang="en">EXPLORE THE UNIVERSE</span><span class="brand-cn">探索宇宙科普</span></span></a>
+    <nav id="mode-nav" class="mode-nav" aria-label="选择探索主题">
+      <button type="button" data-mode="earth" class="active" aria-pressed="true"><span class="mode-index">01</span> 我们的星球</button>
+      <button type="button" data-mode="solar" aria-pressed="false"><span class="mode-index">02</span> 太阳系</button>
+      <button type="button" data-mode="galaxy" aria-pressed="false"><span class="mode-index">03</span> 银河</button>
+    </nav>
+    <div class="header-actions">
+      <button id="open-cinema" class="guide-entry cinema-entry" type="button" aria-label="影视" title="影视" aria-haspopup="dialog" aria-controls="cinema-dialog" aria-expanded="false"><svg aria-hidden="true"><use href="#i-play"/></svg><span>影视</span><svg class="guide-entry-arrow" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+      <button id="enter-guide" class="guide-entry" type="button" aria-label="科普导览" title="科普导览"><svg><use href="#i-book"/></svg><span>科普导览</span><svg class="guide-entry-arrow"><use href="#i-chevron"/></svg></button>
+      <button id="open-catalog" class="guide-entry catalog-header-entry" type="button" aria-label="全部天体" title="全部天体" aria-haspopup="dialog" aria-controls="catalog-dialog" aria-expanded="false"><svg aria-hidden="true"><use href="#i-orbit"/></svg><span>全部天体</span><svg class="guide-entry-arrow" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+  </header>
+
+  <main class="explorer interface">
+    <aside class="object-info" aria-label="当前天体介绍">
+      <div id="object-introduction" class="object-introduction" tabindex="-1">
+        <div class="eyebrow"><span class="tiny-line"></span><span id="info-kicker">我们的蓝色星球</span></div>
+        <h1 id="info-title">地球</h1>
+        <p id="info-subtitle" class="object-english">EARTH</p>
+        <p id="info-description" class="object-description">在浩瀚宇宙中，这颗拥有海洋与云层的蓝色星球，是我们共同的家。转动视角，发现晨昏线另一侧的万家灯火。</p>
+      </div>
+      <div id="earth-actions" class="earth-actions"><button id="night-view" type="button"><svg><use href="#i-night"/></svg><span>追寻夜色</span><svg class="action-arrow"><use href="#i-chevron"/></svg></button><button id="earth-craft-view" type="button"><svg><use href="#i-station"/></svg><span>航天器探索</span><svg class="action-arrow"><use href="#i-chevron"/></svg></button></div>
+    </aside>
+
+    <aside id="facts-panel" class="facts-panel" aria-label="资料">
+      <div class="facts-toolbar"><button id="toggle-facts" class="facts-toggle" type="button" aria-label="收起资料" aria-expanded="true" aria-controls="facts-content"><span class="card-toggle-label"><svg><use href="#i-info"/></svg>资料</span><span class="card-fold-action" aria-hidden="true">收起</span><svg class="facts-chevron"><use href="#i-chevron"/></svg></button><button id="facts-narrate" class="facts-narrate" type="button" aria-pressed="false">播放解说</button></div>
+      <div id="facts-content" class="facts-content">
+        <div class="facts-context"><span class="facts-eyebrow">当前锁定</span><span id="facts-context-label">第 3 颗行星</span></div>
+        <div class="facts-identity"><span id="facts-orb" class="facts-orb" aria-hidden="true"></span><div class="facts-heading"><h2 id="facts-name">地球</h2><p id="facts-type">类地行星</p></div></div>
+        <p id="facts-summary" class="facts-summary">目前唯一已知拥有生命的行星，地表长期存在液态水。</p>
+        <dl class="object-stats"><div><dt>距日均距</dt><dd id="stat-context">1.00 AU</dd></div><div><dt data-stat-label="size">平均直径</dt><dd id="stat-size">12,742 km</dd></div><div><dt data-stat-label="period">绕日一圈</dt><dd id="stat-period">365.25 天</dd></div></dl>
+        <details id="facts-more" class="facts-more"><summary>详细资料</summary></details>
+        <div id="info-status" class="object-status" hidden>太阳系 · 第三颗行星</div>
+      </div>
+    </aside>
+
+    <div class="scene-caption"><span class="caption-cross">+</span><span id="mode-caption">HOME, AMONG THE STARS</span></div>
+    <div class="render-quality"><span class="quality-bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="quality-label">实时 3D 渲染</span></div>
+
+    <aside class="view-tools" aria-label="视角控制"><div class="zoom-tools"><button id="zoom-in" type="button" title="拉近视角" aria-label="拉近视角"><svg><use href="#i-plus"/></svg></button><span></span><button id="zoom-out" type="button" title="拉远视角" aria-label="拉远视角"><svg><use href="#i-minus"/></svg></button></div><button id="reset-view" class="icon-button reset-button" type="button" title="重置视角" aria-label="重置视角"><svg><use href="#i-reset"/></svg></button></aside>
+
+    <section class="destination-dock" aria-label="天体目的地">
+      <div class="dock-heading"><span>下一站<span class="dock-heading-en">CHOOSE A DESTINATION</span></span><label class="destination-search"><svg><use href="#i-search"/></svg><input id="destination-search" type="search" placeholder="寻找天体" aria-label="搜索天体" autocomplete="off" spellcheck="false"></label></div>
+      <div id="destination-list" class="destination-list">
+        <button type="button" data-target="sun" aria-label="前往太阳" aria-pressed="false"><span class="planet-thumb planet-sun"></span><span>太阳</span></button>
+        <button type="button" data-target="mercury" aria-label="前往水星" aria-pressed="false"><span class="planet-thumb planet-mercury"></span><span>水星</span></button>
+        <button type="button" data-target="venus" aria-label="前往金星" aria-pressed="false"><span class="planet-thumb planet-venus"></span><span>金星</span></button>
+        <button type="button" data-target="earth" class="active" aria-label="前往地球" aria-pressed="true"><span class="planet-thumb planet-earth"></span><span>地球</span></button>
+        <button type="button" data-target="moon" aria-label="前往月球" aria-pressed="false"><span class="planet-thumb planet-moon"></span><span>月球</span></button>
+        <button type="button" data-target="mars" aria-label="前往火星" aria-pressed="false"><span class="planet-thumb planet-mars"></span><span>火星</span></button>
+        <button type="button" data-target="jupiter" aria-label="前往木星" aria-pressed="false"><span class="planet-thumb planet-jupiter"></span><span>木星</span></button>
+        <button type="button" data-target="saturn" aria-label="前往土星" aria-pressed="false"><span class="planet-thumb planet-saturn"></span><span>土星</span></button>
+        <button type="button" data-target="uranus" aria-label="前往天王星" aria-pressed="false"><span class="planet-thumb planet-uranus"></span><span>天王星</span></button>
+        <button type="button" data-target="neptune" aria-label="前往海王星" aria-pressed="false"><span class="planet-thumb planet-neptune"></span><span>海王星</span></button>
+      </div>
+    </section>
+  </main>
+
+  <section id="guide-panel" class="guide-interface interface" aria-label="科普导览" hidden>
+    <div class="guide-topbar"><span class="guide-mode-label"><svg><use href="#i-book"/></svg>科普导览</span><span class="guide-topbar-divider"></span><button id="exit-guide" type="button">返回自由漫游<svg><use href="#i-chevron"/></svg></button></div>
+    <nav class="guide-chapters" aria-label="导览章节">
+      <p class="guide-rail-heading">从这里，认识宇宙<span>A JOURNEY OF DISCOVERY</span></p>
+      <button type="button" data-chapter="0" class="active" aria-current="step"><span class="chapter-number">01</span><span>我们的家园</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="1"><span class="chapter-number">02</span><span>月球邻居</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="2"><span class="chapter-number">03</span><span>太阳的引力</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="3"><span class="chapter-number">04</span><span>气态巨行星</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="4"><span class="chapter-number">05</span><span>更远的星空</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="5"><span class="chapter-number">06</span><span>星系的样貌</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="6"><span class="chapter-number">07</span><span>太阳之外的世界</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="7"><span class="chapter-number">08</span><span>看不见的引力</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="8"><span class="chapter-number">09</span><span>人类的远方</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="9"><span class="chapter-number">10</span><span>运动与视角</span><svg><use href="#i-chevron"/></svg></button>
+      <button type="button" data-chapter="10"><span class="chapter-number">11</span><span>宇宙大爆炸</span><svg><use href="#i-chevron"/></svg></button>
+      <p class="guide-rail-note">跟随章节，发现熟悉星球背后的故事。<br>也可以随时拖动，换个角度观察。</p>
+    </nav>
+    <article id="guide-lesson" class="guide-lesson" aria-live="polite" aria-atomic="true">
+      <div class="guide-lesson-heading"><p id="guide-kicker" class="guide-kicker">第一章 · 我们的家园</p><button id="toggle-guide-lesson" class="guide-lesson-toggle" type="button" aria-label="收起导览卡片" aria-expanded="true" aria-controls="guide-lesson-content"><span>收起</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
+      <div id="guide-lesson-content">
+        <h1 id="guide-title" tabindex="-1">为什么地球会有昼夜？</h1>
+        <p id="guide-copy" class="guide-copy">地球不停地自转，朝向太阳的一面是白天，背向太阳的一面是夜晚。转动视角，找到光与影交汇的晨昏线。</p>
+        <div class="guide-lesson-actions"><button id="guide-action" class="guide-action" type="button"><svg><use href="#i-night"/></svg><span>查看夜半球</span></button><button id="guide-narrate" class="guide-narrate" type="button" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>听讲解</span></button></div>
+      </div>
+    </article>
+    <div class="guide-navigation"><button id="guide-prev" type="button" disabled><svg><use href="#i-chevron"/></svg><span>上一章</span></button><div class="guide-progress-wrap"><span id="guide-counter">章节 01 / 11</span><progress id="guide-progress" max="11" value="1" aria-label="导览进度">1 / 11</progress></div><button id="guide-next" type="button"><span>下一站：月球邻居</span><svg><use href="#i-chevron"/></svg></button></div>
+  </section>
+
+  <footer class="control-footer interface">
+    <p class="scene-disclaimer">示意比例 · 演示运动</p>
+    <div class="scale-readout"><span class="live-dot"></span><div><span id="scale-label">地球近景</span><span id="distance-label">蓝色星球 · 自由漫游</span></div></div>
+    <div class="playback-controls" aria-label="场景设置"><button id="toggle-orbits" type="button" aria-pressed="true" title="显示或隐藏轨道"><svg><use href="#i-orbit"/></svg><span>轨道</span></button><button id="toggle-labels" type="button" aria-pressed="true" title="显示或隐藏天体名称"><svg><use href="#i-label"/></svg><span>名称</span></button><span class="control-separator"></span><button id="toggle-pause" type="button" aria-pressed="false" title="暂停或继续时间"><svg><use href="#i-pause"/></svg><span>暂停</span></button><label class="speed-control"><span class="sr-only">时间流速</span><select id="speed-select" title="时间流速"><option value="0.25">0.25×</option><option value="1" selected>1×</option><option value="5">5×</option><option value="20">20×</option></select></label></div>
+    <div class="footer-actions"><span class="gesture-hint"><svg><use href="#i-mouse"/></svg>拖动旋转 · 滚动缩放</span><button id="source-button" class="icon-button" type="button" title="资料与说明" aria-label="资料与说明"><svg><use href="#i-info"/></svg></button><button id="author-statement-button" class="author-statement-button" type="button" aria-haspopup="dialog" aria-controls="author-statement-dialog" aria-expanded="false"><svg aria-hidden="true"><use href="#i-book"/></svg><span>作者声明</span></button></div>
+  </footer>
+  <dialog id="cinema-dialog" class="cinema-dialog" aria-label="视频播放">
+    <div class="cinema-heading"><button id="close-cinema" class="icon-button" type="button" aria-label="关闭视频" title="关闭"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div id="cinema-player" class="cinema-player" tabindex="0" aria-label="视频播放器">
+      <video id="cinema-video" src="./assets/video/yuzhou.mp4" playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-label="影视视频"></video>
+      <div class="cinema-controls" role="group" aria-label="视频播放控制">
+        <button id="cinema-play" type="button" aria-label="播放视频"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+        <span id="cinema-time" class="cinema-time">0:00 / 0:00</span>
+        <span class="cinema-control-spacer"></span>
+        <div class="cinema-volume-controls">
+          <button id="cinema-mute" type="button" aria-label="静音视频"><svg aria-hidden="true"><use href="#i-sound"/></svg></button>
+          <input id="cinema-volume" class="cinema-volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="视频音量">
+        </div>
+        <button id="cinema-fullscreen" type="button" aria-label="视频全屏"><svg aria-hidden="true"><use href="#i-expand"/></svg></button>
+        <input id="cinema-seek" class="cinema-seek" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="视频播放进度">
+      </div>
+    </div>
+    <button id="cinema-unmute" class="cinema-unmute" type="button" hidden>开启声音</button>
+    <p id="cinema-status" class="cinema-status" role="status" hidden></p>
+  </dialog>
+  <audio id="background-music" src="./assets/audio/universe-background-first.mp3" preload="auto"></audio>
+  <div class="display-tools"><button id="toggle-music" class="icon-button music-button" type="button" title="播放背景音乐" aria-label="播放背景音乐" aria-pressed="false" aria-controls="background-music" data-state="loading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/><path class="music-slash" d="m3 3 18 18"/></svg><span class="music-label">背景音乐</span><span class="music-indicator" aria-hidden="true"></span></button><button id="help-button" class="icon-button help-button" type="button" title="操作帮助" aria-label="操作帮助">?</button><button id="toggle-ui" class="icon-button" type="button" title="隐藏或显示界面" aria-label="隐藏或显示界面" aria-pressed="false"><svg><use href="#i-eye"/></svg></button><button id="toggle-fullscreen" class="icon-button" type="button" title="全屏浏览" aria-label="全屏浏览"><svg><use href="#i-expand"/></svg></button></div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="help-dialog" class="explorer-dialog" aria-labelledby="help-title"><button id="close-help" class="icon-button dialog-close" type="button" aria-label="关闭操作帮助"><svg><use href="#i-close"/></svg></button><p class="dialog-eyebrow">A SMALL GUIDE TO A VAST UNIVERSE</p><h2 id="help-title">从地球，开始探索</h2><p class="dialog-intro">地球漫游，欣赏太空中的家园；感知地球，从地点出发探索地理、天气、四季与月相。</p><div class="help-grid"><div><span class="help-symbol" aria-hidden="true">▤</span><h3>天体与航天器分类</h3><p>自然天体页面的底部只显示「天体」，搜索也只匹配天体；地球漫游与航天器页面保留「天体」「航天器」分类，包含全部 11 个航天器。底部说明随所属星系变化。搜索支持名称、英文和编号，会切换到允许的匹配分类。「运动轨迹」通过独立快捷入口进入；「全部图鉴」保留所有分类与完整目录。右上角「收起」可让出场景空间，再点「展开」恢复；星座列表也支持收起。窄屏可横向滑动浏览更多。</p></div><div><span class="help-symbol" aria-hidden="true">↗</span><h3>太阳系与近地轨道</h3><p>点击顶部「太阳系」，其下方的「近地轨道」进入地球、月球、卫星与太阳同场视图。点击天体或底部写实卡片前往；点击顶部「太阳系」返回全景。「我们的星球」仍保留独立的漫游和感知功能。</p></div><div><span class="help-symbol" aria-hidden="true">◇</span><h3>深空航天器与运动轨迹</h3><p>进入网页时，底部「深空航天器」默认关闭。开启后，地球漫游和太阳系的近地轨道页显示詹姆斯·韦伯太空望远镜、南希·格蕾丝·罗曼太空望远镜与旅行者 1 号的模型及位置示意。金色曲线表示韦伯绕日地 L2 附近运行，紫色虚线说明罗曼的转移方向与 L2 目标轨道；青色虚线说明旅行者与地球的位置关系，近地轨道页另示意经过木星、土星的历史路径。点击模型或名称进入近距离观察。「轨道」控制示意线，「名称」控制文字；位置与距离均非实时、非等比例。在「地球漫游」底部的「航天器」中选择「詹姆斯·韦伯太空望远镜」，可观察展开与收拢：遮阳板、光学塔、副镜、主镜侧翼分阶段运动，可中途反向，暂停公转时仍可操作。完整动画约 8 秒，为结构示意。「运动轨迹」进入即显示完整曲线；底部切换银河/太阳参照和长/短轨迹，支持暂停、倍速、重置视角和返回太阳系。减少动态效果时结构与参照切换即时完成。</p></div><div><span class="help-symbol" aria-hidden="true">✧</span><h3>星座探索与图鉴</h3><p>顶部「星座探索」打开沉浸星空。底部切换星座，点亮星或名称查看资料；「认识星座」「寻找亮星」「星座故事」切换科普内容。连线、名称可单独关闭，拖动轻转视角、滚轮缩放，重置恢复完整星图。「星座图鉴」提供中英文搜索和分类筛选，首批收录 12 个入门星座。手机点「星座科普」展开资料。星位来自 J2000 星表投影；连线为辨认简图，未按所在地与当前时间计算可见天空。</p></div><div><span class="help-symbol" aria-hidden="true">07</span><h3>七大洲探索</h3><p>在「感知地球」左侧选择「七大洲」，从卡片或球面洲名选择大洲，查看地理简介。镜头保持该洲在视野中；拖动自由观察，重置可重新对准。代表地点可继续查看天气和四季。底部「名称」显示洲名，「范围示意」独立显示所选洲的淡色范围与轮廓；定位点是浏览代表位置，范围为简化地理教学示意。</p></div><div><span class="help-symbol" aria-hidden="true">↔</span><h3>旋转、缩放与锁定</h3><p>拖动或单指滑动旋转；滚轮、双指或加减按钮缩放。锁定地点后，镜头随地球转动；拖动会解除锁定。</p></div><div><span class="help-symbol" aria-hidden="true">⌖</span><h3>搜索与地表选点</h3><p>在「感知地球」中选择「地点与天气」，搜索城市、地标，或输入“纬度, 经度”。感知总览可轻点地表选点；地点页可切换「地表选点」和经纬网。选中后球面显示地点名称与位置圈；任意坐标显示「所选位置」及经纬度。「名称」只隐藏文字，点和模拟仍可选择。漫游时点击地表不会切换模式，拖动和双指缩放不会选点。</p></div><div><span class="help-symbol" aria-hidden="true">☀</span><h3>地点与四季联动</h3><p>选定地点后点「联动四季」，查看当地昼长、四季对比及日出日落。可对准并锁定地点，再切换季节或时刻；太阳时为教学示意，与当地钟表时间不同。</p></div><div><span class="help-symbol" aria-hidden="true">℃</span><h3>查看所选地点天气</h3><p>在地点卡中点「查看此地天气」。联网查询该坐标附近的天气模型数据，显示温度、体感、湿度、风速和数据时间。查询失败可重试；四季滑块不会改变实际天气。</p></div><div><span class="help-symbol" aria-hidden="true">◐</span><h3>月相互动</h3><p>在「感知地球」左侧打开「月相互动」。点选八个月相或拖动月龄，观察亮面变化；「太空视角」看地月位置，「地球所见」看月面形状。可自动演示，也受底部暂停与流速控制。</p></div><div><span class="help-symbol" aria-hidden="true">◎</span><h3>空间站与卫星</h3><p>在「地球漫游」点击「航天器探索」，展开全部 11 个航天器，选择空间站、卫星或望远镜进行观察；也可点模型、名称或底部卡片飞近并跟随；「环地全景」可比较不同轨道。位置、大小与速度为教学示意。</p></div><div><span class="help-symbol" aria-hidden="true">01 → 04</span><h3>地球漫游与感知地球</h3><p>顶部第二排选择模式，左侧选择功能，右侧进行操作。「地球漫游」看夜景与航天器；「感知地球」探索地理与自然。感知首次打开七大洲，之后记住上次功能；关闭功能回到感知总览。点击「地球漫游」才恢复进入前的视角与播放设置；直接前往其它天体开始新的漫游。</p></div><div><span class="help-symbol" aria-hidden="true">✦</span><h3>夜景与流星</h3><p>地球默认从夜侧进入，保留晨昏亮边；「追寻夜色」可观察完整夜半球。城市灯火带有暖色柔光与持续局部微闪，暂停天体运动时仍闪烁，不随倍速加快。主地球夜景中均生效，地理阅读视图保持清晰明亮。漫游中偶尔出现流星或彗星；感知、导览和运动轨迹中隐藏。减少动态效果偏好下关闭微闪与流星。灯火与天象效果为艺术示意。</p></div><div><span class="help-symbol" aria-hidden="true">▤</span><h3>科普导览</h3><p>点击「科普导览」按章节体验，退出后恢复原来的探索状态；也会恢复进入前的感知功能或总览，以及返回漫游的原始视角。</p></div><div><span class="help-symbol" aria-hidden="true">Ⅱ</span><h3>手机与流畅画质</h3><p>手机可单指旋转、双指缩放，底部面板可滚动。暂停天体后，夜景灯火继续闪烁，其他静止画面减少绘制；切入后台停止动画，返回后继续。桌面可在画质菜单中选择流畅模式。</p></div></div><p class="dialog-note">键盘快捷键：<kbd>H</kbd> 回到地球 · <kbd>空格</kbd> 暂停 / 继续 · <kbd>＋</kbd> / <kbd>−</kbd> 缩放 · <kbd>I</kbd> 隐藏 / 显示界面 · <kbd>F</kbd> 全屏 · <kbd>?</kbd> 操作帮助。<br>关闭地点面板回到感知总览并结束锁定；离开地球或手动解除时也结束锁定；在地点、天气和四季之间切换保留锁定。隐藏界面后，可双击场景重新显示。</p></dialog>
+
+  <dialog id="source-dialog" class="explorer-dialog source-dialog"><button id="close-source" class="icon-button dialog-close" type="button" aria-label="关闭资料说明"><svg><use href="#i-close"/></svg></button><div class="source-brand-type source-brand-heading"><p class="source-brand-en" lang="en">EXPLORE THE UNIVERSE</p><h2 class="source-brand-cn">探索宇宙科普</h2></div><p class="dialog-intro">一次可交互的宇宙印象，一份写给好奇心的邀请。</p><div class="source-copy"><h3>关于比例与运动</h3><p>为便于观看，场景中的天体大小、距离、轨道和运动速度经过视觉化调整。星系、黑洞、系外行星和航天器为程序生成的科普示意，不提供精密天文定位。感知地球模块可联网读取公开天气模型与热带气旋事件；闪电明确为模拟演示，联网失败会显示错误状态。</p><h3>七大洲</h3><p>采用常见的七大洲分法；大洋洲包含澳大利亚、新西兰及太平洋诸岛，北极不是另一个洲。各洲资料卡附自然地理资料来源。标记和镜头锚点用于浏览，不提供洲界或国界图；天气仅按具体地点坐标查询。</p><h3>地点、四季与月相</h3><p>地点坐标采用精选城市中心或手动点击位置。四季和昼夜使用理想圆球、平行日光与地轴倾角模型；当地太阳时并非当地法定时间，日出日落不包含大气折射与地形。月相采用约 29.53 天的朔望周期示意；「地球所见」固定月面北方朝上，不能代表每个地点当晚的月面朝向或可见时段。月相来自相对位置变化，普通新月和满月并不必然发生日月食。参考 <span class="source-attribution">NASA · Moon Phases</span>。</p><h3>天气资料</h3><p>天气来源为 <span class="source-attribution">Open-Meteo</span> 的模式估计值，按所选经纬度请求附近网格并显示其数据时间；不是地表贴图中的实时云图。天气时间与教学动画相互独立，不读取设备定位。</p><h3>星座星图与资料</h3><p>星座探索首批收录 12 个入门星座，并非完整的 88 星座目录。星点采用 <span class="source-attribution">David Nash · HYG v4.1</span> 的 J2000 赤经、赤纬与视星等，经局部星图投影绘制；星点大小和色彩作显示调整。星表衍生数据依 <span class="source-attribution">CC BY-SA 4.0</span> 提供。连线是自编辨认辅助，装饰背景不用于天文定位。星座是天空中的区域，图案内的恒星不一定相邻；北斗七星是大熊座内的星群。距离为星表估计近似值，不是恒星之间的距离。这里未计算实时天空，所在地与时间观星留待后续扩展。参考 <span class="source-attribution">IAU · 星座</span>。</p><h3>数据注释</h3><p>¹ 太阳的周期指围绕银河系中心运行一周的时间。<br>² 月球与国际空间站的周期指围绕地球运行一周的时间。<br>³ 太阳系概览中的时间指太阳系年龄。<br>⁴ 空间站的尺度指其翼展。</p><p>天体与空间站资料参考 <span class="source-attribution">NASA · Solar System</span>、<span class="source-attribution">NASA · Space Station Facts and Figures</span>；数值取近似值。</p></div><div class="source-signature"><div class="source-brand-mark" aria-hidden="true"><img src="./assets/explore-universe-logo.png" width="2048" height="2048" alt="" decoding="async" draggable="false"></div><div class="source-brand-type"><p class="source-brand-en" lang="en">EXPLORE THE UNIVERSE</p><p class="source-brand-cn">探索宇宙科普</p></div></div></dialog>
+
+  <div id="loading" class="loading-screen"><div class="loading-inner"><div class="loading-orbit"><span></span><i></i></div><span class="loading-brand">UNIVERSE</span><h2>宇宙，即将展开</h2><p id="loading-message">正在点亮星空…</p><div class="loading-track"><div id="loading-progress"></div></div><span class="loading-bottom">从这里，看见更远的世界</span></div></div>
+  <dialog id="author-statement-dialog" class="explorer-dialog" aria-labelledby="author-statement-title">
+    <div class="author-statement-heading"><h2 id="author-statement-title">作者声明：</h2><button id="close-author-statement" class="icon-button dialog-close" type="button" aria-label="关闭作者声明"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <ol class="author-statement-copy" tabindex="0" aria-label="作者声明内容">
+      <li>访问者仅可将本站内容用于个人学习、研究、技术参考，属于非商业目的；</li>
+      <li>严禁未经授权用于商业用途，包括但不限于：广告、带货、付费课程、短视频变现、项目交付、企业内部商用，及未列出的商业行为；</li>
+      <li>如需将本页面、页面素材用于任何商业场景，请联系作者，取得书面授权后方可使用；</li>
+      <li>禁止未经许可篡改本页面内容；</li>
+      <li>页面中包含的第三方素材（如：音频、文字等），版权归原权利人所有，本作者仅作学习、展示，未存在任何商业行为；如权利人发现侵权，可联系本人，收到通知后将及时删除对应内容。</li>
+      <li>作者于个人兴趣爱好制作，未存在任何商业行为，页面各数据不代表权威性，仅用于展示参考。权威数据：需与实际的、权威机构、的为准。</li>
+      <li>在此感谢：NASA，提供的相关公开数据。</li>
+    </ol>
+    <p class="author-statement-license">第三方素材与数据遵循各自原有许可。</p>
+    <p class="author-statement-contact">联系方式：<a href="mailto:wohelloworld@163.com">wohelloworld@163.com</a></p>
+    <div class="author-statement-signature"><div class="author-brand-mark" aria-hidden="true"><img src="./assets/explore-universe-logo.png" width="2048" height="2048" alt="" decoding="async" draggable="false"></div><div class="author-brand-type"><p class="author-brand-en" lang="en">EXPLORE THE UNIVERSE</p><p class="author-brand-cn">探索宇宙科普</p></div></div>
+  </dialog>
+  <script type="module" src="./app.js?v=20261024-explore-universe"></script>
+  <script type="module" src="./background-music-init.js"></script>
+</body>
+</html>
+

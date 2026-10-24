@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -5 72 58" width="64" height="48">
+  <title>气象卫星：宽幅扫描仪与单侧太阳翼</title>
+  <g transform="rotate(-15 32 24)" stroke-linejoin="round">
+    <path d="M29 25H5" stroke="#d4dee4" stroke-width="2"/>
+    <path d="M2 11h19v30H2z" fill="#37718f" stroke="#aacdd7" stroke-width=".7"/>
+    <path d="M8 11v30m7-30v30M2 19h19M2 27h19M2 35h19" stroke="#a6c5cf" stroke-width=".6"/>
+    <path d="m29 15 13-5 12 8v18l-14 7-12-8Z" fill="#e1c78c" stroke="#f2e7bb" stroke-width=".75"/><path d="m29 15 11 8 14-5M40 23v20" fill="none" stroke="#a18753"/>
+    <path d="M32 14V8l9-4 9 5v7l-9 4Z" fill="#e5e8e3" stroke="#a8bfcb" stroke-width=".75"/>
+    <path d="m36 9 6-2 5 3-6 3Z" fill="#16364e"/><path d="M43 22v10l8-4v-9Z" fill="#294458" stroke="#adc6d4" stroke-width=".7"/>
+    <path d="M56 32h5m-1-4v8" stroke="#e8eff0" stroke-width="1.2"/>
+  </g>
+</svg>

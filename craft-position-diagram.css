@@ -1,0 +1,53 @@
+.facts-panel .craft-position {
+  margin: 14px 0 0;
+  padding: 0 12px 12px;
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(36, 89, 119, .14), rgba(7, 19, 39, .2));
+}
+.facts-panel .craft-position[hidden] { display: none; }
+.facts-panel .craft-position:not([open]) { padding-bottom: 0; }
+.facts-panel .craft-position > summary {
+  padding: 11px 0;
+  color: #c4e8f8;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.7;
+  cursor: pointer;
+}
+.facts-panel .craft-position > summary:hover { color: #ecf8ff; }
+.facts-panel .craft-position > summary:focus-visible { outline: 2px solid #78c9e5; outline-offset: 3px; border-radius: 4px; }
+.facts-panel .position-toggle-hint { float: right; color: #a4bdd0; font-size: 12px; font-weight: 400; }
+.facts-panel .position-toggle-hint::before { content: '展开'; }
+.facts-panel .craft-position[open] .position-toggle-hint::before { content: '收起'; }
+.facts-panel .position-heading { margin: 0 0 5px; color: #a9d7e8; font-size: 12px; line-height: 1.7; }
+.facts-panel .position-graphic { width: 100%; margin: 4px 0 9px; }
+/* Diagrams define their own lines; do not inherit the global icon outline. */
+.facts-panel .position-graphic svg { display: block; width: 100%; height: auto; overflow: visible; stroke: none; }
+.facts-panel .position-graphic text { fill: #e0edf8; stroke: none; text-shadow: none; font-family: inherit; font-size: 13px; font-weight: 500; }
+.facts-panel .position-graphic .position-muted { fill: #a3bfd2; font-size: 12px; }
+.facts-panel .position-graphic .position-highlight { fill: #b6e9f5; }
+.facts-panel .position-axis { fill: none; stroke: #688da8; stroke-width: 1; stroke-dasharray: 4 4; }
+.facts-panel .position-direction, .facts-panel .position-leader, .facts-panel .position-measure { fill: none; stroke: #89b5cc; stroke-width: 1.2; }
+.facts-panel .position-sun { fill: #f4c66b; stroke: #ffde92; stroke-width: 1.5; }
+.facts-panel .position-sun-glow { fill: #ecb24b; fill-opacity: .13; }
+.facts-panel .position-earth { fill: #65bfe3; stroke: #b3e8f4; stroke-width: 1.2; }
+.facts-panel .position-earth-glow { fill: #67c6ef; fill-opacity: .12; }
+.facts-panel .position-halo { fill: none; stroke: #9dd3d4; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.facts-panel .position-l2 { fill: none; stroke: #c0dadf; stroke-width: 1.5; }
+.facts-panel .position-craft { fill: #d9b65e; stroke: #fae5a8; stroke-width: 1.4; }
+.facts-panel .position-heliosphere { fill: #246081; fill-opacity: .17; stroke: #79b3cb; stroke-width: 1.3; stroke-dasharray: 5 4; }
+.facts-panel .position-orbit { fill: none; stroke: #6399af; stroke-width: 1; }
+.facts-panel .position-flight { fill: none; stroke: #e1c287; stroke-width: 1.8; }
+.facts-panel .position-transfer { stroke: #c8b0ee; stroke-dasharray: 5 4; }
+.facts-panel .position-roman-halo { stroke: #c8b0ee; }
+.facts-panel .position-roman-probe { fill: #8b80b4; stroke: #e5d9ff; stroke-width: 1.3; }
+.facts-panel .position-crossing { fill: #edc98a; stroke: #0a1d30; stroke-width: 1; }
+.facts-panel .position-probe { fill: none; stroke: #d4edf5; stroke-width: 1.6; stroke-linecap: round; }
+.facts-panel .position-description, .facts-panel .position-clarification { margin: 0; color: #c2d3e5; font-size: 12px; line-height: 1.9; overflow-wrap: anywhere; }
+.facts-panel .position-clarification { margin-top: 9px; padding-left: 9px; border-left: 2px solid #8abcc9; color: #b4d5e6; }
+.facts-panel .position-note { margin: 10px 0 0; color: #a1b8cd; font-size: 11px; line-height: 1.8; }
+.facts-panel .position-source { margin: 4px 0 0; color: #8fb3c8; font-size: 11px; line-height: 1.8; }
+@media (max-width: 370px) {
+  .facts-panel .craft-position { padding-inline: 8px; }
+}

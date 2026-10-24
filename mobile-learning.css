@@ -1,0 +1,171 @@
+/* Mobile-only learning windows. Desktop keeps its original layout and DOM order. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  #constellation-explorer .constellation-hero {
+    left:12px; right:12px; top:calc(124px + env(safe-area-inset-top,0px)); width:auto;
+  }
+  #constellation-explorer .constellation-hero h1 { font-size:27px; max-width:calc(100% - 120px); margin:5px 0; }
+  #constellation-explorer .constellation-hero-actions { display:flex; gap:6px; margin-top:9px; }
+  #constellation-explorer .constellation-action { min-height:44px; font-size:12px!important; }
+  #constellation-explorer .constellation-library-entry { position:absolute; top:0; right:0; min-height:44px; margin:0; font-size:12px!important; }
+  #constellation-explorer .constellation-card {
+    top:auto; left:12px; right:calc(50% + 4px); width:auto;
+    bottom:var(--mobile-sheet-bottom,68px);
+    max-height:min(52dvh,calc(100dvh - var(--mobile-sheet-bottom,68px) - 128px - env(safe-area-inset-top,0px)));
+    display:flex; flex-direction:column; padding:6px 12px; overflow:hidden; border-radius:16px;
+    background:rgba(5,18,35,.97);
+  }
+  #constellation-explorer.constellation-card-open .constellation-card { right:12px; }
+  #constellation-explorer .constellation-card-toolbar { flex:none; min-height:44px; gap:8px; }
+  #constellation-explorer .constellation-card-toggle { pointer-events:auto; cursor:pointer!important; min-height:44px; font-size:13px!important; }
+  #constellation-explorer .constellation-card-chevron { display:inline; }
+  #constellation-explorer .constellation-narrate { min-height:44px; padding:7px 10px; font-size:12px!important; }
+  #constellation-explorer:not(.constellation-card-open) .constellation-narrate { display:none; }
+  #constellation-explorer .constellation-card-content { display:none; min-height:0; overflow:auto; overscroll-behavior:contain; padding:0 2px 8px; touch-action:pan-y pinch-zoom; }
+  #constellation-explorer.constellation-card-open .constellation-card-content { display:block; }
+  #constellation-explorer.constellation-card-open .constellation-dock,
+  #constellation-explorer.constellation-card-open .constellation-hero,
+  #constellation-explorer.constellation-card-open .constellation-hero-actions,
+  #constellation-explorer.constellation-dock-open .constellation-hero-actions,
+  #constellation-explorer.constellation-dock-open .constellation-card { display:none; }
+  #constellation-explorer .constellation-card-identity { margin:10px 0; }
+  #constellation-explorer .constellation-card-tabs button { min-height:44px; font-size:12px!important; }
+  #constellation-explorer .constellation-card-body h3 { font-size:14px; }
+  #constellation-explorer .constellation-card-body p { font-size:14px; line-height:1.8; }
+  #constellation-explorer .constellation-star-button { min-height:48px; }
+  #constellation-explorer .constellation-star-button strong { font-size:13px; }
+  #constellation-explorer .constellation-star-button small { font-size:11px; }
+  #constellation-explorer :is(.constellation-distance-entry,.constellation-return) { min-height:44px; font-size:12px!important; }
+  #constellation-explorer .constellation-dock,
+  #constellation-explorer .constellation-dock.constellation-dock-collapsed {
+    left:12px; right:12px; bottom:var(--mobile-sheet-bottom,68px); width:auto; max-width:none;
+    transform:none; padding:6px 10px; border-radius:14px; background:rgba(5,18,35,.97);
+  }
+  #constellation-explorer .constellation-dock-heading { display:flex; min-height:44px; padding:0; font-size:12px; }
+  #constellation-explorer .constellation-dock.constellation-dock-collapsed { left:calc(50% + 4px); }
+  #constellation-explorer .constellation-dock-collapse { min-height:44px; min-width:64px; font-size:12px!important; }
+  #constellation-explorer .constellation-dock .constellation-destination { flex-basis:88px; min-height:72px; font-size:12px!important; }
+  #constellation-explorer .constellation-dock .constellation-mini-map { height:35px; }
+  #constellation-explorer .constellation-dock-list { padding-top:6px; touch-action:pan-x pinch-zoom; }
+  #constellation-explorer .constellation-controls {
+    left:50%; right:auto; bottom:var(--mobile-bar-bottom,10px); transform:translateX(-50%);
+    height:var(--mobile-bar-height,48px); max-width:calc(100vw - 24px); padding:2px; gap:0;
+  }
+  #constellation-explorer .constellation-controls button { min-height:44px; min-width:0; padding:6px 12px; font-size:12px!important; }
+  #constellation-explorer .constellation-scene-hint { display:none; }
+
+  .constellation-library {
+    width:calc(100vw - 16px); height:calc(100dvh - 16px); margin:auto; max-height:none;
+    padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+    border-radius:16px; overflow:hidden;
+  }
+  .constellation-library-header { flex:none; align-items:center; padding-bottom:8px; }
+  .constellation-library-header h2 { margin:0; font-size:23px; }
+  .constellation-library-header :is(.constellation-eyebrow,p:last-child) { display:none; }
+  .constellation-library-close { width:44px; height:44px; }
+  .constellation-library-layout { display:flex; flex-direction:column; min-height:0; gap:10px; padding-top:10px; overflow:hidden; }
+  .constellation-library-sidebar { flex:none; }
+  .constellation-library-search input { min-height:44px; font-size:16px!important; }
+  .constellation-library-filters { display:flex; gap:2px; margin:5px 0 0; }
+  .constellation-library-filters button { min-height:44px; font-size:11px!important; padding:7px 3px; }
+  .constellation-library-count { margin:3px 0 0; padding:0; border:0; font-size:11px; }
+  .constellation-library-scope { display:none; }
+  .constellation-library-results { flex:1; min-height:0; overflow:auto; overscroll-behavior:contain; touch-action:pan-y pinch-zoom; scrollbar-width:thin; }
+  .constellation-library-grid { overflow:visible; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; padding:1px; }
+  .constellation-library-art { height:62px; }
+  .constellation-library-tile-copy strong { font-size:14px; }
+  .constellation-library-tile-copy small,.constellation-library-region { font-size:10px; }
+  .constellation-library-preview { margin-top:12px; overflow:visible; padding:14px; }
+  .constellation-library-preview p { font-size:13px; line-height:1.75; }
+  .constellation-library-enter { position:static; min-height:44px; font-size:13px!important; }
+
+  #guide-panel .guide-topbar {
+    position:fixed; left:12px; right:12px; top:calc(66px + env(safe-area-inset-top,0px)); width:auto;
+    min-height:52px; transform:none; padding:3px; gap:6px; justify-content:space-between;
+  }
+  #guide-panel :is(.guide-mode-label,.guide-topbar-divider) { display:none; }
+  #guide-panel :is(.guide-chapters-toggle,#exit-guide) { min-height:44px; padding:8px 12px; font-size:12px!important; white-space:nowrap; }
+  #guide-panel .guide-chapters-toggle { order:-1; border:1px solid #8cbacc40; border-radius:7px; background:#122c3e; color:#c3e6ef; }
+  #guide-panel .guide-chapters {
+    position:fixed; top:auto; bottom:calc(var(--mobile-sheet-bottom,68px) + 56px); left:12px; right:12px;
+    width:auto; max-height:calc(100dvh - var(--mobile-sheet-bottom,68px) - 184px - env(safe-area-inset-top,0px));
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; padding:10px;
+    overflow:auto; overscroll-behavior:contain; touch-action:pan-y pinch-zoom;
+    border:1px solid #8cbacc40; border-radius:16px; background:rgba(5,18,35,.98); z-index:2;
+  }
+  #guide-panel .guide-chapters[hidden] { display:none; }
+  #guide-panel .guide-chapters button { min-width:0; min-height:44px; padding:8px; font-size:12px!important; gap:7px; }
+  #guide-panel :is(.guide-rail-heading,.guide-rail-note) { display:none; }
+  #guide-panel.mobile-guide-chapters-open #guide-lesson { display:none; }
+  #guide-panel #guide-lesson {
+    position:fixed; top:auto; left:12px; right:12px; width:auto; max-width:none; transform:none;
+    bottom:calc(var(--mobile-sheet-bottom,68px) + 56px);
+    max-height:min(48dvh,calc(100dvh - var(--mobile-sheet-bottom,68px) - 184px - env(safe-area-inset-top,0px)));
+    display:flex; flex-direction:column; padding:8px 14px; overflow:hidden; border-radius:16px; background:rgba(5,18,35,.97);
+  }
+  #guide-panel #guide-lesson.is-collapsed { max-height:none; padding:6px 14px; }
+  #guide-panel .guide-lesson-heading { flex:none; min-height:44px; margin:0; gap:8px; }
+  #guide-panel .guide-kicker { font-size:11px; letter-spacing:.4px; min-width:0; }
+  #guide-panel .guide-lesson-toggle { min-height:44px; font-size:12px!important; }
+  #guide-panel #guide-lesson > #guide-title { flex:none; font-size:18px; line-height:1.4; margin:2px 0 10px; }
+  #guide-panel #guide-lesson.is-collapsed > #guide-title { display:none; }
+  #guide-panel #guide-lesson-content { min-height:0; overflow:auto; overscroll-behavior:contain; padding:0 2px 4px; touch-action:pan-y pinch-zoom; }
+  #guide-panel .guide-copy { font-size:13px; line-height:1.75; margin:0 0 10px; }
+  #guide-panel .guide-lesson-actions { flex-wrap:wrap; gap:6px; }
+  #guide-panel .guide-lesson-actions button { min-width:0; max-width:100%; min-height:44px; font-size:12px!important; white-space:normal; overflow-wrap:anywhere; }
+  #guide-panel .guide-lesson-actions button span { min-width:0; }
+  #guide-panel .guide-lesson-actions button svg { flex:none; }
+  #guide-panel .guide-lesson .special-controls .segmented-control { min-width:0; width:100%; margin:4px 0; }
+  #guide-panel .guide-lesson .special-controls button { min-height:44px; font-size:12px!important; }
+  #guide-panel .guide-navigation {
+    position:fixed; left:12px; right:12px; width:auto; max-width:none; transform:none;
+    bottom:var(--mobile-sheet-bottom,68px); min-height:48px; display:grid; grid-template-columns:auto 52px minmax(0,1fr); gap:7px;
+  }
+  #guide-panel .guide-navigation button { min-height:44px; padding:7px 9px; font-size:12px!important; white-space:normal; line-height:1.4; }
+  #guide-panel .guide-navigation button svg { flex:none; }
+  #guide-panel .guide-progress-wrap { width:52px; min-width:0; max-width:none; }
+  #guide-panel #guide-counter { font-size:9px; white-space:normal; }
+  body.guide-active .view-tools { display:none; }
+
+  .cinema-dialog {
+    width:calc(100vw - 16px); max-height:calc(100dvh - 16px); margin:auto; padding:0;
+    padding-inline:max(0px,env(safe-area-inset-left,0px)) max(0px,env(safe-area-inset-right,0px));
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    overscroll-behavior:contain;
+  }
+  .cinema-heading { position:sticky; top:0; z-index:1; min-height:48px; padding:0 0 4px; }
+  .cinema-heading .icon-button { width:44px; height:44px; }
+  #cinema-video { max-height:calc(100dvh - 76px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); border-radius:10px; }
+  .cinema-dialog:has(.cinema-unmute:not([hidden])) #cinema-video { max-height:calc(100dvh - 132px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); }
+  .cinema-unmute { min-height:44px; margin:8px auto 0; }
+  .cinema-status { font-size:13px; }
+}
+
+@media (max-width:760px) and (max-height:500px) {
+  #constellation-explorer .constellation-hero { top:calc(112px + env(safe-area-inset-top,0px)); }
+  #constellation-explorer .constellation-hero h1 { font-size:22px; }
+  #constellation-explorer .constellation-hero-actions { margin-top:4px; }
+  #constellation-explorer .constellation-card { max-height:calc(100dvh - var(--mobile-sheet-bottom,68px) - 116px - env(safe-area-inset-top,0px)); }
+  #constellation-explorer.constellation-card-open .constellation-hero-actions { display:none; }
+  #guide-panel #guide-lesson > #guide-title { font-size:15px; margin-bottom:5px; }
+  #guide-panel #guide-lesson { padding:4px 12px; }
+  #guide-panel .guide-lesson-heading { min-height:44px; }
+  .constellation-library-header { padding-bottom:4px; }
+  .constellation-library-layout { padding-top:5px; gap:5px; }
+  .constellation-library-count { display:none; }
+}
+
+@media (max-width:760px) and (max-height:500px) and (orientation:landscape) {
+  /* Share the chapter strip in short landscapes instead of stacking a third bar. */
+  #guide-panel .guide-topbar { left:12px; right:auto; width:224px; gap:3px; }
+  #guide-panel :is(.guide-chapters-toggle,#exit-guide) { padding-inline:7px; font-size:11px!important; }
+  #guide-panel .guide-navigation {
+    top:calc(66px + env(safe-area-inset-top,0px)); bottom:auto; left:244px; right:12px;
+    height:52px; grid-template-columns:auto 44px minmax(0,1fr); gap:5px;
+  }
+  #guide-panel .guide-navigation button { padding-inline:7px; font-size:11px!important; }
+  #guide-panel .guide-progress-wrap { width:44px; }
+  #guide-panel #guide-lesson,#guide-panel .guide-chapters {
+    bottom:var(--mobile-sheet-bottom,68px);
+    max-height:calc(100dvh - var(--mobile-sheet-bottom,68px) - 128px - env(safe-area-inset-top,0px));
+  }
+}

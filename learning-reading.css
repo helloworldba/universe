@@ -1,0 +1,37 @@
+.learning-reading { margin-top:14px; border-top:1px solid #9dcce629; color:#b8d1e1; font-size:12px; }
+.learning-reading > summary { display:flex; align-items:center; gap:9px; min-height:40px; padding:8px 0; cursor:pointer; list-style:none; line-height:1.6; }
+.learning-reading > summary::-webkit-details-marker { display:none; }
+.learning-reading > summary::before { content:"›"; font-size:19px; color:#89c9db; flex:none; }
+.learning-reading[open] > summary::before { transform:rotate(90deg); }
+.learning-reading > summary > span:first-of-type { flex:1; min-width:0; }
+.learning-reading-hint { color:#84a8bd; font-size:10px; flex:none; }
+.learning-reading summary:focus-visible { outline:2px solid #9ddff1; outline-offset:3px; border-radius:4px; }
+.learning-reading-content { padding:2px 2px 8px; }
+.learning-reading .learning-reading-section { margin:0 0 14px; }
+.learning-reading .learning-reading-section h3,.learning-reading .learning-observation h3 { font-size:12px; line-height:1.7; color:#bde4f0; font-weight:500; margin:0 0 5px; }
+.learning-reading .learning-reading-content p { font-size:12px; line-height:1.85; color:#afc5d5; margin:0; overflow-wrap:anywhere; }
+.learning-reading .learning-observation { border-left:2px solid #7bcbdc88; padding:2px 0 2px 11px; margin:4px 0 14px; }
+.learning-reading .learning-question { padding:10px 12px; background:#9fcce309; border:1px solid #9dcce624; border-radius:7px; }
+.learning-reading .learning-question summary { cursor:pointer; line-height:1.8; color:#d5e4ee; }
+.learning-reading .learning-question p { padding-top:8px; color:#b8d6df; }
+.learning-reading .learning-reading-content .learning-reading-source { margin-top:14px; color:#82a4b8; font-size:10px; line-height:1.8; }
+.learning-audio { display:flex; align-items:center; flex-wrap:wrap; gap:8px; margin:0 0 14px; }
+.learning-reading .learning-narrate { min-height:36px; padding:7px 12px; border:1px solid #8fd2ec42; border-radius:6px; background:#539cb917; color:#c7e9f6; font-size:12px; cursor:pointer; }
+.learning-reading .learning-narrate[aria-pressed="true"] { background:#69b8d729; border-color:#9addf857; }
+.learning-reading .learning-narrate:focus-visible { outline:2px solid #9ddff1; outline-offset:3px; }
+.learning-audio-status { font-size:11px; color:#d3bba0; }
+/* Guide stays compact until requested; long reading is bounded on desktop.
+   Phones keep a single scroll surface in the existing lesson sheet. */
+@media(min-width:761px) {
+  #guide-lesson .learning-reading-content { max-height:min(220px,28vh); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#456373 transparent; padding-right:10px; }
+  #guide-lesson:has(.learning-reading[open]) { max-height:calc(100dvh - 245px); overflow:auto; scrollbar-width:thin; scrollbar-color:#456373 transparent; }
+}
+@media(max-width:760px) {
+  .learning-reading > summary,.learning-reading .learning-question summary { min-height:44px; align-content:center; }
+  .learning-reading .learning-reading-content p { font-size:14px; }
+  .learning-reading .learning-reading-section h3,.learning-reading .learning-observation h3 { font-size:14px; }
+  .learning-reading .learning-reading-content .learning-reading-source { font-size:12px; }
+  .learning-reading-hint { display:none; }
+  .learning-reading .learning-narrate { min-height:44px; }
+  .learning-reading .learning-reading-content { max-height:none; overflow:visible; }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -5 72 58" width="64" height="48">
+  <title>遥感卫星：对地相机与长翼太阳能板</title>
+  <g transform="rotate(-18 32 24)" stroke-linejoin="round">
+    <path d="M5 22h54" stroke="#c8d4e0" stroke-width="1.8"/>
+    <path d="M2 14h22v16H2zm38 0h22v16H40z" fill="#286b9c" stroke="#8cbcd8" stroke-width=".8"/>
+    <path d="M7 14v16m6-16v16m6-16v16m26-16v16m6-16v16m6-16v16M2 22h22m16 0h22" stroke="#b1d2e2" stroke-width=".55"/>
+    <path d="m25 13 9-4 8 6v19l-10 6-10-6V18Z" fill="#c1a15a" stroke="#dfd4a6" stroke-width=".8"/><path d="m25 13 7 6 10-4M32 19v21" fill="none" stroke="#f6d88d"/>
+    <path d="m24 29 8 4 8-4v9l-8 6-8-6Z" fill="#8fabbc" stroke="#cadde7" stroke-width=".7"/><ellipse cx="32" cy="37" rx="5" ry="4" fill="#071c31" stroke="#80c1da" stroke-width="1"/><ellipse cx="31" cy="36" rx="2" ry="1.4" fill="#4899c0"/>
+    <path d="M33 9V4m-4 0h8" stroke="#d4e4e9" stroke-width="1.1"/>
+  </g>
+</svg>

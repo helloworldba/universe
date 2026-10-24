@@ -1,0 +1,158 @@
+/* The desktop cascade is deliberately untouched. All rules below are phone-only. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  body.mobile-workspace {
+    --mobile-content-top:calc(116px + env(safe-area-inset-top,0px));
+    --earth-navigation-bottom:calc(164px + env(safe-area-inset-top,0px));
+    --mobile-bar-height:52px;
+    --mobile-bar-bottom:calc(8px + env(safe-area-inset-bottom,0px) + var(--mobile-keyboard-inset,0px));
+    --mobile-sheet-bottom:calc(var(--mobile-bar-bottom) + 60px);
+    --mobile-sheet-max-height:min(38dvh,calc(100dvh - 300px - var(--mobile-sheet-bottom)));
+  }
+  body.mobile-workspace .site-header {position:fixed;inset:0 0 auto;height:calc(56px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 12px 0;display:flex;align-items:center;}
+  body.mobile-workspace .site-header .wordmark {display:flex;max-width:calc(100vw - 186px);}
+  body.mobile-workspace .brand-en {display:none;}
+  body.mobile-workspace .brand-cn {white-space:nowrap;letter-spacing:0;}
+  body.mobile-workspace .site-header #mode-nav {top:calc(58px + env(safe-area-inset-top,0px));left:12px;right:12px;width:auto;transform:none;}
+  body.mobile-workspace #mode-nav button {min-height:44px;white-space:nowrap;}
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) {left:12px;top:var(--mobile-content-top);transform:none;width:204px;}
+  body.mobile-workspace.earth-experience-active:not(.guide-active):not(.ui-hidden):not(.clean-view) .object-info {position:fixed;left:224px;right:12px;top:var(--mobile-content-top)!important;width:auto;}
+  body.mobile-workspace.earth-experience-active .object-introduction {display:none!important;}
+  body.mobile-workspace #mobile-features-toggle {padding:7px 8px;font-size:12px;min-height:48px;}
+  body.mobile-workspace.mobile-features-open .earth-mode-features:not([hidden]) {position:fixed;left:12px;right:12px;top:calc(170px + env(safe-area-inset-top,0px));width:auto;max-height:calc(100dvh - 180px - var(--mobile-sheet-bottom));border-radius:14px;}
+  body.mobile-workspace .earth-feature-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.mobile-workspace:not(.earth-experience-active) .object-info {position:fixed;left:16px;right:16px;top:var(--mobile-content-top)!important;width:auto;max-height:none;overflow:visible;pointer-events:none;}
+  body.mobile-workspace:not(.earth-experience-active).earth-navigation-active .object-info,
+  body.mobile-workspace:not(.earth-experience-active).solar-navigation-active .object-info {top:calc(170px + env(safe-area-inset-top,0px))!important;}
+  body.mobile-workspace .object-info .object-introduction {height:auto!important;min-height:0!important;max-height:none!important;overflow:visible;}
+  body.mobile-workspace .object-info h1 {font-size:22px!important;line-height:1.4!important;margin:0!important;max-width:100%;word-break:normal;overflow-wrap:anywhere;letter-spacing:.6px;}
+  body.mobile-workspace .object-info :is(.eyebrow,.object-english,.object-description,.object-navigation,.model-source) {display:none!important;}
+  body.mobile-workspace .object-info>.special-controls {display:none!important;}
+  body.mobile-workspace :is(.cosmic-breadcrumb,.scene-caption,.render-quality) {display:none!important;}
+  body.mobile-workspace :is(.control-footer,.constellation-controls,.guide-navigation) {display:none!important;}
+  body.mobile-workspace #mobile-scene-bar {position:fixed;left:12px;right:12px;bottom:var(--mobile-bar-bottom);height:52px;z-index:55;display:flex;align-items:stretch;gap:2px;padding:3px;border:1px solid #86bad342;border-radius:14px;background:#08172bf5;box-shadow:0 8px 28px #0005;pointer-events:auto;}
+  body.mobile-workspace .mobile-scene-action {flex:1;min-width:0;min-height:44px;padding:6px 2px;border:0;border-radius:9px;background:transparent;color:#c8e2ee;font-size:12px;line-height:1.4;white-space:nowrap;cursor:pointer;}
+  body.mobile-workspace .mobile-scene-action:is([aria-expanded="true"],[aria-pressed="true"]) {color:#e0f9fc;background:#234659;}
+  body.mobile-workspace .mobile-scene-action:disabled {color:#8095a6;opacity:.65;cursor:default;}
+  body.mobile-workspace .mobile-scene-action[hidden] {display:none;}
+  body.mobile-workspace :is(.mobile-scene-action,.mobile-read-button,.mobile-fold-button):focus-visible {outline:2px solid #9ddfeb;outline-offset:1px;}
+  body.mobile-workspace :is(.destination-dock.dock-collapsed,#facts-panel.collapsed,.constellation-dock.constellation-dock-collapsed,#guide-lesson.is-collapsed,#trajectory-panel.trajectory-panel-collapsed) {display:none!important;}
+  body.mobile-workspace #constellation-explorer:not(.constellation-card-open) .constellation-card {display:none!important;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) {position:fixed;left:12px;right:12px;width:auto;transform:none;bottom:var(--mobile-sheet-bottom);padding:8px 10px;max-height:min(48dvh,calc(100dvh - 170px - var(--mobile-sheet-bottom)));border-radius:16px;display:flex;flex-direction:column;overflow:hidden;}
+  body.mobile-workspace .destination-dock .dock-heading {flex:none;}
+  body.mobile-workspace .destination-dock .dock-context {display:none;}
+  body.mobile-workspace .destination-dock .dock-tabs {display:flex!important;gap:4px;}
+  body.mobile-workspace .destination-dock .dock-tabs button {flex:1;min-height:44px;}
+  body.mobile-workspace .destination-dock .destination-list {display:flex;flex:none;min-height:94px;max-height:none;overflow-x:auto;overflow-y:hidden;padding:6px 0 2px;gap:6px;}
+  body.mobile-workspace .destination-dock .destination-list>button {flex:0 0 88px;width:88px;height:94px;min-height:94px;display:flex;flex-direction:column;justify-content:flex-start;gap:4px;padding:6px 4px;}
+  body.mobile-workspace .destination-dock .destination-name {min-height:34px;max-height:none;font-size:11px;line-height:1.5;display:block;white-space:normal;}
+  body.mobile-workspace .destination-dock .planet-thumb {flex:none;width:34px;height:34px;margin:0 auto;}
+  body.mobile-workspace #solar-quick-actions {position:fixed;right:12px;left:auto;top:var(--mobile-content-top);bottom:auto;}
+  body.mobile-workspace #solar-quick-actions button {min-height:44px;}
+  body.mobile-workspace[data-destination="trajectories"] #solar-quick-actions {display:none;}
+  body.mobile-workspace .view-tools {bottom:calc(var(--mobile-sheet-bottom) + 12px)!important;right:12px!important;}
+  body.mobile-workspace:has(.destination-dock:not([hidden]):not(.dock-collapsed),#trajectory-panel:not([hidden]):not(.trajectory-panel-collapsed)) .view-tools {display:none;}
+
+  /* Sheet headers stay accessible; only their content scrolls. */
+  body.mobile-workspace .mobile-reader {z-index:40;}
+  body.mobile-workspace .mobile-reader:is(#facts-panel,#earthsense-panel,#earth-environment-panel,.moon-phases-panel,.earth-sense-overview,.constellation-card,#guide-lesson) {top:auto;bottom:var(--mobile-sheet-bottom);left:12px;right:12px;width:auto;max-height:var(--mobile-sheet-max-height);transform:none;border-radius:16px;}
+  body.mobile-workspace .mobile-reader-actions {display:flex;align-items:center;gap:3px;flex:none;margin-left:auto;}
+  body.mobile-workspace :is(.mobile-read-button,.mobile-fold-button) {min-height:44px;min-width:44px;padding:6px 7px;border:1px solid #85bdd433;border-radius:8px;background:#112a3e;color:#c6e4ef;font-size:11px;white-space:nowrap;}
+  body.mobile-workspace :is(.facts-toolbar,.earthsense-header,.earth-environment-header,.moon-phases-header,.constellation-card-toolbar,.guide-lesson-heading,.earth-overview-heading) {display:flex;align-items:center;flex:none;min-height:52px;padding:4px 10px;gap:6px;}
+  body.mobile-workspace :is(.earthsense-header,.earth-environment-header,.moon-phases-header)>div:first-child {flex:1;min-width:0;}
+  body.mobile-workspace :is(.earthsense-header,.earth-environment-header,.moon-phases-header) h2 {font-size:16px;letter-spacing:0;}
+  body.mobile-workspace :is(.earthsense-close,.earth-environment-close,.moon-phases-close) {order:3;flex:0 0 36px;width:36px;}
+  body.mobile-workspace :is(.facts-narrate,.constellation-narrate) {display:none!important;}
+  body.mobile-workspace .earth-overview-heading {position:static;padding-right:10px;}
+  body.mobile-workspace .earth-overview-heading>h2 {flex:1;min-width:0;margin:0;font-size:16px;}
+  body.mobile-workspace .earth-overview-heading>p {display:none;}
+  body.mobile-workspace .earth-overview-heading>.mobile-sheet-close {position:static;order:3;flex:0 0 36px;width:36px;}
+  body.mobile-workspace .mobile-reader[data-mobile-reading="collapsed"],
+  body.mobile-workspace .mobile-reader.mobile-sheet-covered {display:none!important;}
+  body.mobile-workspace .mobile-reader[data-mobile-reading="reading"] {top:var(--mobile-content-top)!important;bottom:var(--mobile-sheet-bottom)!important;max-height:none!important;height:auto!important;background:#08172b;box-shadow:0 0 0 100vmax #02091699;}
+  body.mobile-workspace .mobile-reader[data-mobile-reading="compact"] :is(.earthsense-explanation,.earthsense-legend,.earthsense-source,.earthsense-surface-help,.earthsense-lock-help,.earthsense-place-search>p,.earthsense-place-search>label,.earth-environment-intro,.earth-environment-note,.moon-phases-intro,.moon-science-note,.moon-model-note,.earth-overview-note) {display:none;}
+  body.mobile-workspace .earthsense-panel[data-mobile-reading="compact"] .earthsense-row {min-height:54px;padding:6px 10px;margin-top:5px;}
+  body.mobile-workspace .earthsense-panel[data-mobile-reading="compact"] .earthsense-row strong {font-size:13px;}
+  body.mobile-workspace .earthsense-panel[data-mobile-reading="compact"] .earthsense-row>span:last-child {font-size:15px;}
+  body.mobile-workspace .earthsense-toolbar {margin:0 0 5px;min-height:20px;}
+  body.mobile-workspace .earthsense-continent-options {gap:4px;}
+  body.mobile-workspace .earthsense-content {scroll-padding-top:8px;}
+  body.mobile-workspace .mobile-reader[data-mobile-reading="compact"] .facts-context {display:none;}
+  body.mobile-workspace .mobile-reader .facts-identity {margin:6px 0;}
+  body.mobile-workspace .mobile-reader .facts-heading h2 {font-size:19px;line-height:1.5;}
+  body.mobile-workspace .mobile-reader .facts-summary {margin:10px 0;line-height:1.7;}
+  body.mobile-workspace #trajectory-panel {max-height:var(--mobile-sheet-max-height);}
+
+  /* Settings reuse the original controls and their listeners. */
+  body.mobile-workspace #mobile-playback-panel {max-height:min(52dvh,calc(100dvh - 150px - var(--mobile-sheet-bottom)));z-index:65;}
+  body.mobile-workspace .mobile-menu-heading {position:sticky;top:-12px;background:#08172b;padding:4px 0;z-index:1;}
+  body.mobile-workspace .mobile-setting-group {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;grid-column:1/-1;}
+  body.mobile-workspace .mobile-setting-group[hidden] {display:none!important;}
+  body.mobile-workspace .mobile-setting-group [hidden] {display:none!important;}
+  body.mobile-workspace[data-earth-experience="sense"] .mobile-setting-group[data-mobile-settings="scene"] :is(#toggle-labels,#toggle-orbits,.deep-space-toggle) {display:none;}
+  body.mobile-workspace .mobile-setting-group>button,
+  body.mobile-workspace .mobile-setting-group>label {position:static!important;display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;width:auto!important;min-width:0;margin:0;padding:8px;border:1px solid #86bad333;border-radius:8px;background:#132b43;color:#c6e1ec;font-size:13px;}
+  body.mobile-workspace .mobile-setting-group button svg {width:18px;height:18px;}
+  body.mobile-workspace .mobile-setting-group>label {flex-direction:column;}
+  body.mobile-workspace .mobile-setting-group .earth-sense-controls {position:static!important;transform:none!important;width:auto!important;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-column:1/-1;padding:0;border:0;gap:8px;background:none;}
+  body.mobile-workspace .mobile-setting-group .earth-sense-controls[hidden] {display:none;}
+  body.mobile-workspace .mobile-setting-group .earth-sense-controls button {min-height:44px;justify-content:center;background:#132b43;border:1px solid #86bad333;border-radius:8px;}
+  body.mobile-workspace .mobile-special-host {grid-column:1/-1;}
+  body.mobile-workspace .mobile-special-host .special-controls {margin:0;padding:8px;font-size:12px;max-width:none;}
+  body.mobile-workspace .mobile-special-host .special-controls button {min-height:44px;padding:8px 12px;}
+
+  body.mobile-workspace #constellation-explorer .constellation-hero {top:var(--mobile-content-top);left:16px;right:16px;min-height:44px;display:block;}
+  body.mobile-workspace #constellation-explorer .constellation-hero h1 {font-size:24px;margin:4px 0;line-height:1.4;}
+  body.mobile-workspace #constellation-explorer :is(.constellation-eyebrow,.constellation-latin,.constellation-tagline,.constellation-hero-actions) {display:none!important;}
+  body.mobile-workspace #constellation-explorer .constellation-card {padding:4px 8px;}
+  body.mobile-workspace #constellation-explorer .constellation-card-content {padding:0 6px 10px;}
+  body.mobile-workspace #constellation-explorer .constellation-card-identity {margin:4px 0 8px;}
+  body.mobile-workspace #constellation-explorer .constellation-dock:not(.constellation-dock-collapsed) {left:12px;right:12px;width:auto;bottom:var(--mobile-sheet-bottom);padding:6px 10px;}
+  body.mobile-workspace #constellation-explorer .constellation-destination {min-height:90px;}
+  body.mobile-workspace #guide-panel .guide-topbar {top:calc(60px + env(safe-area-inset-top,0px));left:12px;right:12px;width:auto;}
+  body.mobile-workspace #guide-panel #toggle-guide-chapters {display:none;}
+  body.mobile-workspace #guide-panel .guide-topbar::before {content:"科普导览";color:#b9dce9;font-size:13px;}
+  body.mobile-workspace #guide-panel #guide-lesson {padding:4px 10px;bottom:var(--mobile-sheet-bottom);max-height:var(--mobile-sheet-max-height);}
+  body.mobile-workspace #guide-panel #guide-narrate {display:none;}
+  body.mobile-workspace #guide-panel .guide-lesson-heading {padding:0;gap:4px;}
+  body.mobile-workspace #guide-panel .guide-kicker {font-size:11px;}
+  body.mobile-workspace #guide-panel #guide-title {font-size:17px;margin:4px 0 8px;}
+  body.mobile-workspace #guide-panel .guide-chapters {bottom:var(--mobile-sheet-bottom);max-height:var(--mobile-sheet-max-height);}
+  body.mobile-workspace #guide-panel .learning-reading-content {max-height:none;overflow:visible;}
+  body.mobile-workspace.mobile-keyboard-open :is(.destination-dock:not(.dock-collapsed),#earthsense-panel:not([hidden])) {top:var(--mobile-content-top)!important;max-height:none!important;}
+  body.mobile-workspace.mobile-keyboard-open #mobile-scene-bar {display:none;}
+  body.mobile-workspace.mobile-keyboard-open {--mobile-sheet-bottom:calc(var(--mobile-keyboard-inset,0px) + 8px);}
+  body.mobile-workspace:is(.ui-hidden,.clean-view) :is(#mobile-scene-bar,.mobile-reader,#mobile-playback-panel) {display:none!important;}
+}
+@media (max-width:370px) {
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) {width:190px;}
+  body.mobile-workspace.earth-experience-active:not(.guide-active):not(.ui-hidden):not(.clean-view) .object-info {left:208px;}
+  body.mobile-workspace .mobile-read-button {padding-inline:5px;font-size:10px;}
+}
+/* Touch landscape uses a side sheet so the globe keeps its vertical space. */
+@media (max-width:760px) and (max-height:600px) and (orientation:landscape), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) and (orientation:landscape) {
+  body.mobile-workspace {--mobile-content-top:calc(106px + env(safe-area-inset-top,0px));--earth-navigation-bottom:var(--mobile-content-top);}
+  body.mobile-workspace .site-header {height:48px;}
+  body.mobile-workspace .site-header #mode-nav {top:calc(50px + env(safe-area-inset-top,0px));}
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) {top:var(--mobile-content-top);width:204px;}
+  body.mobile-workspace.earth-experience-active:not(.guide-active):not(.ui-hidden):not(.clean-view) .object-info {left:224px;right:auto;width:120px;top:var(--mobile-content-top)!important;}
+  body.mobile-workspace:not(.earth-experience-active).earth-navigation-active .object-info {top:var(--mobile-content-top)!important;left:230px;right:12px;}
+  body.mobile-workspace .mobile-reader:is(#facts-panel,#earthsense-panel,#earth-environment-panel,.moon-phases-panel,.earth-sense-overview,.constellation-card,#guide-lesson),
+  body.mobile-workspace :is(.destination-dock:not(.dock-collapsed),#trajectory-panel:not(.trajectory-panel-collapsed)),
+  body.mobile-workspace #constellation-explorer .constellation-dock:not(.constellation-dock-collapsed),
+  body.mobile-workspace #guide-panel .guide-chapters {
+    left:auto!important;right:12px!important;top:var(--mobile-content-top)!important;bottom:var(--mobile-sheet-bottom)!important;width:310px!important;max-height:none!important;transform:none!important;
+  }
+  body.mobile-workspace .mobile-reader[data-mobile-reading="reading"] {left:12px!important;width:auto!important;}
+  body.mobile-workspace #mobile-tools-panel {top:54px;width:320px;max-height:calc(100dvh - 68px);}
+  body.mobile-workspace #mobile-playback-panel {left:auto;width:320px;max-height:calc(100dvh - 80px);}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) {padding:6px 8px;overflow-y:auto;}
+  body.mobile-workspace .destination-dock .destination-list {min-height:90px;height:90px;flex:none;overflow-y:hidden;padding:4px 0;}
+  body.mobile-workspace .destination-dock .destination-list>button {height:82px;min-height:82px;padding:4px;gap:2px;}
+  body.mobile-workspace .destination-dock .planet-thumb {width:28px;height:28px;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .dock-heading {grid-template-columns:minmax(0,1fr) 64px;gap:4px;margin:0;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .dock-heading>span {grid-column:2;grid-row:2;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .catalog-entry {min-height:44px;font-size:10px;white-space:normal;padding:3px;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .dock-collapse {grid-column:2;grid-row:1;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .dock-tabs {grid-column:1;grid-row:1;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .destination-search {grid-column:1;grid-row:2;}
+}

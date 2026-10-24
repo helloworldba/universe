@@ -1,0 +1,183 @@
+/* Reading windows share one phone drawer. Desktop rules remain untouched. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  body {
+    --mobile-sheet-top-clearance:var(--mobile-content-top,148px);
+    --mobile-sheet-max-height:min(52dvh,calc(100dvh - var(--mobile-sheet-bottom,78px) - var(--mobile-sheet-top-clearance) - 8px));
+  }
+
+  body .explorer #facts-panel:not(.collapsed):not([hidden]),
+  body #earthsense-panel:not([hidden]),
+  body #earth-environment-panel:not([hidden]),
+  body .moon-phases-panel:not([hidden]),
+  body .earth-sense-overview:not([hidden]),
+  body #trajectory-panel:not([hidden]) {
+    position:fixed;
+    top:auto;
+    bottom:var(--mobile-sheet-bottom,78px);
+    left:12px;
+    right:12px;
+    width:auto;
+    max-width:none;
+    max-height:var(--mobile-sheet-max-height);
+    margin:0;
+    transform:none;
+    border-radius:18px;
+    overflow:hidden;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+  }
+  body:not(.guide-active):not(.ui-hidden):not(.clean-view) .explorer #facts-panel:not(.collapsed):not([hidden]),
+  body:not(.guide-active):not(.ui-hidden):not(.clean-view) :is(#earthsense-panel,#earth-environment-panel,.moon-phases-panel):not([hidden]),
+  body:not(.guide-active):not(.ui-hidden):not(.clean-view) :is(.earth-sense-overview,#trajectory-panel):not([hidden]) {
+    display:flex;
+    flex-direction:column;
+  }
+  /* Some existing near-Earth rules carry a longer selector. Keep the shared
+     bottom clearance authoritative without changing their visibility logic. */
+  body.near-earth-scene:not(.guide-active):not(.earthsense-active):not(.earth-environment-active) #facts-panel:not(.collapsed):not([hidden]),
+  body[data-earth-experience="sense"]:is([data-earth-section="overview"],[data-earth-section="continents"],[data-earth-section="places"],[data-earth-section="weather"]) :is(#earthsense-panel,.earth-sense-overview) {
+    bottom:var(--mobile-sheet-bottom,78px);
+    max-height:var(--mobile-sheet-max-height);
+  }
+  body:not(.guide-active):not(.ui-hidden):not(.clean-view) .explorer #facts-panel.collapsed { display:block; }
+  body:has(#facts-panel:not(.collapsed):not([hidden])) .destination-dock { visibility:hidden; pointer-events:none; }
+  body #facts-panel .facts-toolbar,
+  body :is(.earthsense-header,.earth-environment-header,.moon-phases-header,.mobile-sheet-heading) {
+    position:relative;
+    top:auto;
+    flex:0 0 auto;
+    min-height:54px;
+    padding:10px 14px;
+    background:rgba(7,20,41,.98);
+  }
+  body .explorer #facts-panel.collapsed { position:fixed; top:calc(116px + env(safe-area-inset-top,0px)); bottom:auto; right:12px; left:auto; width:46px; max-height:46px; transform:none; }
+  body.mobile-layout.earth-experience-active .explorer #facts-panel.collapsed { top:var(--mobile-content-top); }
+  body .explorer #facts-panel.collapsed .facts-toolbar { min-height:44px; padding:0; }
+  body .explorer #facts-panel.collapsed .facts-toggle { width:44px; height:44px; }
+  body :is(.earthsense-header,.earth-environment-header,.moon-phases-header,.mobile-sheet-heading) h2 {
+    margin:0;
+    font-size:18px;
+    line-height:1.4;
+    letter-spacing:.5px;
+  }
+  body :is(.earthsense-close,.earth-environment-close,.moon-phases-close,.mobile-sheet-close) {
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+    min-height:44px;
+    font-size:24px;
+    border:1px solid rgba(145,197,230,.22);
+    border-radius:8px;
+    background:rgba(24,50,74,.75);
+    color:#c5e1ec;
+  }
+  body #facts-panel .facts-toggle { min-height:44px; font-size:13px; }
+  body #facts-panel .facts-narrate { min-height:44px; font-size:13px; }
+  body #facts-panel .facts-content,
+  body :is(.earthsense-content,.earth-environment-body,.moon-phases-body) {
+    flex:1 1 auto;
+    min-height:0;
+    max-height:none;
+    overflow-x:hidden;
+    overflow-y:auto;
+    overscroll-behavior-y:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:4px 15px 16px;
+    scroll-padding-block:12px;
+  }
+  body :is(.earthsense-tabs,.earthsense-source) { flex-shrink:0; }
+  body .earthsense-source { padding:8px 15px; font-size:12px; line-height:1.6; }
+  body :is(.earthsense-kicker,.earth-environment-kicker,.moon-phases-kicker) { display:none; }
+  body #facts-panel :is(.facts-summary,.facts-sections p,.science-facts),
+  body :is(.earthsense-explanation,.earthsense-row strong,.earthsense-empty,.earthsense-legend,.earthsense-continent-summary,.earthsense-continent-facts,.earthsense-continent-tagline,.earth-environment-intro,.earth-season-description,.earth-time-help,.earth-environment-note,.moon-phases-intro,.moon-view-hint,.moon-phase-explanation,.moon-science-note,.moon-model-note) {
+    font-size:13px;
+    line-height:1.75;
+  }
+  body #facts-panel .facts-summary { font-size:14px; }
+  body #facts-panel :is(.facts-context,.object-stats dt,.facts-extra-stats dt,.facts-sources,.model-note),
+  body :is(.earthsense-row small,.earthsense-status,.earthsense-place-search p,.earthsense-lock-help,.earthsense-surface-help,.earthsense-selected-coordinates,.earthsense-continent-location-note,.earthsense-continent-place small,.earthsense-weather-time,.earthsense-weather-stats dt,.earth-season-hemispheres,.earth-daylength,.earth-time-ticks) {
+    font-size:12px;
+    line-height:1.6;
+  }
+  body #facts-panel :is(.object-stats dd,.facts-extra-stats dd,.facts-sections h3) { font-size:14px; }
+  body .earthsense-row { min-height:58px; padding:11px; }
+  body :is(.earthsense-tabs button,.earthsense-place-search button,.earthsense-map-tools button,.earthsense-selection-actions button,.earthsense-lock,.earthsense-change-place,.earth-guides-toggle,.moon-view-tabs button,.moon-demo-toggle) { min-height:44px; font-size:13px; }
+  body .earthsense-place-search input { min-width:0; min-height:44px; font-size:16px; }
+  body :is(.earthsense-place-search label,.earthsense-continent-option strong,.earthsense-continent-place strong,.earthsense-continent-destinations h4,.earthsense-weather-presets summary) { font-size:13px; line-height:1.6; }
+
+  body .earth-sense-overview { padding:0; }
+  body .earth-overview-heading { flex:0 0 auto; padding:14px 15px 8px; }
+  body .earth-overview-heading>span { display:none; }
+  body .earth-overview-heading h2 { font-size:18px; margin-bottom:6px; }
+  body .earth-overview-heading p { font-size:13px; line-height:1.7; margin:0; }
+  body .earth-overview-entries { flex:1 1 auto; min-height:0; overflow:auto; overscroll-behavior:contain; padding:4px 15px 12px; }
+  body .earth-overview-copy strong { font-size:14px; }
+  body .earth-overview-copy small { font-size:12px; line-height:1.6; }
+  body .earth-overview-note { flex:0 0 auto; margin:0 15px; padding:8px 0 12px; font-size:12px; line-height:1.6; }
+  body #trajectory-panel { padding:0; }
+  body #trajectory-panel .trajectory-panel-heading { margin:0; }
+  body #trajectory-panel .trajectory-panel-caption { flex-direction:column; align-items:flex-start; gap:2px; }
+  body #trajectory-panel .trajectory-panel-caption strong { font-size:15px; }
+  body #trajectory-panel .trajectory-panel-summary { font-size:12px; }
+  body #trajectory-panel .trajectory-panel-content { flex:1 1 auto; min-height:0; overflow:auto; overscroll-behavior:contain; padding:13px 15px; }
+  body #trajectory-panel .special-controls { padding:0; }
+  body #trajectory-panel :is(button,.segmented-control button) { min-height:44px; font-size:13px; }
+  body #trajectory-panel :is(.trajectory-legend,.trajectory-note) { font-size:12px; line-height:1.6; }
+  body .mobile-sheet-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  body .mobile-sheet-heading>strong { font-size:16px; font-weight:500; }
+  body .mobile-sheet-heading .mobile-sheet-close { flex-basis:auto; width:auto; min-width:58px; padding:8px 10px; font-size:13px; }
+
+  /* Native dialogs remain above the scene. Only the reading body scrolls. */
+  body :is(#help-dialog,#source-dialog,#catalog-dialog)[open] {
+    display:flex;
+    flex-direction:column;
+    box-sizing:border-box;
+    width:calc(100vw - 20px);
+    max-width:none;
+    height:calc(100dvh - 20px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+    max-height:calc(100dvh - 20px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+    margin:auto;
+    padding:18px 15px 14px;
+    border-radius:16px;
+    overflow:hidden;
+    overscroll-behavior:contain;
+  }
+  body :is(#help-dialog,#source-dialog)>.dialog-close { position:absolute; top:12px; right:12px; width:44px; height:44px; z-index:2; }
+  body :is(#help-dialog,#source-dialog)>.dialog-eyebrow { flex:0 0 auto; padding-right:46px; margin:0 0 7px; font-size:9px; line-height:1.6; }
+  body :is(#help-dialog,#source-dialog)>h2 { flex:0 0 auto; padding-right:44px; font-size:21px; margin:0 0 9px; }
+  body :is(#help-dialog,#source-dialog)>.dialog-intro { flex:0 0 auto; font-size:13px; line-height:1.65; margin:0 0 14px; }
+  body .mobile-dialog-body { flex:1 1 auto; min-height:0; overflow:auto; overscroll-behavior:contain; padding:0 4px 12px 0; scroll-padding-block:12px; }
+  body #help-dialog .help-grid { grid-template-columns:minmax(0,1fr); gap:18px; }
+  body #help-dialog .help-grid h3,body #source-dialog .source-copy h3 { font-size:15px; line-height:1.6; }
+  body #help-dialog .help-grid p,body #source-dialog .source-copy p { font-size:14px; line-height:1.85; }
+  body #help-dialog .dialog-note { font-size:12px; line-height:1.75; margin-top:20px; }
+  body #source-dialog :is(.source-credits summary,.source-credits pre) { font-size:13px; line-height:1.75; }
+  body #catalog-dialog .catalog-top { flex:0 0 auto; align-items:flex-start; gap:12px; }
+  body #catalog-dialog .catalog-top h2 { font-size:21px; margin:4px 0 6px; }
+  body #catalog-dialog .catalog-top .dialog-eyebrow { font-size:9px; margin:0 0 6px; }
+  body #catalog-dialog .catalog-intro { font-size:13px; margin:0; line-height:1.6; }
+  body #catalog-dialog .catalog-close { width:44px; height:44px; }
+  body #catalog-dialog .catalog-toolbar { flex:0 0 auto; margin:14px 0 9px; }
+  body #catalog-dialog .catalog-toolbar input { font-size:16px; min-height:44px; padding:9px 10px; }
+  body #catalog-dialog .catalog-filters { flex:0 0 auto; margin:0 0 8px; padding-bottom:6px; touch-action:pan-x pinch-zoom; }
+  body #catalog-dialog .catalog-filters button { min-height:44px; font-size:13px; padding:8px 11px; }
+  body #catalog-dialog .catalog-grid { flex:1 1 auto; min-height:0; max-height:none; align-content:start; overflow:auto; overscroll-behavior:contain; }
+  body #catalog-dialog .catalog-card { min-height:88px; padding:12px 9px; }
+  body #catalog-dialog .catalog-card .destination-name { font-size:13px; line-height:1.5; }
+  body #catalog-dialog .catalog-card small { font-size:11px; line-height:1.6; }
+  body #catalog-dialog .catalog-footnote { flex:0 0 auto; margin:9px 0 0; font-size:11px; line-height:1.6; }
+
+  @media (orientation:portrait) {
+    /* Keep a visible globe between the top controls and an expanded reader. */
+    body { --mobile-sheet-max-height:min(48dvh,calc(100dvh - var(--mobile-sheet-bottom,78px) - 324px - env(safe-area-inset-top,0px))); }
+  }
+
+  @media (orientation:landscape) and (max-height:500px) {
+    body { --mobile-sheet-top-clearance:var(--mobile-content-top,76px); }
+    body :is(#help-dialog,#source-dialog,#catalog-dialog)[open] { padding-top:12px; }
+    body :is(#help-dialog,#source-dialog)>.dialog-intro { margin-bottom:8px; }
+    body #catalog-dialog .catalog-intro { display:none; }
+    body #catalog-dialog .catalog-toolbar { margin-top:8px; }
+    body #catalog-dialog .catalog-footnote { font-size:10px; margin-top:5px; }
+  }
+}

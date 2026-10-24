@@ -1,0 +1,415 @@
+{
+  "title": "世界城市、自然地标及中国台湾城市扩充来源",
+  "retrievedAt": "2026-10-21",
+  "scope": "新增 27 处：世界城市 14、世界自然地标 5、中国台湾城市 8。台北沿用既有点并更名为台北市，台湾城市目录共 9 处。",
+  "sources": [
+    {
+      "id": "natural-earth",
+      "name": "Natural Earth · Populated Places",
+      "version": "5.1.2",
+      "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/",
+      "download": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_populated_places.zip",
+      "sha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b",
+      "license": "Public domain · Made with Natural Earth",
+      "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "usage": "仅提取 22 个城市代表点的经纬度；原始地域字段仅保留作溯源，不决定应用分类或行政范围。"
+    },
+    {
+      "id": "unesco",
+      "name": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/",
+      "usage": "仅摘录 5 处世界遗产项目的经纬度事实，十进制度由原 DMS 坐标换算，不复制介绍文章或边界。"
+    }
+  ],
+  "records": [
+    {
+      "id": "tw-newtaipei",
+      "displayName": "新北市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "New Taipei",
+        "NAME_ZH": "新北",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "New Taipei City",
+        "LATITUDE": "25.012778",
+        "LONGITUDE": "121.465000",
+        "WIKIDATAID": "Q244898"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-taoyuan",
+      "displayName": "桃园市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Taoyuan",
+        "NAME_ZH": "桃园区",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Taoyuan",
+        "LATITUDE": "24.988889",
+        "LONGITUDE": "121.311111",
+        "WIKIDATAID": "Q715975"
+      },
+      "note": "Natural Earth 的 Taoyuan 记录位于桃园区，用作桃园市市区代表点，并非整个行政区域中心。"
+    },
+    {
+      "id": "tw-taichung",
+      "displayName": "台中市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Taichung",
+        "NAME_ZH": "台中",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Taichung City",
+        "LATITUDE": "24.152078",
+        "LONGITUDE": "120.681667",
+        "WIKIDATAID": "Q245023"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-tainan",
+      "displayName": "台南市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Tainan",
+        "NAME_ZH": "台南",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Tainan City",
+        "LATITUDE": "23.000003",
+        "LONGITUDE": "120.200043",
+        "WIKIDATAID": "Q140631"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-kaohsiung",
+      "displayName": "高雄市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Kaohsiung",
+        "NAME_ZH": "高雄",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Kaohsiung City",
+        "LATITUDE": "22.633307",
+        "LONGITUDE": "120.266602",
+        "WIKIDATAID": "Q181557"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-keelung",
+      "displayName": "基隆市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Keelung",
+        "NAME_ZH": "基隆",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Keelung City",
+        "LATITUDE": "25.133258",
+        "LONGITUDE": "121.733282",
+        "WIKIDATAID": "Q249996"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-hsinchu",
+      "displayName": "新竹市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Hsinchu",
+        "NAME_ZH": "新竹",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Hsinchu City",
+        "LATITUDE": "24.816791",
+        "LONGITUDE": "120.976740",
+        "WIKIDATAID": "Q249994"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "tw-chiayi",
+      "displayName": "嘉义市",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Chiayi",
+        "NAME_ZH": "嘉义",
+        "ADM0NAME": "Taiwan",
+        "ADM1NAME": "Chiayi City",
+        "LATITUDE": "23.475452",
+        "LONGITUDE": "120.435067",
+        "WIKIDATAID": "Q249995"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "osaka",
+      "displayName": "大阪",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Ōsaka",
+        "NAME_ZH": "大阪",
+        "ADM0NAME": "Japan",
+        "ADM1NAME": "Osaka",
+        "LATITUDE": "34.751981",
+        "LONGITUDE": "135.458199",
+        "WIKIDATAID": "Q35765"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "kyoto",
+      "displayName": "京都",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Kyoto",
+        "NAME_ZH": "京都",
+        "ADM0NAME": "Japan",
+        "ADM1NAME": "Kyoto",
+        "LATITUDE": "35.031938",
+        "LONGITUDE": "135.748052",
+        "WIKIDATAID": "Q34600"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "jakarta",
+      "displayName": "雅加达",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Jakarta",
+        "NAME_ZH": "雅加达",
+        "ADM0NAME": "Indonesia",
+        "ADM1NAME": "Jakarta Raya",
+        "LATITUDE": "-6.172472",
+        "LONGITUDE": "106.827492",
+        "WIKIDATAID": "Q3630"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "kualalumpur",
+      "displayName": "吉隆坡",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Kuala Lumpur",
+        "NAME_ZH": "吉隆坡",
+        "ADM0NAME": "Malaysia",
+        "ADM1NAME": "Selangor",
+        "LATITUDE": "3.168612",
+        "LONGITUDE": "101.698037",
+        "WIKIDATAID": "Q1865"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "hanoi",
+      "displayName": "河内",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Hanoi",
+        "NAME_ZH": "河内",
+        "ADM0NAME": "Vietnam",
+        "ADM1NAME": "Thái Nguyên",
+        "LATITUDE": "21.035273",
+        "LONGITUDE": "105.848068",
+        "WIKIDATAID": "Q1858"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "kathmandu",
+      "displayName": "加德满都",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Kathmandu",
+        "NAME_ZH": "加德满都",
+        "ADM0NAME": "Nepal",
+        "ADM1NAME": "Bhaktapur",
+        "LATITUDE": "27.718638",
+        "LONGITUDE": "85.314696",
+        "WIKIDATAID": "Q3037"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "istanbul",
+      "displayName": "伊斯坦布尔",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Istanbul",
+        "NAME_ZH": "伊斯坦布尔",
+        "ADM0NAME": "Turkey",
+        "ADM1NAME": "Istanbul",
+        "LATITUDE": "41.106942",
+        "LONGITUDE": "29.008056",
+        "WIKIDATAID": "Q406"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "athens",
+      "displayName": "雅典",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Athens",
+        "NAME_ZH": "雅典",
+        "ADM0NAME": "Greece",
+        "ADM1NAME": "Attiki",
+        "LATITUDE": "37.985272",
+        "LONGITUDE": "23.731375",
+        "WIKIDATAID": "Q1524"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "madrid",
+      "displayName": "马德里",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Madrid",
+        "NAME_ZH": "马德里",
+        "ADM0NAME": "Spain",
+        "ADM1NAME": "Comunidad de Madrid",
+        "LATITUDE": "40.401972",
+        "LONGITUDE": "-3.685298",
+        "WIKIDATAID": "Q2807"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "amsterdam",
+      "displayName": "阿姆斯特丹",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Amsterdam",
+        "NAME_ZH": "阿姆斯特丹",
+        "ADM0NAME": "Netherlands",
+        "ADM1NAME": "Noord-Holland",
+        "LATITUDE": "52.351915",
+        "LONGITUDE": "4.914694",
+        "WIKIDATAID": "Q727"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "vancouver",
+      "displayName": "温哥华",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Vancouver",
+        "NAME_ZH": "温哥华",
+        "ADM0NAME": "Canada",
+        "ADM1NAME": "British Columbia",
+        "LATITUDE": "49.275362",
+        "LONGITUDE": "-123.123590",
+        "WIKIDATAID": "Q24639"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "washingtondc",
+      "displayName": "华盛顿",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Washington,  D.C.",
+        "NAME_ZH": "华盛顿哥伦比亚特区",
+        "ADM0NAME": "United States of America",
+        "ADM1NAME": "District of Columbia",
+        "LATITUDE": "38.901495",
+        "LONGITUDE": "-77.011364",
+        "WIKIDATAID": "Q61"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "santiago",
+      "displayName": "圣地亚哥",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Santiago",
+        "NAME_ZH": "圣地亚哥",
+        "ADM0NAME": "Chile",
+        "ADM1NAME": "Región Metropolitana de Santiago",
+        "LATITUDE": "-33.448068",
+        "LONGITUDE": "-70.668987",
+        "WIKIDATAID": "Q2887"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "wellington",
+      "displayName": "惠灵顿",
+      "source": "natural-earth",
+      "original": {
+        "NAME": "Wellington",
+        "NAME_ZH": "惠灵顿",
+        "ADM0NAME": "New Zealand",
+        "ADM1NAME": "Manawatu-Wanganui",
+        "LATITUDE": "-41.299988",
+        "LONGITUDE": "174.783266",
+        "WIKIDATAID": "Q23661"
+      },
+      "note": "城市代表点，并非行政边界。"
+    },
+    {
+      "id": "grandcanyon",
+      "displayName": "科罗拉多大峡谷",
+      "source": "unesco",
+      "url": "https://whc.unesco.org/en/list/75/",
+      "originalCoordinate": "N36 6 3 W112 5 26",
+      "lat": 36.100833,
+      "lon": -112.090556,
+      "note": "UNESCO 世界遗产区代表点，并非景区边界或具体游览位置。"
+    },
+    {
+      "id": "yellowstone",
+      "displayName": "黄石公园",
+      "source": "unesco",
+      "url": "https://whc.unesco.org/en/list/28/",
+      "originalCoordinate": "N44 27 38.016 W110 49 40.008",
+      "lat": 44.46056,
+      "lon": -110.82778,
+      "note": "UNESCO 世界遗产区代表点，并非景区边界或具体游览位置。"
+    },
+    {
+      "id": "iguazu",
+      "displayName": "伊瓜苏瀑布",
+      "source": "unesco",
+      "url": "https://whc.unesco.org/en/list/303/",
+      "originalCoordinate": "S25 34 38.485 W54 17 9.863",
+      "lat": -25.577357,
+      "lon": -54.286073,
+      "note": "采用阿根廷伊瓜苏国家公园的世界遗产区代表点，并非瀑布本体的精确位置。"
+    },
+    {
+      "id": "serengeti",
+      "displayName": "塞伦盖蒂",
+      "source": "unesco",
+      "url": "https://whc.unesco.org/en/list/156/",
+      "originalCoordinate": "S2 44 24 E34 51 32.4",
+      "lat": -2.74,
+      "lon": 34.859,
+      "note": "UNESCO 世界遗产区代表点，并非景区边界或具体游览位置。"
+    },
+    {
+      "id": "galapagos",
+      "displayName": "加拉帕戈斯群岛",
+      "source": "unesco",
+      "url": "https://whc.unesco.org/en/list/1/",
+      "originalCoordinate": "N0 41 23.496 W90 30 4.748",
+      "lat": 0.68986,
+      "lon": -90.501319,
+      "note": "UNESCO 世界遗产区代表点，并非景区边界或具体游览位置。"
+    }
+  ],
+  "retainedTaipei": {
+    "id": "taiwan",
+    "displayName": "台北市",
+    "lat": 25.038,
+    "lon": 121.514,
+    "source": "original",
+    "note": "保留原台北代表点 ID 与坐标；未改用 Natural Earth 的台北点。原项目参考 https://scweb.cwa.gov.tw/zh-tw/pws/info_d/6 。"
+  },
+  "organization": "世界城市与自然地标按地理大洲浏览。跨洲城市按所选代表点归组。格林尼治、赤道与本初子午线交点单列为地理参考点。"
+}

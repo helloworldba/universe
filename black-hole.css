@@ -1,0 +1,148 @@
+body.blackholes-active :is(#label-layer,.object-info,.facts-panel,.destination-dock,.cosmic-breadcrumb,.scene-caption,.playback-controls,.gesture-hint,#solar-quick-actions,.earth-navigation,.solar-navigation,.earth-sense-controls,.deep-space-toggle) {display:none!important;}
+.black-hole-explorer {position:fixed;inset:0;z-index:5;pointer-events:none;color:#dce8f4;}
+.black-hole-explorer[hidden],.black-hole-explorer [hidden],.black-hole-labels[hidden],.black-hole-labels [hidden] {display:none!important;}
+body:is(.ui-hidden,.clean-view,.guide-active) :is(.black-hole-explorer,.black-hole-labels) {visibility:hidden;}
+.black-hole-explorer :is(button,summary) {cursor:pointer;font:inherit;}
+.black-hole-explorer button {border:1px solid #8cc3df30;color:#bed4e3;background:#102237b3;border-radius:8px;padding:9px 13px;font-size:12px;min-height:34px;}
+.black-hole-explorer button:hover {border-color:#f6bb7066;background:#29415399;}
+.black-hole-explorer button[aria-pressed="true"] {color:#ffdfae;border-color:#eeb46b8c;background:#77532d38;}
+.black-hole-explorer button:disabled {opacity:.38;cursor:default;}
+.black-hole-explorer :focus-visible {outline:2px solid #f6c886;outline-offset:3px;}
+.black-hole-hero {position:fixed;left:2.5%;top:25%;width:195px;pointer-events:auto;}
+.black-hole-eyebrow {font-size:10px;letter-spacing:3px;color:#bba383;}
+.black-hole-hero h1 {font-size:64px;letter-spacing:7px;font-weight:350;line-height:1.25;margin:26px 0 10px;}
+.black-hole-english {font-size:11px;letter-spacing:5px;color:#8c9fb5;}
+.black-hole-intro {color:#91a9bd;line-height:1.9;font-size:12px;margin:30px 0 22px;}
+.black-hole-topics {display:grid;gap:8px;}
+.black-hole-topics button {display:flex;align-items:center;justify-content:space-between;min-height:43px;text-align:left;}
+.black-hole-topics button span {color:#8aa8bc;}
+.black-hole-topics .black-hole-video-entry {justify-content:flex-start;gap:8px;min-height:43px;padding:9px 13px;border:1px solid #8cc3df30;border-radius:8px;color:#bed4e3;background:#102237b3;font-size:12px;}
+.black-hole-topics .black-hole-video-entry:hover {border-color:#f6bb7066;background:#29415399;}
+.black-hole-topics .black-hole-video-entry span {color:inherit;}
+.black-hole-card {position:fixed;right:2.2%;top:140px;bottom:235px;width:clamp(265px,19vw,340px);pointer-events:auto;border:1px solid #759dc83d;border-radius:20px;background:linear-gradient(145deg,#0a1830f2,#050e1ef5);backdrop-filter:blur(18px);display:flex;flex-direction:column;overflow:hidden;}
+.black-hole-card-toolbar {display:flex;align-items:center;justify-content:space-between;padding:14px 16px;gap:8px;flex:none;}
+.black-hole-card-toolbar button {font-size:11px;padding:7px 10px;white-space:nowrap;}
+#toggle-black-hole-card {border:0;background:transparent;padding:5px 0;color:#92b5c9;}
+#black-hole-narrate {border-radius:30px;}
+#black-hole-read {display:none;}
+.black-hole-card.is-collapsed {bottom:auto;}
+#black-hole-card-content {min-height:0;overflow:auto;overscroll-behavior:contain;padding:2px 20px 20px;scrollbar-width:thin;scrollbar-color:#325471 transparent;}
+.black-hole-context {color:#dfa861;font-size:10px;letter-spacing:1px;margin:12px 0 9px;}
+#black-hole-card-content h2 {font-size:28px;line-height:1.35;margin:0 0 7px;font-weight:550;}
+.black-hole-latin {font-size:9px;letter-spacing:2px;color:#849ab0;margin:0;}
+#black-hole-card-content p {line-height:1.85;}
+.black-hole-summary {font-size:13px;color:#ccd7e3;margin:22px 0;}
+.black-hole-facts {display:grid;grid-template-columns:1fr;gap:16px;border-block:1px solid #96bbdb1a;padding:19px 0;margin:0 0 22px;}
+.black-hole-facts small {display:block;color:#829ab1;font-size:10px;margin-bottom:6px;}
+.black-hole-facts strong {font-size:14px;font-weight:500;}
+.black-hole-section-title {color:#e6bc87!important;font-size:13px!important;letter-spacing:1px;margin:0 0 18px!important;}
+#black-hole-card-content section {margin-bottom:20px;}
+#black-hole-card-content section h3 {color:#a8d4e7;font-size:12px;margin:0 0 6px;font-weight:500;}
+#black-hole-card-content section p {font-size:12px;color:#a1b4c6;margin:0;}
+.black-hole-model-note {border-top:1px solid #92bad324;padding-top:15px;font-size:10px;color:#8096ac;}
+.black-hole-sources {font-size:10px;color:#91a7bb;border-top:1px solid #92bad324;padding-top:12px;}
+.black-hole-sources summary {padding:6px 0;}
+.black-hole-sources span {display:block;overflow-wrap:anywhere;color:#718a9c;}
+.black-hole-caption {position:fixed;left:50%;bottom:240px;transform:translateX(-50%);text-align:center;pointer-events:none;}
+.black-hole-caption strong {font-size:16px;font-weight:400;letter-spacing:2px;color:#e6d7c2;display:block;margin-bottom:8px;}
+.black-hole-caption span {font-size:10px;white-space:nowrap;color:#889cae;}
+.black-hole-dock {position:fixed;left:9%;right:9%;bottom:70px;padding:13px 18px;border:1px solid #89acc62b;border-radius:17px;background:linear-gradient(115deg,#0d1c30ed,#06111eed);backdrop-filter:blur(18px);pointer-events:auto;}
+.black-hole-dock-heading {display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#b6cbd7;margin-bottom:8px;}
+.black-hole-dock-heading small {font-size:10px;color:#69899d;margin-left:12px;}
+#black-hole-dock-toggle {font-size:11px;padding:6px 11px;}
+.black-hole-dock.is-collapsed {padding-block:8px;}
+.black-hole-dock.is-collapsed .black-hole-dock-heading {margin:0;}
+.black-hole-dock-folded .black-hole-caption {bottom:145px;}
+#black-hole-destinations {display:flex;gap:10px;overflow-x:auto;padding:2px 0;scrollbar-width:thin;scrollbar-color:#536f85 transparent;}
+#black-hole-destinations button {flex:0 0 146px;min-height:94px;padding:9px 12px;display:flex;flex-direction:column;align-items:center;gap:5px;background:transparent;border-color:transparent;}
+#black-hole-destinations button[aria-pressed="true"] {border-color:#dfa86166;background:#77532d26;}
+#black-hole-destinations strong {font-size:12px;font-weight:400;}
+#black-hole-destinations small {font-size:9px;color:#809aac;}
+.black-hole-thumb {display:block;width:45px;height:32px;position:relative;background:radial-gradient(ellipse at center,#010409 25%,#f7d09b 29%,#df914a 33%,#8f4d1d22 53%,transparent 70%);transform:rotate(-13deg);}
+.black-hole-thumb::after {content:"";position:absolute;inset:4px 11px;border:1px solid #efb87c7a;border-radius:50%;box-shadow:0 0 7px #ffa95255;}
+.black-hole-compare-thumb {background:radial-gradient(circle at 20% 70%,#000 3px,#e4b782 4px,transparent 5px),radial-gradient(circle at 50% 60%,#000 6px,#e4b782 7px,transparent 8px),radial-gradient(circle at 85% 50%,#000 9px,#e4b782 10px,transparent 11px);transform:none;}
+.black-hole-compare-thumb::after {display:none;}
+.black-hole-controls {position:fixed;bottom:15px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:5px;border:1px solid #8ab5d22b;border-radius:9px;pointer-events:auto;background:#081522e8;}
+.black-hole-controls button {border:0;padding:7px 13px;}
+.black-hole-comparison-values>div {margin:17px 0;}
+.black-hole-comparison-values strong {font-size:13px;font-weight:500;}
+.black-hole-comparison-values span {display:block;color:#e5bd87;font-size:12px;margin:5px 0;}
+.black-hole-comparison-values small {display:block;font-size:10px;color:#8da5bb;}
+.black-hole-comparison-values i {display:block;width:var(--value);height:3px;margin-top:10px;border-radius:2px;background:linear-gradient(90deg,#b6763f,#f5dba7);}
+.black-hole-labels {position:fixed;inset:0;pointer-events:none;z-index:4;}
+.black-hole-labels span {position:absolute;top:0;left:0;max-width:150px;white-space:nowrap;padding:6px 9px;color:#f7d7a7;border:1px solid #d5a26855;border-radius:7px;background:#08121de3;font-size:11px;}
+@media(min-width:761px){
+  body.blackholes-active .view-tools {position:fixed;top:48%;bottom:auto;right:calc(2.2vw + clamp(265px,19vw,340px) + 18px)!important;}
+}
+@media(min-width:761px) and (max-width:1350px){
+  body.blackholes-active .black-hole-hero {width:160px;left:2%;}
+  .black-hole-card {width:245px;right:2%;top:160px;}
+  .black-hole-hero h1 {font-size:52px;}
+  body.blackholes-active .view-tools {right:calc(2vw + 263px)!important;}
+}
+@media(min-width:761px) and (max-height:730px){
+  .black-hole-card {top:125px;bottom:200px;}
+  .black-hole-hero {top:18%;}
+  .black-hole-hero h1 {font-size:45px;margin:8px 0 4px;}
+  .black-hole-intro {margin:10px 0;}
+  .black-hole-dock {bottom:65px;}
+  #black-hole-destinations button {min-height:70px;padding-block:4px;}
+  #black-hole-destinations small {display:none;}
+  .black-hole-caption {bottom:215px;}
+}
+@media(min-width:761px) and (max-height:650px){
+  .black-hole-hero {top:110px;}
+  .black-hole-eyebrow,.black-hole-english {display:none;}
+}
+@media(max-width:760px),(max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse){
+  body.blackholes-active .black-hole-hero {left:16px;right:16px;width:auto;top:var(--mobile-content-top,116px);}
+  .black-hole-hero h1 {font-size:23px;line-height:1.4;letter-spacing:2px;margin:0 0 9px;}
+  .black-hole-eyebrow,.black-hole-english,.black-hole-intro {display:none;}
+  .black-hole-topics {display:flex;gap:6px;}
+  .black-hole-topics button {flex:1;min-height:40px;font-size:12px;padding:6px 8px;justify-content:center;}
+  .black-hole-topics button span {display:none;}
+  .black-hole-topics .black-hole-video-entry {justify-content:center;gap:5px;min-height:44px;padding:6px;}
+  .black-hole-topics .black-hole-video-entry span {display:inline;}
+  .black-hole-card {left:12px;right:12px;top:auto;bottom:var(--mobile-sheet-bottom,75px);width:auto;max-height:min(40dvh,calc(100dvh - 320px));border-radius:16px;z-index:42;}
+  .black-hole-card.is-collapsed {display:none;}
+  .black-hole-card-toolbar {padding:5px 10px;min-height:48px;}
+  .black-hole-card-toolbar button {min-height:40px;font-size:12px;}
+  #black-hole-narrate {display:none;}
+  #black-hole-read {display:block;}
+  .black-hole-card.is-reading {top:var(--mobile-content-top,116px);max-height:none;box-shadow:0 0 0 100vmax #030914aa;background:#08172b;}
+  #black-hole-card-content {padding:0 15px 18px;}
+  #black-hole-card-content h2 {font-size:23px;}
+  .black-hole-summary {margin:12px 0;}
+  .black-hole-dock {left:12px;right:12px;bottom:var(--mobile-sheet-bottom,75px);padding:7px 10px;border-radius:16px;max-height:34dvh;z-index:43;}
+  .black-hole-dock.is-collapsed {display:none;}
+  .black-hole-dock-heading {margin-bottom:4px;}
+  .black-hole-dock-heading small {display:none;}
+  #black-hole-dock-toggle {min-height:44px;}
+  #black-hole-destinations {gap:5px;}
+  #black-hole-destinations button {flex-basis:98px;min-height:92px;}
+  #black-hole-destinations small {display:none;}
+  .black-hole-controls {display:none;}
+  .black-hole-explorer .black-hole-caption {left:50%;bottom:calc(var(--mobile-sheet-bottom,75px) + 8px);width:95%;}
+  .black-hole-caption strong {font-size:14px;}
+  .black-hole-caption span {font-size:9px;}
+  .black-hole-explorer:has(.black-hole-card:not(.is-collapsed),.black-hole-dock:not(.is-collapsed)) .black-hole-caption {display:none;}
+  .black-hole-labels span {max-width:90px;padding:5px;font-size:10px;}
+  body.blackholes-active .view-tools {display:flex!important;}
+  body.blackholes-active:has(.black-hole-card:not(.is-collapsed),.black-hole-dock:not(.is-collapsed)) .view-tools {display:none!important;}
+}
+@media(max-width:760px) and (max-height:600px) and (orientation:landscape),(max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) and (orientation:landscape){
+  body.blackholes-active .black-hole-hero {display:flex;align-items:center;gap:14px;}
+  .black-hole-hero h1 {font-size:20px;margin:0;white-space:nowrap;}
+  .black-hole-topics {width:330px;}
+  .black-hole-topics button {min-height:36px;}
+  .black-hole-explorer .black-hole-caption {display:none;}
+  .black-hole-card,.black-hole-dock {left:auto;right:12px;top:calc(var(--mobile-content-top,106px) + 44px);bottom:var(--mobile-sheet-bottom,75px);width:280px;max-height:none;}
+  .black-hole-dock {overflow-y:auto;}
+  .black-hole-card.is-reading {left:12px;right:12px;width:auto;top:var(--mobile-content-top,106px);}
+}
+
+.black-hole-dock-actions {display:flex;align-items:center;gap:8px;}
+.black-hole-links {display:flex;gap:6px;min-width:0;}
+.black-hole-topics .black-hole-links button {flex:1;min-width:0;white-space:nowrap;font-size:11px;padding-inline:6px;}
+#black-hole-catalog {font-size:11px;padding:6px 11px;}
+@media(max-width:760px){.black-hole-topics{overflow-x:auto;scrollbar-width:thin;}.black-hole-links{display:contents;}.black-hole-topics button,.black-hole-topics .black-hole-links button{flex:0 0 auto;}#black-hole-catalog{min-height:44px;}}

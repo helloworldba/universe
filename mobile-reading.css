@@ -1,0 +1,341 @@
+/* Phone presentation only. Light controls, bounded selection, opt-in reading. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  body.mobile-workspace {
+    --mobile-content-top:calc(92px + env(safe-area-inset-top,0px));
+    --earth-navigation-bottom:calc(var(--mobile-content-top) + 44px);
+    --mobile-bar-height:48px;
+    --mobile-control-height:40px;
+    --mobile-control-padding-y:6px;
+    --mobile-control-line-height:18px;
+    --mobile-control-font-size:12px;
+    --mobile-sheet-bottom:calc(var(--mobile-bar-bottom) + 56px);
+    --ui-surface-line:rgba(115,210,255,.22);
+    --ui-surface-shadow:0 8px 24px #0003;
+  }
+  /* Use the existing paint tokens, without touching the models or desktop. */
+  body.mobile-workspace :is(.site-header,.display-tools,.earth-navigation,.solar-navigation,.earth-mode-features,.mobile-scene-bar,.mobile-menu,.mobile-reader,.destination-dock,.black-hole-dock,.black-hole-topics,.black-hole-card,.constellation-dock,.constellation-card,.constellation-library,.catalog-dialog,.guide-topbar,.guide-chapters,.view-tools) button {
+    --ui-button-radius:6px;
+    --ui-button-fill:rgba(5,18,36,.36);
+    --ui-button-line:rgba(123,209,255,.19);
+    --ui-button-shadow:none;
+  }
+  body.mobile-workspace :is(.site-header,.display-tools,.earth-navigation,.solar-navigation,.earth-mode-features,.mobile-scene-bar,.mobile-menu,.mobile-reader,.destination-dock,.black-hole-dock,.black-hole-topics,.black-hole-card,.constellation-dock,.constellation-card,.constellation-library,.catalog-dialog,.guide-topbar,.guide-chapters,.view-tools) button:is([aria-pressed="true"],[aria-selected="true"],[aria-expanded="true"],.active,[aria-current="step"]) {
+    --ui-button-fill:color-mix(in srgb,var(--ui-surface-accent) 12%,#09182c);
+    --ui-button-line:color-mix(in srgb,var(--ui-surface-accent) 48%,transparent);
+    --ui-button-shadow:none;
+  }
+  body.mobile-workspace button:focus-visible {outline:2px solid #9ddfeb;outline-offset:1px;}
+  /* Keep the startup video's focused close control clear of the phone edge. */
+  body.mobile-workspace #close-cinema {
+    margin-inline-end:8px;border:1px solid;outline:none;
+    --ui-button-line:rgba(123,209,255,.28);--ui-button-shadow:none;
+  }
+  /* Match the near-Earth navigation card on the scene shortcuts. */
+  body.mobile-workspace :is(#solar-quick-actions button,#open-constellation-library,.mobile-scene-shortcut) {
+    background:linear-gradient(135deg,rgba(7,23,50,.80),rgba(4,10,29,.74))!important;
+    border:1px solid var(--ui-surface-line)!important;border-radius:8px!important;
+    box-shadow:none!important;backdrop-filter:blur(14px);
+  }
+  /* Reuse the desktop actions and their handlers beside these phone titles. */
+  body.mobile-workspace:not(.guide-active) .object-info .object-navigation.has-mobile-shortcut {
+    display:flex!important;position:absolute;top:0;right:-4px;margin:0;width:auto;gap:0;
+  }
+  body.mobile-workspace .object-navigation.has-mobile-shortcut>button:not(.mobile-scene-shortcut) {display:none;}
+  body.mobile-workspace .object-navigation .mobile-scene-shortcut {
+    display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+    min-width:100px;min-height:var(--mobile-control-height);padding:6px 12px;
+    font-size:var(--mobile-control-font-size);line-height:var(--mobile-control-line-height);
+    white-space:nowrap;pointer-events:auto;
+  }
+  body.mobile-workspace:is([data-destination="galaxy"],[data-destination="sagittarius-a"]) #info-title {
+    display:flex;align-items:center;min-height:var(--mobile-control-height);max-width:calc(100% - 112px);
+  }
+  body.mobile-workspace .site-header {height:calc(44px + env(safe-area-inset-top,0px));}
+  body.mobile-workspace .display-tools {top:env(safe-area-inset-top,0px);gap:2px;}
+  body.mobile-workspace .display-tools .music-button {width:88px;gap:4px;padding-inline:6px;}
+  body.mobile-workspace .display-tools :is(.music-button,#mobile-tools-toggle) {border:0;--ui-button-fill:transparent;--ui-button-shadow:none;}
+  body.mobile-workspace .display-tools .music-button svg {width:17px;height:17px;}
+  body.mobile-workspace #mobile-tools-toggle {font-size:12px;padding-inline:8px;}
+  body.mobile-workspace .site-header #mode-nav {top:calc(44px + env(safe-area-inset-top,0px));padding:1px 2px;gap:0;}
+  body.mobile-workspace #mode-nav button {min-height:40px;padding:6px 7px;--ui-button-fill:transparent;--ui-button-line:transparent;}
+  body.mobile-workspace :is(#mode-nav,.earth-navigation,.solar-navigation,.zoom-tools,#mobile-scene-bar) {box-shadow:none!important;}
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) {padding:1px 2px;}
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) button {min-height:36px;padding-block:4px;}
+  body.mobile-workspace #mobile-features-toggle {min-height:40px;padding:4px 8px;}
+  body.mobile-workspace.mobile-features-open .earth-mode-features:not([hidden]) {top:calc(var(--mobile-content-top) + 46px);}
+  body.mobile-workspace:not(.earth-experience-active):is(.earth-navigation-active,.solar-navigation-active) .object-info {top:calc(var(--mobile-content-top) + 46px)!important;}
+  body.mobile-workspace .black-hole-topics {gap:6px;margin-top:4px;padding-block:5px;overflow-y:hidden;scrollbar-width:none;}
+  body.mobile-workspace .black-hole-topics::-webkit-scrollbar {display:none;}
+  body.mobile-workspace .black-hole-topics button {position:relative;min-height:34px;padding:4px 6px;}
+  body.mobile-workspace .black-hole-topics button::before {content:"";position:absolute;inset:-5px 0;}
+  body.mobile-workspace .black-hole-hero {display:flex;flex-direction:column;align-items:stretch;gap:0;}
+  body.mobile-workspace .black-hole-hero h1 {order:2;margin:6px 0 0;}
+  body.mobile-workspace .black-hole-topics {order:1;flex:none;width:100%;margin-top:0;}
+  body.mobile-workspace .black-hole-links {display:contents;}
+  body.mobile-workspace .black-hole-video-entry {order:-1;}
+  body.mobile-workspace #trajectory-panel .trajectory-view-actions {width:100%;margin-left:0;justify-content:space-between;}
+  body.mobile-workspace[data-destination="trajectories"] .destination-dock {display:none!important;}
+  body.mobile-workspace #mobile-scene-bar {height:48px;padding:1px 3px;border-radius:10px;}
+  body.mobile-workspace .mobile-scene-action {padding:4px 2px;--ui-button-fill:transparent;}
+  body.mobile-workspace .view-tools .zoom-tools {padding:1px;}
+  body.mobile-workspace .view-tools button {--ui-button-fill:transparent;}
+  body.mobile-workspace .mobile-menu {padding:8px 10px;}
+  body.mobile-workspace .mobile-menu-heading {margin-bottom:2px;padding:0;}
+  body.mobile-workspace .mobile-menu-heading strong {font-size:13px;}
+  body.mobile-workspace .mobile-menu-heading .mobile-menu-close {--ui-button-fill:transparent;--ui-button-line:transparent;font-size:22px;}
+  body.mobile-workspace :is(.mobile-menu-items,.mobile-setting-group) {gap:6px;}
+  body.mobile-workspace .mobile-menu-items>button {min-height:44px;padding:6px;}
+  body.mobile-workspace .mobile-menu-items>button>span {font-size:12px;}
+  /* Compact choices share the text-control row; native inputs keep their sizing. */
+  body.mobile-workspace .mobile-menu-items>.mobile-quality-setting {height:44px;min-height:44px;padding:0;gap:0;justify-content:center;}
+  body.mobile-workspace .mobile-quality-setting .quality-select {height:42px;min-height:42px;padding:5px 8px;background:transparent;}
+  body.mobile-workspace .mobile-setting-group>.speed-control {height:44px;min-height:44px;flex-direction:row;justify-content:space-between;padding:0 7px;gap:4px;background:rgba(5,18,36,.36);}
+  body.mobile-workspace .speed-control>.mobile-setting-label {flex:none;font-size:12px;white-space:nowrap;}
+  body.mobile-workspace .mobile-setting-group .speed-control select {flex:1;min-width:0;max-width:76px;width:auto;min-height:42px;height:42px;padding:4px 2px;background:transparent;}
+  body.mobile-workspace #constellation-explorer .constellation-library-entry {top:4px;min-height:32px;height:32px;width:auto;padding:4px 7px;gap:5px;border:0;--ui-button-fill:rgba(5,18,36,.3);--ui-button-line:transparent;--ui-button-shadow:none;}
+  body.mobile-workspace #constellation-explorer .constellation-library-entry::before {content:"";position:absolute;inset:-6px 0;}
+  body.mobile-workspace #constellation-explorer .constellation-library-entry svg {width:13px!important;height:13px!important;}
+  body.mobile-workspace #guide-panel .guide-topbar {top:calc(44px + env(safe-area-inset-top,0px));min-height:44px;padding:1px 6px;}
+  body.mobile-workspace #guide-panel #exit-guide {min-height:40px;padding:5px 8px;}
+  body.mobile-workspace #guide-panel .guide-chapters {gap:5px;padding:8px;}
+  body.mobile-workspace #guide-panel .guide-chapters button {min-height:44px;padding:6px;margin:0;}
+
+  body.mobile-workspace :is(.destination-dock:not(.dock-collapsed),.constellation-dock:not(.constellation-dock-collapsed),.black-hole-dock:not(.is-collapsed)) {
+    display:flex;flex-direction:column;overflow:hidden;
+    max-height:min(38dvh,calc(100dvh - 260px - var(--mobile-sheet-bottom)));
+    padding:4px 8px 8px;
+  }
+  body.mobile-workspace :is(.dock-heading,.constellation-dock-heading,.black-hole-dock-heading) {flex:none;}
+  body.mobile-workspace :is(.dock-scroll-controls,.constellation-dock-arrow) {display:none!important;}
+  body.mobile-workspace .destination-dock .destination-list,
+  body.mobile-workspace #constellation-explorer .constellation-dock-list,
+  body.mobile-workspace #black-hole-destinations {
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:82px;
+    align-content:start;gap:6px;flex:1 1 auto;min-height:0;height:auto;max-height:none;
+    width:100%;padding:4px 0;overflow-x:hidden;overflow-y:auto;
+    scroll-snap-type:none;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;
+    scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;
+  }
+  body.mobile-workspace .destination-dock .destination-list>button,
+  body.mobile-workspace #constellation-explorer .constellation-destination,
+  body.mobile-workspace #black-hole-destinations>button {
+    width:100%;min-width:0;max-width:none;height:82px;min-height:82px;
+    margin:0;padding:5px 6px;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:3px;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;
+  }
+  body.mobile-workspace .destination-dock .destination-name {font-size:12px;line-height:16px;min-height:0;}
+  /* Center the visible portrait and caption, without an empty second text line. */
+  body.mobile-workspace .destination-dock .destination-list>button>span:last-child {flex:none;align-self:center;text-align:center;}
+  body.mobile-workspace #black-hole-destinations strong {font-size:12px;line-height:17px;white-space:normal;}
+  body.mobile-workspace #black-hole-destinations small {display:block;font-size:10px;line-height:14px;}
+  body.mobile-workspace .destination-dock .planet-thumb {width:28px;height:28px;}
+  body.mobile-workspace #constellation-explorer .constellation-mini-map {width:76px;height:32px;flex:none;}
+  body.mobile-workspace .destination-list>.search-empty {grid-column:1/-1;}
+  body.mobile-workspace .destination-dock:not(.dock-collapsed) .destination-search {min-height:38px;padding:0 7px;}
+  body.mobile-workspace .destination-dock .destination-search input {height:36px;min-height:36px;padding-block:4px;}
+  body.mobile-workspace .destination-dock .dock-tabs button {min-height:36px;padding-block:4px;}
+  body.mobile-workspace #catalog-dialog {--catalog-card-height:116px;}
+  body.mobile-workspace #catalog-dialog .catalog-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+  body.mobile-workspace #catalog-dialog .catalog-card {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:6px;text-align:center;height:116px;min-height:116px;}
+  body.mobile-workspace #catalog-dialog .catalog-card-copy {min-width:0;width:100%;}
+  body.mobile-workspace :is(.destination-dock .destination-list>button,#catalog-dialog .catalog-card)>.destination-icon {flex:none;align-self:center;margin:0 auto;}
+  body.mobile-workspace :is(.destination-dock,#catalog-dialog) .craft-thumbnail img {object-fit:contain;object-position:center;}
+  body.mobile-workspace .destination-dock .voyager-thumbnail img {position:static;width:100%;height:100%;max-width:100%;left:auto;top:auto;}
+  body.mobile-workspace #catalog-dialog .catalog-card .destination-name {font-size:12px;line-height:17px;}
+  body.mobile-workspace #catalog-dialog .catalog-card small {font-size:10px;line-height:14px;}
+  body.mobile-workspace #catalog-dialog :is(.catalog-grid,.catalog-filters) {scrollbar-width:thin;scrollbar-color:#416780 #08172b;}
+  body.mobile-workspace #catalog-dialog .catalog-filters button {min-height:36px;padding:5px 9px;font-size:12px;}
+  body.mobile-workspace .constellation-library-art {height:44px;}
+  body.mobile-workspace .constellation-library-tile {padding:7px 9px;}
+  body.mobile-workspace #constellation-explorer .constellation-card-tabs button {min-height:36px;padding-block:5px;}
+
+  /* Headers are outside the scrolling body, so close never moves off-screen. */
+  body.mobile-workspace.mobile-reading-open :is(.earth-navigation,.solar-navigation,#solar-quick-actions,.object-info,.constellation-hero,.black-hole-hero,.view-tools) {visibility:hidden;pointer-events:none;}
+  body.mobile-workspace :is(.mobile-reader,.black-hole-card) {overflow:hidden;scrollbar-gutter:auto;}
+  body.mobile-workspace :is(.facts-toolbar,.earthsense-header,.earth-environment-header,.moon-phases-header,.constellation-card-toolbar,.guide-lesson-heading,.earth-overview-heading,.black-hole-card-toolbar) {
+    position:relative;flex:0 0 auto;min-height:48px;margin:0;padding:2px 8px!important;
+    gap:6px;box-sizing:border-box;background:#08172b;z-index:1;
+  }
+  body.mobile-workspace .mobile-reader-actions {gap:6px;}
+  body.mobile-workspace :is(.mobile-read-button,#black-hole-read) {min-height:36px;padding:4px 8px;font-size:12px;}
+  body.mobile-workspace :is(#facts-panel,.mobile-reader,.black-hole-card) .mobile-reader-close {
+    position:relative;display:flex;align-items:center;justify-content:center;
+    width:44px;min-width:44px;height:44px;min-height:44px;flex:0 0 44px;
+    padding:0;border:0;--ui-button-fill:transparent;--ui-button-shadow:none;
+    color:#d8eef7;font-size:22px;line-height:1;cursor:pointer;
+  }
+  body.mobile-workspace :is(#facts-panel,.mobile-reader,.black-hole-card) .mobile-reader-close::before {content:none;}
+  body.mobile-workspace .mobile-reader-close:focus-visible {outline:2px solid #9ddfeb;outline-offset:1px;}
+  body.mobile-workspace .mobile-reader :is(.earthsense-close,.earth-environment-close,.moon-phases-close,.mobile-sheet-close) {display:none;}
+  body.mobile-workspace :is(#facts-panel,.mobile-reader)[data-mobile-reading="reading"],
+  body.mobile-workspace .black-hole-card.is-reading {
+    position:fixed;left:12px!important;right:12px!important;width:auto!important;
+    top:var(--mobile-content-top)!important;bottom:var(--mobile-sheet-bottom)!important;
+    max-width:none;max-height:none!important;height:auto!important;
+    background:#08172b;box-shadow:0 0 0 100vmax #020916b3;
+  }
+  body.mobile-workspace .mobile-reader[data-mobile-reading="reading"] :is(.facts-content,.constellation-card-content,.earthsense-content,.earth-environment-body,.moon-phases-body,#guide-lesson-content),
+  body.mobile-workspace .black-hole-card.is-reading #black-hole-card-content {
+    flex:1 1 auto;min-height:0;max-height:none;overflow-y:auto;overflow-x:hidden;
+    padding:8px 16px 20px;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;
+  }
+  body.mobile-workspace .mobile-reader[data-mobile-reading="reading"] :is(.facts-summary,.facts-sections p,.constellation-card-body p,.guide-copy,.learning-reading-content p,.earthsense-explanation,.earthsense-continent-summary,.earth-environment-intro,.moon-phase-explanation),
+  body.mobile-workspace .black-hole-card.is-reading #black-hole-card-content :is(p,section p) {font-size:15px;line-height:1.85;}
+  body.mobile-workspace .mobile-reader[data-mobile-reading="reading"] :is(.facts-heading h2,.constellation-card-identity h2),
+  body.mobile-workspace .black-hole-card.is-reading #black-hole-card-content h2 {font-size:23px;line-height:1.4;}
+  body.mobile-workspace .black-hole-card.is-reading #black-hole-card-content section h3 {font-size:15px;line-height:1.6;}
+  body.mobile-workspace .black-hole-card-toolbar #black-hole-read {margin-left:auto;}
+  body.mobile-workspace #guide-panel .guide-lesson-heading .guide-lesson-toggle {display:none;}
+  body.mobile-workspace #guide-panel .guide-lesson-heading .guide-kicker {flex:1;}
+  body.mobile-workspace.mobile-keyboard-open {--mobile-sheet-bottom:calc(var(--mobile-keyboard-inset,0px) + 8px);}
+
+  /* Match the primary navigation's vertical rhythm across text controls.
+     Object cards, native inputs and icon-only close/zoom targets keep their sizing. */
+  body.mobile-workspace :is(
+    #mode-nav button,.earth-navigation button,.solar-navigation button,
+    #mobile-features-toggle,#solar-quick-actions button,.black-hole-topics button,
+    #constellation-explorer .constellation-library-entry,
+    #mobile-scene-bar .mobile-scene-action,
+    .mobile-menu-items>button,.mobile-setting-group>button,
+    .mobile-setting-group .earth-sense-controls button,
+    .earth-feature-grid>.earth-feature-tile,.earth-natural-options>.earth-feature-tile,
+    .dock-tabs button,.dock-collapse,.constellation-dock-collapse,#black-hole-dock-toggle,
+    #catalog-dialog .catalog-filters button,.constellation-library-filters button,
+    #constellation-explorer .constellation-card-tabs button,
+    .earthsense-tabs button,.moon-view-tabs button,
+    .earthsense-continent-options button,.mobile-read-button,#black-hole-read,
+    #trajectory-panel button,#guide-action,
+    #guide-panel .guide-chapters button,#exit-guide,.mobile-guide-pager button
+  ):not([hidden]) {
+    display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;text-align:center;
+    min-height:var(--mobile-control-height);height:auto;margin-block:0;
+    padding-block:var(--mobile-control-padding-y);line-height:var(--mobile-control-line-height);
+  }
+  body.mobile-workspace #mobile-scene-bar {align-items:center;}
+  body.mobile-workspace #mobile-scene-bar .mobile-scene-action {height:var(--mobile-control-height);}
+  body.mobile-workspace :is(#mobile-tools-panel .mobile-quality-setting,#mobile-playback-panel .speed-control) {height:var(--mobile-control-height);min-height:var(--mobile-control-height);align-self:center;}
+  body.mobile-workspace :is(#mobile-tools-panel .quality-select,#mobile-playback-panel .speed-control select) {height:38px;min-height:38px;}
+  body.mobile-workspace #constellation-explorer .constellation-library-entry {top:0;}
+  body.mobile-workspace :is(#constellation-explorer .constellation-library-entry,.black-hole-topics button)::before {inset:-2px 0;}
+  body.mobile-workspace .black-hole-topics {padding-block:2px;}
+  body.mobile-workspace .mobile-setting-group>.speed-control {line-height:var(--mobile-control-line-height);}
+
+  /* The segmented frame and its neighbouring action share one outside height. */
+  body.mobile-workspace :is(.earth-navigation,.solar-navigation) {
+    box-sizing:border-box;height:var(--mobile-control-height);min-height:var(--mobile-control-height);align-items:stretch;
+  }
+  body.mobile-workspace #earth-navigation.earth-navigation button:not([hidden]),
+  body.mobile-workspace #solar-navigation.solar-navigation button:not([hidden]) {
+    min-height:0;height:100%;padding-block:0;
+  }
+  /* Keep the search focus ring inside the field, rather than clipping at the sheet edge. */
+  body.mobile-workspace .constellation-library-search {display:block;min-width:0;width:100%;max-width:100%;}
+  body.mobile-workspace .constellation-library-search input {
+    display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;
+    height:38px;min-height:38px;padding:6px 10px;line-height:20px;
+  }
+  body.mobile-workspace .constellation-library-search input:focus {
+    outline:1px solid #9ddfeb;outline-offset:-2px;box-shadow:none;
+  }
+  /* Categories remain swipeable; only the visible horizontal scrollbar is removed. */
+  body.mobile-workspace #catalog-dialog .catalog-filters {overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding-bottom:0;}
+  body.mobile-workspace #catalog-dialog .catalog-filters::-webkit-scrollbar {display:none;height:0;}
+
+  /* Match the primary navigation, including nested captions and selected values. */
+  body.mobile-workspace :is(
+    #mode-nav button,.earth-navigation button,.solar-navigation button,
+    #mobile-features-toggle,#solar-quick-actions button,.black-hole-topics button,
+    #constellation-explorer .constellation-library-entry,
+    .earth-feature-grid>.earth-feature-tile,.earth-natural-options>.earth-feature-tile,
+    #mobile-tools-panel .mobile-menu-items>button,
+    #mobile-playback-panel button:not(.mobile-menu-close),
+    #mobile-playback-panel .mobile-setting-label,
+    .mobile-select-trigger,.mobile-select-option
+  ) {font-size:var(--mobile-control-font-size);}
+  body.mobile-workspace :is(
+    .earth-navigation button,.solar-navigation button,#solar-quick-actions button,
+    .black-hole-topics button,#constellation-explorer .constellation-library-entry,
+    .earth-feature-tile,#mobile-tools-panel .mobile-menu-items>button,
+    #mobile-playback-panel button:not(.mobile-menu-close),.mobile-select-trigger
+  ) :is(span,strong) {font-size:inherit;}
+
+  /* Page-owned choices avoid the phone OS's oversized native option sheet. */
+  body.mobile-workspace select.mobile-select-native {display:none!important;}
+  body.mobile-workspace .mobile-select-control {display:flex;flex:1;min-width:0;width:100%;}
+  body.mobile-workspace #mobile-playback-panel .speed-control .mobile-select-control {max-width:76px;}
+  body.mobile-workspace .mobile-select-trigger {
+    display:flex;align-items:center;justify-content:space-between;gap:6px;
+    width:100%;min-width:0;min-height:38px;height:38px;padding:4px 8px;
+    line-height:var(--mobile-control-line-height);text-align:left;
+    color:inherit;background:transparent;border:0;box-shadow:none;
+    --ui-button-fill:transparent;--ui-button-line:transparent;--ui-button-shadow:none;
+  }
+  body.mobile-workspace .mobile-select-arrow {flex:none;}
+  body.mobile-workspace #mobile-quality-choice {position:relative;justify-content:center;text-align:center;padding-inline:22px;}
+  body.mobile-workspace #mobile-quality-choice .mobile-select-arrow {position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+  /* The 48px speed caption starts where the centred orbit icon-and-label group starts. */
+  body.mobile-workspace #mobile-playback-panel .speed-control {
+    display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:0;padding:0;
+  }
+  body.mobile-workspace #mobile-playback-panel .speed-control>.mobile-setting-label {grid-column:2;grid-row:1;text-align:left;}
+  body.mobile-workspace #mobile-playback-panel .speed-control>.mobile-select-control {grid-column:3;grid-row:1;}
+  body.mobile-workspace #mobile-speed-choice {padding-inline:2px;gap:1px;white-space:nowrap;}
+  body.mobile-workspace #mobile-speed-choice .mobile-select-value {flex:1;min-width:0;text-align:center;}
+  body.mobile-workspace .mobile-select-options {
+    position:fixed;z-index:95;box-sizing:border-box;padding:4px;
+    overflow:auto;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;
+    border:1px solid #416780;border-radius:8px;background:#08172b;
+    color:#d3e9f4;box-shadow:0 8px 24px #0006;
+  }
+  body.mobile-workspace .mobile-select-options[hidden] {display:none!important;}
+  body.mobile-workspace .mobile-select-option {
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    width:100%;min-height:40px;padding:6px 10px;line-height:18px;
+    text-align:left;border:0;border-radius:5px;background:transparent;color:inherit;
+  }
+  body.mobile-workspace .mobile-select-option[aria-selected="true"] {background:#19394d;color:#d5f3ff;}
+  body.mobile-workspace .mobile-select-option[aria-selected="true"]::after {content:'✓';}
+  body.mobile-workspace .mobile-select-option:focus-visible {outline:1px solid #9ddfeb;outline-offset:-2px;}
+
+  @media (max-width:370px) {
+    body.mobile-workspace #mode-nav button {padding-inline:4px;}
+  }
+
+  @media (orientation:landscape) and (max-height:600px) {
+    body.mobile-workspace.mobile-reading-open :is(.site-header,#mode-nav,.display-tools,.guide-topbar) {visibility:hidden;pointer-events:none;}
+    body.mobile-workspace:has(:is(.destination-dock:not(.dock-collapsed),#facts-panel:not(.collapsed))) #solar-quick-actions {visibility:hidden;pointer-events:none;}
+    body.mobile-workspace :is(.destination-dock:not(.dock-collapsed),.constellation-dock:not(.constellation-dock-collapsed),.black-hole-dock:not(.is-collapsed)) {max-height:none;}
+    body.mobile-workspace .black-hole-dock:not(.is-collapsed) {top:var(--mobile-content-top);}
+    body.mobile-workspace .destination-dock .destination-list,
+    body.mobile-workspace #constellation-explorer .constellation-dock-list,
+    body.mobile-workspace #black-hole-destinations {grid-auto-rows:84px;}
+    body.mobile-workspace .destination-dock .destination-list>button,
+    body.mobile-workspace #constellation-explorer .constellation-destination,
+    body.mobile-workspace #black-hole-destinations>button {height:84px;min-height:84px;padding:5px;gap:3px;}
+    body.mobile-workspace #constellation-explorer .constellation-mini-map {height:32px;}
+    body.mobile-workspace .destination-dock .planet-thumb {width:28px;height:28px;}
+    body.mobile-workspace :is(#facts-panel,.mobile-reader)[data-mobile-reading="reading"],
+    body.mobile-workspace .black-hole-card.is-reading {top:calc(8px + env(safe-area-inset-top,0px))!important;z-index:70;}
+  }
+  /* The focused search sheet owns the space below the main navigation while
+     the keyboard is up. Restore the scene controls automatically on dismissal. */
+  body.mobile-workspace.mobile-keyboard-open :is(.earth-navigation,.solar-navigation,#solar-quick-actions,.object-info,.constellation-hero,.black-hole-hero,.view-tools) {
+    visibility:hidden;pointer-events:none;transition:none;
+  }
+  body.mobile-workspace.mobile-keyboard-open :is(.destination-dock:not(.dock-collapsed),#earthsense-panel:not([hidden])) {
+    top:var(--mobile-content-top)!important;bottom:var(--mobile-sheet-bottom)!important;
+    left:12px!important;right:12px!important;width:auto!important;height:auto!important;
+    max-height:none!important;transform:none!important;z-index:60;background:#08172b!important;
+  }
+  body.mobile-workspace.mobile-keyboard-open .destination-dock:not(.dock-collapsed) {overflow:hidden;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .dock-heading {
+    grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) 58px;gap:4px 6px;
+  }
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .dock-heading>span {grid-column:1/3;grid-row:1;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .dock-collapse {grid-column:3;grid-row:1;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .dock-tabs {grid-column:1;grid-row:2;width:100%;box-sizing:border-box;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .dock-tabs button {font-size:var(--mobile-control-font-size);}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .destination-search {display:flex;grid-column:2/-1;grid-row:2;min-width:0;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .destination-search input {min-width:0;}
+  body.mobile-workspace.mobile-keyboard-open .destination-dock .destination-list {flex:1 1 auto;min-height:0;height:auto;overflow-x:hidden;overflow-y:auto;}
+}

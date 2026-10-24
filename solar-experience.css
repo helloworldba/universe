@@ -1,0 +1,52 @@
+/* Solar demonstrations use the same controls and materials as the explorer. */
+body[data-destination="trajectories"]:not(.guide-active) .destination-dock { display:none; }
+.trajectory-panel { position:fixed;z-index:22;left:30px;right:30px;bottom:82px;padding:16px 20px;border:1px solid #24384c;border-radius:14px;background:rgba(7,18,33,.94);backdrop-filter:blur(16px); }
+.trajectory-panel[hidden],.ui-hidden .trajectory-panel,.clean-view .trajectory-panel,.guide-active .trajectory-panel {display:none;}
+.trajectory-panel-heading {display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;}
+.trajectory-panel-caption {display:flex;align-items:center;flex-wrap:wrap;gap:6px 14px;min-width:0;}
+.trajectory-panel-caption strong {color:#c7e9f6;font-size:13px;font-weight:500;}
+.trajectory-panel-summary {color:#8ba9bb;font-size:11px;line-height:1.5;}
+.trajectory-panel-toggle {flex-shrink:0;display:inline-flex;align-items:center;gap:10px;}
+.trajectory-panel-toggle::after {content:"";width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);}
+.trajectory-panel-content[hidden] {display:none;}
+.trajectory-panel.trajectory-panel-collapsed {left:50%;right:auto;width:min(440px,calc(100vw - 60px));box-sizing:border-box;transform:translateX(-50%);padding:10px 14px;}
+.trajectory-panel-collapsed .trajectory-panel-heading {margin-bottom:0;}
+.trajectory-panel-collapsed .trajectory-panel-toggle::after {transform:translateY(2px) rotate(225deg);}
+.trajectory-panel .special-controls {display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;margin:0;max-width:none;}
+.trajectory-panel .segmented-control {margin:0;}
+.trajectory-panel button,.trajectory-view-actions button {min-height:36px;border:1px solid #294357;border-radius:6px;background:#0b1b2b;color:#c7e9f6;padding:8px 12px;font-size:11px;cursor:pointer;}
+.trajectory-panel button:hover,.trajectory-view-actions button:hover {background:#17354a;color:#dcf7ff;}
+.trajectory-panel button[aria-pressed="true"] {background:#21475b;color:#d3f7ff;border-color:#47758c;}
+.trajectory-panel button:focus-visible,.trajectory-view-actions button:focus-visible {outline:2px solid #9ddae6;outline-offset:3px;}
+.trajectory-view-actions {display:flex;gap:8px;margin-left:auto;}
+.guide-lesson .trajectory-view-actions {flex-wrap:wrap;justify-content:flex-start;margin:12px 0;}
+.trajectory-legend {display:flex;flex-wrap:wrap;gap:8px 20px;width:100%;color:#a8becb;font-size:11px;}
+.trajectory-legend span::before {content:"";display:inline-block;vertical-align:middle;width:15px;height:2px;margin-right:7px;background:var(--trail-color);}
+.trajectory-panel .trajectory-note {width:100%;margin:0;font-size:10px;color:#718c9d;}
+.deployment-progress {display:block;width:100%;height:5px;border:0;border-radius:3px;accent-color:#c3a35d;}
+.deployment-progress::-webkit-progress-bar {background:#1c2c3a;border-radius:3px;}
+.deployment-progress::-webkit-progress-value {background:#c3a35d;border-radius:3px;}
+.special-controls .deployment-status {color:#dbc390;margin:10px 0 6px;}
+body[data-destination="trajectories"] .solar-quick-actions {bottom:var(--solar-actions-bottom,250px);}
+@media(max-width:760px){
+ .trajectory-panel {left:12px;right:12px;bottom:100px;padding:12px;}
+ .trajectory-panel .special-controls {gap:9px;}
+ .trajectory-panel .segmented-control {flex:1;}
+ .trajectory-panel .segmented-control button {flex:1;white-space:nowrap;font-size:11px;padding:8px;}
+ .trajectory-view-actions {width:100%;justify-content:flex-end;}
+ .trajectory-legend {gap:6px 12px;font-size:10px;}
+ .trajectory-panel .trajectory-note {font-size:9px;}
+ body.solar-navigation-active .object-info {top:54px;}
+ body.solar-navigation-active .cosmic-breadcrumb {display:none;}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .trajectory-panel {left:22%;right:14px;bottom:58px;padding:9px 12px;}
+ .trajectory-panel .special-controls {gap:6px 10px;}
+ .trajectory-panel button {min-height:29px;font-size:10px;}
+ .trajectory-panel .trajectory-note {display:none;}
+}
+/* The galaxy locator is a scene annotation, separate from the Solar System dock. */
+.scene-label.galaxy-solar-location-label { margin-left:0; min-height:34px; padding:7px 12px; color:#fff0c9; font-size:15px; line-height:20px; font-weight:600; letter-spacing:.3px; border-color:#e4c57b!important; border-radius:7px; background:rgba(19,27,37,.94); box-shadow:0 0 18px #e8c57b35; }
+.scene-label.galaxy-solar-location-label:before { display:none; }
+.scene-label.galaxy-solar-location-label:hover,.scene-label.galaxy-solar-location-label:focus-visible { color:#fff8e7; background:#293442; border-color:#ffe7a7!important; outline:2px solid #ffe7a7; outline-offset:3px; }
+@media(max-width:760px) { .scene-label.galaxy-solar-location-label { font-size:13px; padding:6px 10px; } }

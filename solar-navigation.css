@@ -1,0 +1,109 @@
+/* Solar-system secondary navigation follows the Earth navigation geometry. */
+.solar-navigation {
+  position: fixed;
+  z-index: 24;
+  left: 50%;
+  top: 92px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  width: 116px;
+  padding: 3px;
+  border: 1px solid rgba(127, 184, 215, .16);
+  border-radius: 9px;
+  background: rgba(7, 19, 34, .78);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 5px 20px rgba(0, 6, 15, .13);
+  pointer-events: auto;
+}
+.solar-navigation button {
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #89a8bc;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: .6px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.solar-navigation button:hover { color: #d3efff; background: rgba(112, 184, 215, .07); }
+.solar-navigation button[aria-pressed="true"] {
+  color: #b9edf2;
+  background: rgba(101, 172, 191, .14);
+  box-shadow: inset 0 -2px 0 rgba(123, 217, 220, .75);
+}
+.solar-quick-actions {
+  position: fixed;
+  z-index: 6;
+  left: var(--solar-actions-left, 40px);
+  bottom: var(--solar-actions-bottom, 230px);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: calc(100vw - 80px);
+  pointer-events: auto;
+}
+.solar-quick-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 8px 11px;
+  border: 1px solid rgba(127, 184, 215, .19);
+  border-radius: 6px;
+  background: rgba(7, 19, 34, .82);
+  backdrop-filter: blur(14px);
+  color: #94afbe;
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.solar-quick-actions svg { width: 15px; height: 15px; }
+.solar-quick-actions button:hover { background: rgba(31, 60, 77, .85); border-color: #7fb8d766; color: #d3efff; }
+.solar-quick-actions button[aria-pressed="true"] { color: #b9edf2; background: #193346e6; border-color: #7bd9dc80; }
+.solar-navigation button:focus-visible,
+.solar-quick-actions button:focus-visible { outline: 2px solid #91dce9; outline-offset: 3px; }
+.solar-navigation[hidden],
+.solar-quick-actions[hidden],
+body:is(.ui-hidden,.clean-view,.guide-active) :is(.solar-navigation,.solar-quick-actions) { display: none; }
+body.solar-navigation-active { --solar-navigation-bottom: 134px; }
+body[data-destination="trajectories"] .solar-quick-actions { bottom: 88px; }
+
+@media (min-width: 1550px) { .solar-quick-actions { left: var(--solar-actions-left, 50px); } }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .solar-navigation { left: 47%; }
+  .solar-quick-actions { left: var(--solar-actions-left, 22px); }
+}
+@media (max-width: 760px) {
+  .solar-navigation { top: 126px; width: 124px; padding: 2px; border-radius: 8px; }
+  .solar-navigation button { min-height: 40px; padding: 9px 10px; font-size: 12px; }
+  body.solar-navigation-active { --solar-navigation-bottom: 172px; }
+  .solar-quick-actions { left: var(--solar-actions-left, 18px); bottom: var(--solar-actions-bottom, 220px); gap: 6px; max-width: calc(100vw - 92px); }
+  .solar-quick-actions button { min-height: 40px; padding: 9px 10px; font-size: 10px; gap: 5px; }
+  .solar-quick-actions svg { width: 14px; height: 14px; }
+  body[data-destination="trajectories"] .solar-quick-actions { bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .solar-navigation { top: 119px; }
+  body.solar-navigation-active { --solar-navigation-bottom: 165px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .solar-navigation { top: 61px; width: 112px; padding: 2px; }
+  .solar-navigation button { min-height: 30px; padding: 6px 8px; font-size: 10px; }
+  body.solar-navigation-active { --solar-navigation-bottom: 97px; }
+  .solar-quick-actions { left: var(--solar-actions-left, 24px); bottom: var(--solar-actions-bottom, 80px); max-width: 211px; gap: 5px; }
+  .solar-quick-actions button { min-height: 34px; padding: 7px 8px; font-size: 10px; }
+  body[data-destination="trajectories"] .solar-quick-actions { bottom: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .solar-navigation button,.solar-quick-actions button { transition: none; }
+}

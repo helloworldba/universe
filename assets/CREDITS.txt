@@ -1,0 +1,133 @@
+EXPLORE THE UNIVERSE texture and library credits
+
+Planet surface textures by Solar System Scope.
+Source: https://www.solarsystemscope.com/textures/
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+Public distribution mirror used for these downloads:
+https://github.com/ryh842487118-bot/orbit/tree/main/assets
+Original credits: https://github.com/ryh842487118-bot/orbit/blob/main/assets/CREDITS.md
+Downloaded: 2026-10-16. Asset source URLs and file SHA-256 checksums are in manifest.json.
+
+Modifications for this local preview:
+- Earth day and night maps: 8192 x 4096 source JPEG resized to 4096 x 2048 using Lanczos and encoded at JPEG quality 92.
+- Earth cloud map: source JPEG luminance converted to the alpha channel of a white RGBA PNG at original dimensions.
+- Venus atmosphere map renamed venus.jpg; Saturn ring map renamed saturn-ring.png.
+- Other planet maps retain the original image bytes, at 2048 x 1024.
+
+The maps are visual reconstructions based on NASA imagery and elevation data, with adjusted colors and some artist-filled unmapped regions. They are not unmodified spacecraft photographs. No endorsement by the texture authors is implied.
+
+Three.js 0.185.1, copyright 2010-2026 Three.js authors, MIT licensed.
+Source: https://github.com/mrdoob/three.js/tree/r185
+Distributed files fetched from official npm package through https://cdn.jsdelivr.net/npm/three@0.185.1/
+Full license: ../vendor/THREE-LICENSE.txt
+
+The application UI and most scene code are newly written for EXPLORE THE UNIVERSE. ORBIT is the visual and interaction reference.
+ambient-flybys.js adapts ORBIT src/universe/flybys.js (Apache-2.0): shared tail shader, appearance and timing, with explicit foreground depth occlusion, a host-owned update loop and reduced mobile detail. Modified for EXPLORE THE UNIVERSE on 2026-10-16.
+ORBIT source: https://github.com/ryh842487118-bot/orbit
+Full upstream license and notices: ../vendor/ORBIT-LICENSE.txt and ../vendor/ORBIT-NOTICE.txt
+Near-Earth orbit behavior was compared with ORBIT's satellites, camera and picking modules. Spacecraft meshes and orbit/follow integration were independently implemented for this local preview. Reference: https://github.com/ryh842487118-bot/orbit/tree/main/src
+Near-Earth science references: NASA (ISS, Hubble, Earth orbit types and communications), China Manned Space (Tiangong), NOAA (satellite orbit types), and GPS.gov (navigation). Each spacecraft card names its reference as plain text; full source URLs remain recorded in this credits file and the local data. Five generic satellite models illustrate categories, not specific tracked spacecraft.
+
+deep-space.png: AI-generated artwork created for this local preview from the user's approved background direction. Decorative space background, not an astronomical photograph.
+teal-nebula.png: Archived AI-generated background reconstructed from the user's selected B guided-tour mockup. Cyan light ribbons and a teal star-filled sky; planets, text, and UI removed. Retained as an alternative asset; no longer loaded as the active background. Decorative artwork, not an astronomical photograph.
+Active background: CSS midnight-blue gradients, blue/purple nebulae and small colored stars adapted from the user's supplied 3D solar-system educational HTML page. This decorative backdrop is shared by exploration and guided-tour modes; it is not an astronomical photograph.
+
+Earth interaction update: independent procedural sunlight and atmosphere shaders, illustrative ocean sheen inferred from texture colors, and 8 original code-drawn SVG spacecraft thumbnails. No extra third-party graphics are used.
+Earth seasons and axial tilt references (NASA; accessed 2026-10-16): https://science.nasa.gov/earth/facts/ and https://spaceplace.nasa.gov/seasons/en/
+Season presets and UTC slider are idealized teaching geometry, not a live ephemeris; day lengths omit refraction, solar angular diameter and equation of time. The geographic directory contains approximate city/landmark center coordinates, not administrative boundaries.
+
+Guided tour educational references (NASA; accessed 2026-10-16):
+Earth rotation and day/night: https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-earth-grades-5-8/
+Moon and impact craters: https://science.nasa.gov/moon/facts/
+Sun and gravity: https://science.nasa.gov/sun/facts/
+Gas giants and Saturn's rings: https://science.nasa.gov/saturn/facts/
+Neptune: https://science.nasa.gov/neptune/neptune-facts/
+Outer Solar System and galactic context: https://science.nasa.gov/solar-system/solar-system-facts/
+
+Constellation explorer (2026-10-16): selected star records derived from HYG v4.1 by David Nash / Astronexus.
+Source: https://github.com/astronexus/HYG-Database
+Data license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+The derived star-data subset in ../constellation-data.js is shared under CC BY-SA 4.0.
+Modifications: select bright stars for 12 introductory constellations, round display values, add Chinese labels, educational text and independently authored recognition lines. No endorsement is implied.
+Positions are J2000 right ascension/declination projected into local charts, not a live observing sky. Colors and star sizes are illustrative. Distances are approximate catalog estimates.
+No IAU boundary data or third-party constellation artwork is included. Big Dipper and Great Square are identified as asterisms, not extra constellations.
+
+explore-universe-logo.png: User-supplied artwork, added 2026-10-18. Original PNG retained without image modifications; CSS frames its circular galaxy emblem for the header brand icon.
+
+Destination thumbnails (2026-10-18): planet-thumbnails.js projects the existing Solar System Scope surface maps above onto static shaded spheres, adding the existing Earth cloud map and Saturn ring map. These small cached UI portraits are derived renderings under the same CC BY 4.0 attribution. The retained Voyager and JWST SVG files are original code-drawn illustrations, not photographs; both visible thumbnails now use the NASA PNGs credited below.
+
+assets/craft-thumbnails/jwst-nasa.png (2026-10-18): NASA spacecraft illustration, not a photograph. Transparent-background model rendering by NASA; Wikimedia Commons identifies this file as public domain (PD-USGov-NASA).
+Source page: https://commons.wikimedia.org/wiki/File:JWST_spacecraft_model_2.png
+Original downloaded file: https://upload.wikimedia.org/wikipedia/commons/6/6a/JWST_spacecraft_model_2.png
+NASA source identified by Commons: https://science.nasa.gov/multimedia/spacecraft-icons/
+Retained without image modification: 1654 x 1735 pixels, RGBA PNG, 1460978 bytes. Only CSS contain scaling is used in navigation and library thumbnails; the interactive scene remains a procedural 3D model.
+SHA256: ef662d2f928f34e3837a835f4e028a67772550ed464674d3747eb2700a65ceb6
+
+JWST interactive model (jwst-model.js): original procedural teaching geometry, informed by NASA's component descriptions and the illustration credited above. Mirror count and sunshield layers follow the official references; proportions, reflection environment, membrane creases and deployment timings are illustrative, not an engineering model or mission telemetry.
+https://science.nasa.gov/mission/webb/spacecraftoverview/
+https://science.nasa.gov/mission/webb/webbs-mirrors/
+https://science.nasa.gov/mission/webb/webbs-sunshield/
+
+assets/craft-thumbnails/voyager-nasa.png (2026-10-18): NASA artist's rendering of the twin Voyager spacecraft in mission configuration, not a photograph. Wikimedia Commons identifies the image as public domain (PD-USGov-NASA).
+Source page: https://commons.wikimedia.org/wiki/File:Voyager_spacecraft_model.png
+Original downloaded file: https://upload.wikimedia.org/wikipedia/commons/6/60/Voyager_spacecraft_model.png
+Retained without image modification: 1700 x 1233 pixels, RGBA PNG, 387753 bytes. Navigation uses CSS framing to emphasize the dish and bus; library thumbnails show the full image.
+SHA256: b5cbe168e298b12727cc13ed66a9ed49307497e38815fbcc753b414c389eb761
+
+assets/models/voyager-nasa.glb (2026-10-18): Voyager 3D Model, NASA Visualization Technology Applications and Development (VTAD).
+Source page: https://science.nasa.gov/resource/voyager-3d-model/
+Original downloaded file: https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/v/Voyager.glb
+NASA media usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/
+Original GLB retained unchanged: 3128204 bytes, SHA256 5338241f2e89e9cfe3ebb82f519b4cad64c97e66883cccba6fdda98667aec731.
+Display-only changes in voyager-model.js: replace transparent exporter cube with a group retaining its children, center and scale geometry, rotate presentation axes. Scene lighting is illustrative. No live trajectory or telemetry is included; no NASA endorsement is implied.
+
+Three.js r185 additional modules: GLTFLoader.js, BufferGeometryUtils.js, SkeletonUtils.js from https://github.com/mrdoob/three.js/tree/r185/examples/jsm ; MIT license in vendor/THREE-LICENSE.txt. Only the bare 'three' imports were changed to the existing local vendor/three.module.js path for offline use.
+
+assets/craft-thumbnails/hubble-nasa.jpg (2026-10-18): Hubble Space Telescope photographed by the STS-125 crew on May 19, 2009, from the departing Space Shuttle Atlantis after Servicing Mission 4. NASA photo S125-E-011848. Wikimedia Commons identifies the image as public domain (PD-USGov-NASA).
+Source page: https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg
+Original downloaded file: https://upload.wikimedia.org/wikipedia/commons/3/3f/HST-SM4.jpeg
+Retained without image modification: 2022 x 1518 pixels, JPEG, 325896 bytes. Navigation and library use CSS contain scaling and screen blending to integrate its black background with dark cards. The retained hubble.svg is a legacy original illustration, no longer the displayed thumbnail.
+SHA256: 499dfc0eb5b374e06907faabd978680935ae687ca9cf285de5b7ab2cad052daf
+
+assets/models/hubble-nasa.glb (2026-10-18): Hubble Space Telescope 3D Model, NASA Visualization Technology Applications and Development (VTAD).
+Source page: https://science.nasa.gov/resource/hubble-space-telescope-3d-model/
+Original downloaded file: https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/h/Hubble.glb
+Original GLB retained unchanged: 11463124 bytes, SHA256 e6a40640d6846e8f5d9438821ebe2d7de730c8dadba1cc9dfdbcc148ff1052cd.
+Display-only preparation in hubble-model.js removes an invisible exporter placeholder while retaining its spacecraft children, centers and scales the geometry, and aligns its axes for the existing Earth orbit frame. An original 128 x 64 local reflection texture is assigned only to metal materials for readable surface detail; NASA's surface maps and PBR parameters are retained. The orbit, lighting, object size and speed are educational illustrations, not current orbital data; no NASA endorsement is implied.
+
+galaxy-model.js and galaxy atlas layout in deep-universe.js (2026-10-18): procedural stellar distributions and spatial composition adapted from ORBIT's src/universe/galaxy.js and src/universe/nearby-galaxies.js, Apache-2.0. Source: https://github.com/ryh842487118-bot/orbit . Original license and notice retained in vendor/ORBIT-LICENSE.txt and vendor/ORBIT-NOTICE.txt. Modified population shapes, local additive lighting, responsive framing, independent rotation and subtle stellar shimmer are visualization additions. Stars are illustrative samples; positions, sizes, spin and animation times are not a physical or observational simulation. Existing background textures were retained unchanged.
+
+背景音乐：用户提供的 0.mp3、1.mp3，按此顺序循环播放；本地文件分别为 assets/audio/universe-background-first.mp3、assets/audio/universe-background.mp3。保留两首原始音频内容。
+影视：用户提供的 yuzhou.mp4；本地文件 assets/video/yuzhou.mp4。保留原始视频内容。
+
+Seven-continent region overlay (2026-10-19): Natural Earth physical geography regions and 1:50m land polygons. Public domain.
+License: https://www.naturalearthdata.com/about/terms-of-use/
+Local derived files: assets/geography/continent-mask.js and continent-mask-metadata.json. A 2048 x 1024, single-channel, run-length encoded teaching mask; no runtime network request.
+ne_50m_land.geojson: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson
+Source SHA256: e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b
+ne_50m_geography_regions_polys.geojson: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_geography_regions_polys.geojson
+Source SHA256: 33396643d8f0eed408e80bf5ca43dcdb7993f790fdc4eadae311660f8b91fe76
+Method: Rasterize Natural Earth 1:50m physical continent/island/island-group/isthmus regions, intersect with 1:50m land, reconcile adjacent land-only subpixel coastline gaps. No administrative country boundaries used.
+Geographical teaching regions, not tectonic plates, political boundaries or survey data.
+Europe and Asia use the Natural Earth physical geography partition, separating European Russia from Siberia and European Thrace from Anatolia.
+Oceania includes Australia, New Zealand, New Guinea, Melanesia, Micronesia and Polynesia, including Hawaii. Pacific geometry wraps the date line.
+Greenland is grouped with North America. Antarctica includes the south-pole cap.
+Simplification and the 2048x1024 mask omit some small islands and subpolar islands; coastlines are approximate at this display scale.
+Decoded mask SHA256: de1d498c0d54c90e2a25f94d93aed3aeb2fb274dc73de8b9a94f084e71119538
+The selected region uses a translucent spherical fill and coastline/region outline. It is a simplified geographical illustration, not a tectonic plate layer or administrative boundary map.
+
+assets/models/roman-nasa.glb (2026-10-19): Nancy Grace Roman Space Telescope, NASA / Goddard Space Flight Center. Official Roman Observatory model selected by the user.
+Source page: https://science.nasa.gov/mission/roman-space-telescope/roman-observatory/
+Original downloaded file: https://assets.science.nasa.gov/content/dam/science/missions/rst/spacecraft-illustrations/Large%20new%20RST_Model_V004.glb
+Original GLB retained unchanged: 29655668 bytes (28.28 MiB), SHA256 a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce.
+The model includes 16 embedded textures and requires no external decoder or texture downloads. Display-only preparation in roman-model.js centers and scales the geometry, aligns its axes, and assigns an original local metallic reflection while retaining NASA's PBR parameters and surface maps. Loaded only when requested. The procedural placeholder is an original simplified teaching preview used only in the Earth overview; the dedicated Roman view shows a loading message until the official model is ready.
+The transfer path and Sun-Earth L2 halo are target-orbit illustrations, not measured current positions. Object scale, motion, and lighting are illustrative; no NASA endorsement is implied. Additional source metadata is in assets/models/roman-nasa-source.json.
+
+assets/craft-thumbnails/roman-nasa.png: NASA Goddard Space Flight Center / Conceptual Image Lab, transparent spacecraft illustration.
+Source page: https://science.nasa.gov/gallery/roman-space-telescope-illustrations/
+NASA-hosted 512px image: https://assets.science.nasa.gov/dynamicimage/assets/science/missions/rst/spacecraft-illustrations/Roman-transparent.png?fit=clip&w=512
+Retained unchanged: 512 x 288 pixels, PNG, 122427 bytes. SHA256 28afecf90b8c158bd73263d79c42706cea4ef844647497b77ea758b24d7bff2c.
+NASA media usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/

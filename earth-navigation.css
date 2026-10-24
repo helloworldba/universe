@@ -1,0 +1,70 @@
+/* Two near-Earth modes, aligned below the existing scale navigation. */
+.earth-navigation {
+  position: fixed;
+  z-index: 24;
+  left: 50%;
+  top: 92px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  width: 204px;
+  padding: 3px;
+  gap: 3px;
+  border: 1px solid rgba(127, 184, 215, .16);
+  border-radius: 9px;
+  background: rgba(7, 19, 34, .78);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 5px 20px rgba(0, 6, 15, .13);
+  pointer-events: auto;
+}
+.earth-navigation button {
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #89a8bc;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: .6px;
+  cursor: pointer;
+  transition: color .16s ease, background .16s ease;
+}
+.earth-navigation button:hover { color: #d3efff; background: rgba(112, 184, 215, .07); }
+.earth-navigation button[aria-pressed="true"] {
+  color: #b9edf2;
+  background: rgba(101, 172, 191, .14);
+  box-shadow: inset 0 -2px 0 rgba(123, 217, 220, .75);
+}
+.earth-navigation button:focus-visible { outline: 2px solid #91dce9; outline-offset: 2px; }
+.earth-navigation[hidden],
+body.ui-hidden .earth-navigation,
+body.clean-view .earth-navigation,
+body.guide-active .earth-navigation { display: none; }
+body.earth-navigation-active { --earth-navigation-bottom: 134px; }
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .earth-navigation { left: 47%; }
+}
+@media (max-width: 760px) {
+  .earth-navigation { top: 126px; width: 212px; padding: 2px; border-radius: 8px; }
+  .earth-navigation button { min-height: 40px; padding: 9px 10px; font-size: 12px; }
+  body.earth-navigation-active { --earth-navigation-bottom: 172px; }
+  body.earth-navigation-active .object-info { top: 54px; }
+  body.earth-navigation-active .cosmic-breadcrumb { display: none; }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .earth-navigation { top: 119px; }
+  body.earth-navigation-active { --earth-navigation-bottom: 165px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .earth-navigation { top: 61px; width: 188px; padding: 2px; }
+  .earth-navigation button { min-height: 30px; padding: 6px 8px; font-size: 10px; }
+  body.earth-navigation-active { --earth-navigation-bottom: 97px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .earth-navigation button { transition: none; }
+}

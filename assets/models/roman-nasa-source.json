@@ -1,0 +1,38 @@
+{
+  "title": "Nancy Grace Roman Space Telescope - Roman Observatory model",
+  "displayName": "南希·格蕾丝·罗曼太空望远镜",
+  "publisher": "NASA",
+  "credit": "NASA / Goddard Space Flight Center",
+  "sourcePage": "https://science.nasa.gov/mission/roman-space-telescope/roman-observatory/",
+  "originalModelURL": "https://assets.science.nasa.gov/content/dam/science/missions/rst/spacecraft-illustrations/Large%20new%20RST_Model_V004.glb",
+  "localFile": "roman-nasa.glb",
+  "bytes": 29655668,
+  "sha256": "a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce",
+  "retrieved": "2026-10-19",
+  "assetModification": "Original GLB retained byte-for-byte. Display wrapper centers geometry, normalizes longest edge to 18 units, rotates the original -X aperture to +Z, and adds a generated local metallic reflection while retaining original PBR properties and textures. Model is loaded lazily.",
+  "thumbnail": {
+    "sourcePage": "https://science.nasa.gov/gallery/roman-space-telescope-illustrations/",
+    "sourceURL": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/rst/spacecraft-illustrations/Roman-transparent.png?fit=clip&w=512",
+    "credit": "NASA Goddard Space Flight Center / Conceptual Image Lab",
+    "localFile": "../craft-thumbnails/roman-nasa.png",
+    "width": 512,
+    "height": 288,
+    "bytes": 122427,
+    "sha256": "28afecf90b8c158bd73263d79c42706cea4ef844647497b77ea758b24d7bff2c",
+    "modification": "NASA-hosted 512px thumbnail; locally unchanged."
+  },
+  "verification": {
+    "gltfVersion": "2.0",
+    "meshes": 49,
+    "drawMeshesAfterParse": 57,
+    "triangles": 312774,
+    "vertices": 467681,
+    "embeddedImages": 16,
+    "extensionsRequired": [],
+    "extensionsUsed": [
+      "KHR_materials_specular"
+    ],
+    "noExternalTextures": true,
+    "gpuVisualVerified": false
+  }
+}

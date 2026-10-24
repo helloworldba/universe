@@ -1,0 +1,33 @@
+/* Baked spherical portraits are shared by the destination dock and its library. */
+.destination-icon.textured-thumbnail {
+  width:42px;height:42px;flex:0 0 auto;border:0;border-radius:0;
+  background-color:transparent;background-size:contain;background-position:center;
+  background-repeat:no-repeat;box-shadow:none;transform:none;
+}
+.destination-icon.textured-thumbnail::after { content:none; }
+.destination-icon.textured-thumbnail:not([data-thumbnail-state="ready"]) {
+  width:34px;height:34px;border-radius:50%;background-size:200% 100%;
+  box-shadow:inset -7px -3px 9px rgba(0,0,0,.5);
+}
+.catalog-card .destination-icon.textured-thumbnail { width:44px;height:44px;flex:0 0 44px; }
+/* Original NASA illustrations retain their aspect ratio; the library shows each full silhouette. */
+.destination-icon.craft-thumbnail.official-craft-thumbnail {
+  width:44px;height:44px;flex:0 0 auto;
+}
+.destination-icon.craft-thumbnail.official-craft-thumbnail img { object-fit:contain;object-position:center; }
+/* The unchanged Hubble photograph has a black space background; screen blending
+   integrates it with the existing dark navigation cards without editing the photo. */
+button[data-target="hubble"] .official-craft-thumbnail img { mix-blend-mode:screen; }
+.catalog-card .destination-icon.craft-thumbnail.official-craft-thumbnail { flex-basis:44px; }
+/* In the small dock portrait, emphasize Voyager's dish and equipment bus.
+   Only this viewport crops the long antenna ends; the source PNG is unchanged. */
+.destination-list .destination-icon.craft-thumbnail.voyager-thumbnail { position:relative;overflow:hidden; }
+.destination-list .destination-icon.craft-thumbnail.voyager-thumbnail img {
+  position:absolute;width:210%;height:210%;max-width:none;left:-12%;top:-27%;object-fit:contain;
+}
+@media(max-width:760px) {
+  .destination-icon.textured-thumbnail { width:38px;height:38px; }
+  .catalog-card .destination-icon.textured-thumbnail { width:36px;height:36px;flex-basis:36px; }
+  .destination-icon.craft-thumbnail.official-craft-thumbnail { width:38px;height:38px; }
+  .catalog-card .destination-icon.craft-thumbnail.official-craft-thumbnail { width:36px;height:36px;flex-basis:36px; }
+}

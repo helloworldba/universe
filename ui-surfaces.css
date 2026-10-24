@@ -1,0 +1,183 @@
+/* Shared surface treatment. Paint only: retain layout, typography, icons and behavior.
+   Scoped to interface containers so scene labels and celestial artwork stay intact.
+   Important paint declarations bridge the existing desktop and phone cascades. */
+:root {
+  --ui-surface-accent: #7bd1ff;
+  --ui-surface-line: rgba(115, 210, 255, .32);
+  --ui-surface-fill: linear-gradient(135deg, rgba(7, 23, 50, .87), rgba(4, 10, 29, .76));
+  --ui-surface-shadow: 0 16px 36px rgba(0, 0, 0, .30), inset 0 1px 0 rgba(190, 239, 255, .11);
+}
+
+/* Main navigation matches the readable text of the phone's bottom toolbar. */
+body #mode-nav button { color: #c8e2ee; }
+body #mode-nav button:is(.active, [aria-pressed="true"]) { color: #e0f9fc; }
+body #mode-nav .mode-index { color: inherit; opacity: 1; }
+
+/* Reading panels and destination trays share the same glass shell. */
+body :is(
+  .facts-panel, .earthsense-panel, .earth-environment-panel, .moon-phases-panel,
+  .earth-sense-overview, .earth-mode-features, .destination-dock, .trajectory-panel,
+  .constellation-card, .constellation-dock, .black-hole-card, .black-hole-dock,
+  .guide-lesson, .catalog-dialog, .constellation-library, .explorer-dialog, .mobile-menu
+) {
+  background: var(--ui-surface-fill) !important;
+  border-color: var(--ui-surface-line) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--ui-surface-shadow) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+/* Compact control groups use a quieter version of the same surface. */
+body :is(
+  .mode-nav, .earth-navigation, .solar-navigation, .playback-controls,
+  .earth-sense-controls, .constellation-controls, .black-hole-controls,
+  .guide-topbar, .zoom-tools, .mobile-scene-bar
+) {
+  background: linear-gradient(135deg, rgba(7, 23, 50, .80), rgba(4, 10, 29, .74)) !important;
+  border-color: var(--ui-surface-line) !important;
+  box-shadow: 0 6px 20px #0003, inset 0 1px 0 #beefff12 !important;
+}
+
+/* Do not change border widths: several controls deliberately have no border. */
+body :is(
+  .site-header, .display-tools, .view-tools, .control-footer,
+  .object-navigation, .special-controls, .earth-actions, .earth-mode-features,
+  .earth-navigation, .solar-navigation, .earth-sense-controls, .earth-sense-overview,
+  .facts-panel, .destination-dock, .earthsense-panel, .earth-environment-panel,
+  .moon-phases-panel, .trajectory-panel, .trajectory-view-actions,
+  .constellation-explorer, .constellation-library, .black-hole-explorer,
+  .guide-topbar, .guide-chapters, .guide-lesson, .guide-navigation,
+  .catalog-dialog, .explorer-dialog, .cinema-dialog, .mobile-menu, .mobile-scene-bar
+) button,
+body :is(button.topic-video-button, button.mobile-menu-toggle, .cinema-unmute) {
+  background: var(--ui-button-fill, rgba(4, 16, 37, .70)) !important;
+  border-color: var(--ui-button-line, rgba(123, 209, 255, .28)) !important;
+  border-radius: var(--ui-button-radius, 9px) !important;
+  box-shadow: var(--ui-button-shadow, inset 0 1px 0 #beefff08) !important;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease !important;
+}
+
+/* State variables only affect the scoped buttons above, never scene markers. */
+body button:is([aria-pressed="true"], [aria-selected="true"], .active),
+body .mobile-scene-action[aria-expanded="true"],
+body .mobile-menu-toggle[aria-expanded="true"] {
+  --ui-button-fill: color-mix(in srgb, var(--ui-surface-accent) 16%, rgba(4, 16, 37, .86));
+  --ui-button-line: color-mix(in srgb, var(--ui-surface-accent) 76%, transparent);
+  --ui-button-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ui-surface-accent) 20%, transparent),
+    0 0 16px color-mix(in srgb, var(--ui-surface-accent) 16%, transparent);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body button:not(:disabled):hover {
+    --ui-button-fill: rgba(13, 59, 97, .78);
+    --ui-button-line: color-mix(in srgb, var(--ui-surface-accent) 82%, white);
+    --ui-button-shadow: inset 0 1px 0 #beefff12, 0 0 12px color-mix(in srgb, var(--ui-surface-accent) 12%, transparent);
+  }
+}
+body button:not(:disabled):focus-visible {
+  --ui-button-line: var(--ui-surface-accent);
+  --ui-button-shadow: inset 0 0 0 1px var(--ui-surface-accent);
+}
+body button:not(:disabled):active {
+  --ui-button-fill: rgba(18, 66, 102, .88);
+  --ui-button-line: var(--ui-surface-accent);
+  --ui-button-shadow: inset 0 2px 6px #0005;
+}
+body :is(
+  .site-header, .display-tools, .view-tools, .control-footer, .object-navigation,
+  .special-controls, .earth-actions, .earth-mode-features, .earth-sense-overview,
+  .earth-navigation, .solar-navigation, .earth-sense-controls, .facts-panel,
+  .destination-dock, .earthsense-panel, .earth-environment-panel, .moon-phases-panel,
+  .trajectory-panel, .trajectory-view-actions, .constellation-explorer,
+  .constellation-library, .black-hole-explorer, .guide-topbar, .guide-chapters,
+  .guide-lesson, .guide-navigation, .catalog-dialog, .explorer-dialog, .cinema-dialog,
+  .mobile-menu, .mobile-scene-bar
+) button:active,
+body :is(button.topic-video-button, button.mobile-menu-toggle, .cinema-unmute):active {
+  transform: none !important;
+}
+
+/* Keep capsule/circular controls and quiet section headings recognizable. */
+body :is(.facts-narrate, .constellation-narrate, #black-hole-narrate, .earthsense-lock) {
+  --ui-button-radius: 999px;
+}
+body :is(#help-button, #source-button, .moon-phases-close) { --ui-button-radius: 50%; }
+body :is(
+  .facts-toggle, .constellation-card-toggle, #toggle-black-hole-card,
+  .catalog-entry, .earth-mode-crosslink, .earth-return-roam
+) {
+  --ui-button-fill: transparent;
+  --ui-button-line: transparent;
+  --ui-button-shadow: none;
+}
+body :is(.facts-toolbar, .constellation-card-toolbar, .black-hole-card-toolbar,
+  .earthsense-header, .earth-environment-header, .moon-phases-header,
+  .mobile-menu-heading) {
+  background: linear-gradient(180deg, rgba(7, 23, 50, .97), rgba(7, 23, 50, .84)) !important;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+}
+
+/* Nested facts and tab rails remain subdued instead of stacking glass blurs. */
+body :is(
+  .facts-extra-stats, .craft-position-diagram, .earthsense-place-selection,
+  .earthsense-weather-card, .earthsense-continent-card, .earthsense-place-group,
+  .earth-season-place, .learning-question, .constellation-library-preview
+) {
+  background: rgba(4, 16, 37, .48) !important;
+  border-color: rgba(123, 209, 255, .18) !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 1px 0 #beefff08 !important;
+}
+body :is(.dock-tabs, .segmented-control, .earthsense-tabs, .earth-season-tabs,
+  .moon-view-tabs, .constellation-card-tabs) {
+  background: rgba(3, 13, 30, .55) !important;
+  border-color: rgba(123, 209, 255, .18) !important;
+  border-radius: 12px !important;
+}
+
+/* Black holes retain their existing warm accent; artwork is not selected here. */
+.black-hole-explorer, .mobile-setting-group[data-mobile-settings="blackholes"] {
+  --ui-surface-accent: #eeb46b;
+}
+.earthsense-continent-option { --ui-surface-accent: var(--continent-color, #7bd1ff); }
+
+/* The actual video image stays black; only its surrounding frame is themed. */
+body :is(.cinema-player, .topic-video-screen) {
+  border-color: var(--ui-surface-line) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--ui-surface-shadow) !important;
+}
+
+/* Phone reading mode retains its opaque backdrop and modal dimming. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  body :is(.facts-panel, .earthsense-panel, .earth-environment-panel, .moon-phases-panel,
+    .earth-sense-overview, .earth-mode-features, .destination-dock, .trajectory-panel,
+    .constellation-card, .constellation-dock, .black-hole-card, .black-hole-dock,
+    .guide-lesson, .mobile-menu) {
+    background: linear-gradient(135deg, rgba(7, 23, 50, .95), rgba(4, 10, 29, .92)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+  body .mobile-reader[data-mobile-reading="reading"] {
+    background: #08172b !important;
+    box-shadow: var(--ui-surface-shadow), 0 0 0 100vmax #02091699 !important;
+  }
+  body .black-hole-card.is-reading {
+    background: #08172b !important;
+    box-shadow: var(--ui-surface-shadow), 0 0 0 100vmax #030914aa !important;
+  }
+  body .mobile-menu :is(#help-button, #source-button) { --ui-button-radius: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body :is(button.topic-video-button, button.mobile-menu-toggle, .cinema-unmute),
+  body :is(.site-header, .display-tools, .view-tools, .control-footer, .object-navigation,
+    .special-controls, .earth-actions, .earth-mode-features, .earth-sense-overview,
+    .earth-navigation, .solar-navigation, .earth-sense-controls, .facts-panel,
+    .destination-dock, .earthsense-panel, .earth-environment-panel, .moon-phases-panel,
+    .trajectory-panel, .trajectory-view-actions, .constellation-explorer,
+    .constellation-library, .black-hole-explorer, .guide-topbar, .guide-chapters,
+    .guide-lesson, .guide-navigation, .catalog-dialog, .explorer-dialog, .cinema-dialog,
+    .mobile-menu, .mobile-scene-bar) button { transition: none !important; }
+}

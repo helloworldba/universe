@@ -1,0 +1,114 @@
+/* Only phone layouts use these dimensions. Desktop styles stay in their original files. */
+@media (max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse) {
+  body.mobile-layout {
+    --mobile-safe-top:env(safe-area-inset-top,0px);
+    --mobile-content-top:calc(172px + var(--mobile-safe-top));
+    --mobile-bar-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    --mobile-bar-height:52px;
+    --mobile-sheet-bottom:calc(var(--mobile-bar-bottom) + var(--mobile-bar-height) + 10px);
+    --earth-navigation-bottom:calc(164px + var(--mobile-safe-top));
+  }
+  .mobile-layout .site-header {height:calc(56px + var(--mobile-safe-top));padding:var(--mobile-safe-top) 12px 0;}
+  .mobile-layout .header-actions {display:none;}
+  .mobile-layout .wordmark {gap:7px;}
+  .mobile-layout .brand-mark {width:27px;height:27px;}
+  .mobile-layout .wordmark .brand-cn {font-size:12px;line-height:1.4;}
+  .mobile-layout .display-tools {top:calc(6px + var(--mobile-safe-top));right:12px;gap:6px;opacity:1;z-index:50;}
+  .mobile-layout .display-tools .music-button {width:94px;height:44px;padding:0 8px;gap:5px;border-radius:9px;}
+  .mobile-layout .music-label {position:static;transform:none;font-size:11px;line-height:1.4;}
+  .mobile-menu-toggle {display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid #86bad333;border-radius:9px;background:#102336e8;color:#c2dde8;font-size:13px;white-space:nowrap;}
+  .mobile-layout #mobile-tools-toggle {padding-inline:10px;}
+  .mobile-layout .mode-nav:has([data-mode]) {top:calc(60px + var(--mobile-safe-top));left:12px;transform:none;width:calc(100vw - 24px);padding:3px;gap:2px;overflow-x:auto;scrollbar-width:none;touch-action:pan-x pinch-zoom;}
+  .mobile-layout .mode-nav:has([data-mode]) button {flex:1 0 auto;min-height:44px;font-size:12px;padding:8px 8px;}
+  .mobile-layout .mode-nav .mode-index {display:none;}
+  .mobile-layout :is(.earth-navigation,.solar-navigation) {top:calc(116px + var(--mobile-safe-top));left:50%;transform:translateX(-50%);padding:2px;width:212px;}
+  .mobile-layout :is(.earth-navigation,.solar-navigation) button {min-height:44px;padding:6px 10px;font-size:12px;}
+  .mobile-layout.earth-experience-active:not(.guide-active):not(.ui-hidden):not(.clean-view) .object-info {top:var(--mobile-content-top)!important;left:12px;right:68px;width:auto;max-height:none;overflow:visible;}
+  .mobile-layout #mobile-features-toggle {width:100%;min-height:44px;text-align:left;justify-content:space-between;padding:7px 12px;}
+  .mobile-layout:not(.mobile-features-open) .earth-mode-features {display:none;}
+  .mobile-layout.mobile-features-open .earth-mode-features:not([hidden]) {position:absolute;top:50px;left:0;width:calc(100vw - 24px);max-height:min(48dvh,340px,calc(100dvh - var(--mobile-content-top) - var(--mobile-sheet-bottom) - 58px));overflow:auto;overscroll-behavior:contain;padding:10px;border:1px solid #86bad344;background:#09192ef7;z-index:45;box-shadow:0 16px 48px #0008;}
+  .mobile-layout .earth-feature-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;overflow:visible;}
+  body.mobile-layout.earth-experience-active #earth-actions .earth-feature-tile {min-height:44px;font-size:12px;padding:9px 7px;white-space:normal;}
+  .mobile-layout .earth-natural-features {grid-column:1/-1;width:auto;}
+  .mobile-layout .earth-natural-features summary {min-height:44px;font-size:12px;}
+  .mobile-layout .earth-natural-features[open] summary {float:none;width:auto;}
+  .mobile-layout .earth-natural-options {display:grid;grid-template-columns:1fr 1fr;width:auto;margin:7px 0 0;gap:7px;}
+  .mobile-layout .earth-mode-crosslink {display:none!important;}
+  .mobile-layout .control-footer {height:auto;pointer-events:none;}
+  body.mobile-layout .control-footer .playback-controls {position:fixed;left:12px;right:12px;bottom:var(--mobile-bar-bottom);transform:none;width:auto;max-width:none;height:var(--mobile-bar-height);display:flex;flex-wrap:nowrap;align-items:stretch;justify-content:stretch;gap:4px;padding:3px;border-radius:12px;background:#09182eeb;}
+  .mobile-layout .playback-controls>button {flex:1;min-width:0;min-height:44px;justify-content:center;font-size:13px;padding:7px;}
+  .mobile-layout .playback-controls>.control-separator {display:none;}
+  .mobile-layout .control-footer :is(.footer-actions,.scene-disclaimer,.scale-readout) {display:none!important;}
+  .mobile-layout .destination-dock,.mobile-layout .constellation-dock {bottom:var(--mobile-sheet-bottom);}
+  .mobile-layout .destination-dock.dock-collapsed {width:calc(100vw - 24px);padding:3px 10px;}
+  .mobile-layout .destination-dock .dock-collapse {min-height:44px;font-size:12px;}
+  .mobile-layout .destination-dock .catalog-entry {font-size:12px;}
+  .mobile-layout .destination-dock.dock-collapsed .dock-context {display:inline;font-size:11px;max-width:28vw;}
+  .mobile-layout .destination-dock .destination-list {max-height:126px;}
+  .mobile-layout .destination-dock .destination-list button {min-height:76px;font-size:12px;}
+  .mobile-layout .destination-dock .dock-tabs button {min-height:44px;font-size:12px;}
+  /* Expanded search gets a full row; long names never squeeze the close button. */
+  .mobile-layout .destination-dock:not(.dock-collapsed) {max-height:calc(100dvh - var(--mobile-sheet-bottom) - var(--mobile-content-top) - 8px);overflow-y:auto;overscroll-behavior:contain;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-heading {grid-template-columns:minmax(0,1fr) auto;gap:6px 8px;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-tools {display:contents;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-heading>span {grid-column:1;grid-row:1;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-collapse {grid-column:2;grid-row:1;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .destination-search {display:flex;grid-column:1/-1;grid-row:2;min-width:0;min-height:44px;width:100%;padding:6px 10px;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-tabs {grid-column:1/-1;grid-row:3;}
+  .mobile-layout .destination-dock .destination-search input {min-width:0;font-size:16px;}
+  .mobile-layout .destination-dock .destination-list {touch-action:pan-x pinch-zoom;}
+  .mobile-layout .destination-dock .catalog-entry {min-height:44px;}
+  body.mobile-layout .view-tools {position:fixed;right:12px!important;top:auto!important;bottom:calc(var(--mobile-sheet-bottom) + 62px)!important;z-index:21;}
+  body.mobile-layout:has(#facts-panel:not(.collapsed):not([hidden]),#earthsense-panel:not([hidden]),#earth-environment-panel:not([hidden]),.moon-phases-panel:not([hidden]),.earth-sense-overview:not([hidden])) .view-tools {visibility:hidden;pointer-events:none;}
+  .mobile-layout .view-tools button {width:44px;min-height:44px;}
+  .mobile-layout .reset-button {display:none;}
+  .mobile-layout .earth-sense-controls {bottom:var(--mobile-bar-bottom)!important;left:12px;right:12px;transform:none;width:auto;max-width:none;min-height:var(--mobile-bar-height);}
+  .mobile-layout .earth-sense-controls button {font-size:12px;min-height:44px;flex:1;}
+  .mobile-menu {position:fixed;left:12px;right:12px;z-index:60;max-height:65dvh;padding:12px;border:1px solid #86bad34d;border-radius:16px;background:#08172bf7;color:#cee2ec;box-shadow:0 18px 50px #0009;overflow:auto;overscroll-behavior:contain;}
+  #mobile-tools-panel {top:calc(60px + var(--mobile-safe-top));max-height:min(65dvh,calc(100dvh - var(--mobile-safe-top) - 84px));}
+  #mobile-playback-panel {bottom:var(--mobile-sheet-bottom);}
+  .mobile-menu[hidden] {display:none!important;}
+  .mobile-menu-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;}
+  .mobile-menu-heading strong {font-size:15px;font-weight:500;}
+  .mobile-menu-close {width:44px;height:44px;border-radius:9px;background:#17314d;color:#c9e1ef;font-size:23px;}
+  .mobile-menu-items {display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+  .mobile-menu-items>button,.mobile-menu-items>label {position:static!important;margin:0!important;display:flex;align-items:center;justify-content:center;gap:7px;width:auto!important;min-width:0;min-height:48px;height:auto;border:1px solid #86bad333;border-radius:9px;background:#132b43b3;color:#c6e1ec;padding:9px;font-size:13px;white-space:normal;}
+  .mobile-menu-items button>span {display:inline!important;font-size:13px;}
+  .mobile-menu-items .guide-entry-arrow {display:none!important;}
+  .mobile-menu-items button>svg:first-child {display:block;width:18px;height:18px;}
+  .mobile-menu-items button[aria-pressed="true"] {background:#23526a;border-color:#9ddfeb88;}
+  .mobile-menu-items>label {flex-direction:column;align-items:stretch;font-size:12px;}
+  .mobile-menu-items select {width:100%;max-width:none;min-height:44px;padding:5px;border:0;border-radius:5px;background:#0a1b30;color:#d3e9f4;font-size:16px;}
+  .mobile-menu-items #help-button {border-radius:9px;font-size:17px;}
+  .mobile-menu-items #reset-view {display:flex;}
+  .mobile-layout .earth-overview-heading {position:relative;padding-right:46px;}
+  .mobile-layout .earth-overview-heading>.mobile-sheet-close {position:absolute;right:0;top:0;}
+  .mobile-setting-label {font-size:12px;color:#a9c9dc;}
+  .mobile-layout.mobile-menu-open .facts-panel:not(.collapsed) {visibility:hidden;}
+  .mobile-layout.mobile-features-open :is(#earthsense-panel,#earth-environment-panel,.moon-phases-panel,.earth-sense-overview) {visibility:hidden;pointer-events:none;}
+  .mobile-layout :is(.scene-label,.object-label,.planet-label) {font-size:11px;line-height:1.4;letter-spacing:0;padding:4px 6px;max-width:148px;white-space:normal;overflow-wrap:anywhere;}
+  .mobile-layout #label-layer .deep-space-label {max-width:166px;white-space:normal;line-height:1.45;}
+  .mobile-layout .toast {top:calc(62px + var(--mobile-safe-top));z-index:90;font-size:12px;}
+  .mobile-layout:is(.ui-hidden,.clean-view) :is(#mobile-playback-panel,#mobile-features-toggle) {display:none;}
+  .mobile-layout:is(.ui-hidden,.clean-view) .display-tools {opacity:.7;}
+}
+@media (max-width:370px) {
+  .mobile-layout .wordmark .brand-cn {font-size:11px;}
+  .mobile-layout .brand-mark {width:25px;height:25px;}
+  .mobile-layout .display-tools .music-button {width:88px;}
+  .mobile-layout #mobile-tools-toggle {padding-inline:9px;font-size:12px;}
+  .mobile-layout .mode-nav:has([data-mode]) button {padding-inline:6px;font-size:11px;}
+}
+@media (max-width:760px) and (max-height:500px) and (orientation:landscape) {
+  .mobile-layout .site-header {height:calc(52px + var(--mobile-safe-top));}
+  .mobile-layout .site-header .wordmark {display:flex;}
+  .mobile-layout .mode-nav:has([data-mode]) {top:calc(56px + var(--mobile-safe-top));}
+  .mobile-layout :is(.earth-navigation,.solar-navigation) {top:calc(112px + var(--mobile-safe-top));left:12px;transform:none;width:196px;}
+  body.mobile-layout.earth-experience-active:not(.guide-active):not(.ui-hidden):not(.clean-view) .object-info {top:var(--mobile-content-top)!important;left:12px;right:auto;width:196px;}
+  .mobile-layout #mobile-tools-panel {top:calc(56px + var(--mobile-safe-top));left:auto;width:320px;max-height:calc(100dvh - var(--mobile-safe-top) - 68px);}
+  body.mobile-layout .view-tools {bottom:var(--mobile-sheet-bottom)!important;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) {max-height:calc(100dvh - var(--mobile-sheet-bottom) - 116px - var(--mobile-safe-top));}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-heading {grid-template-columns:minmax(80px,1fr) auto auto;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-tabs {grid-column:2;grid-row:1;width:auto;}
+  .mobile-layout .destination-dock:not(.dock-collapsed) .dock-collapse {grid-column:3;}
+}
