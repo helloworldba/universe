@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { loadStartupTextures } from './startup-textures.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createGuide } from './guided-tour.js?v=20261024-phone-landscape-startup';
 import { CATALOG } from './catalog.js';
@@ -34,6 +35,8 @@ import { createPageFullscreen } from './page-fullscreen.js?v=20261024-portrait-f
 
 // EXPLORE THE UNIVERSE is an original local explorer. Positions, sizes and speeds are illustrative.
 const $ = id => document.getElementById(id);
+$('loading').dataset.state = 'textures';
+$('loading-message').textContent = '正在准备星空贴图…';
 const mobile = () => isPhoneLayout();
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
 const reducedMotion = motionPreference.matches;
@@ -90,7 +93,7 @@ let renderer;
 try {
   renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true, logarithmicDepthBuffer:true, powerPreference:mobile()?'low-power':'default' });
 } catch (error) {
-  $('loading-message').textContent = '浏览器无法启动 3D 渲染。请用开启硬件加速的 Chrome 或 Edge 打开本地地址。';
+  $('loading-message').textContent = '浏览器无法启动 3D 渲染。请开启硬件加速，或使用更新版本的浏览器重试。';
   throw error;
 }
 renderer.setPixelRatio(Math.min(devicePixelRatio, mobile() ? 1.5 : 1.75));
@@ -190,13 +193,16 @@ function fallbackTexture(color) {
 }
 const textureNames=[...new Set(Object.values(DATA).map(d=>d.texture)),'earth-night.jpg','earth-clouds.png','saturn-ring.png'];
 const loader=new THREE.TextureLoader();
-let completed=0;
-await Promise.all(textureNames.map(name=>new Promise(resolve=>{
-  loader.load(`./assets/${name}`,t=>{
-    t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());textures[name]=t;done();
-  },undefined,()=>{state.textureFailures.push(name);textures[name]=fallbackTexture(name.includes('night')?'#000000':'#6c7781');done();});
-  function done(){completed++;$('loading-progress').style.width=`${completed/textureNames.length*100}%`;$('loading-message').textContent=`正在准备星空 · ${completed} / ${textureNames.length}`;resolve();}
-})));
+await loadStartupTextures({
+  names:textureNames,loader,textures,
+  configure:t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());},
+  fallback:name=>fallbackTexture(name.includes('night')?'#000000':name.endsWith('.png')?'rgba(0,0,0,0)':'#6c7781'),
+  onFailure:name=>state.textureFailures.push(name),
+  onRecovery:name=>{state.textureFailures=state.textureFailures.filter(item=>item!==name);invalidate();},
+  onProgress:(completed,total)=>{$('loading-progress').style.width=`${completed/total*100}%`;$('loading-message').textContent=`正在准备星空 · ${completed} / ${total}`;}
+});
+$('loading').dataset.state='scene';
+$('loading-message').textContent='正在展开宇宙…';
 
 function makeEarth(radius) {
   const sunDirection=radius===3?earthSunDirection:new THREE.Vector3(-.83,.28,.47).normalize();
@@ -967,7 +973,7 @@ composition();showObjectInfo('earth');syncToggles();
 $('quality-label').textContent=`${mobile()?'自适应':'高清'}画质 · 本地预览`;
 state.loaded=true;
 $('loading').classList.add('loaded');setTimeout(()=>$('loading').hidden=true,650);
-if(state.textureFailures.length)toast('部分素材未加载，当前使用备用材质。请检查本地文件。');
+if(state.textureFailures.length)toast('部分贴图下载较慢或未能加载，先使用备用外观；下载完成后会自动补上。');
 
 function updateLabels() {
   const blockers=explorerUI?.getOcclusionRects()||[],placed=[];let nearbyLabels=0;

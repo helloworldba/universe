@@ -39,7 +39,15 @@
   <link rel="stylesheet" href="./catalog-layout.css?v=20261023">
   <link rel="stylesheet" href="./mobile-reading.css?v=20261024-keyboard-layout" media="(max-width:760px), (max-width:1000px) and (max-height:600px) and (hover:none) and (pointer:coarse)">
   <link rel="stylesheet" href="./author-statement.css?v=20261024-seven-items">
-  <meta name="app-version" content="20261020-phone-2">
+  <meta name="app-version" content="20261025-loading-recovery">
+  <style>
+    #loading-message{max-width:min(32rem,85vw);line-height:1.7;margin-inline:auto}
+    #loading-actions{display:flex;justify-content:center;gap:12px;margin-top:20px}
+    #loading-actions[hidden],#loading-actions [hidden]{display:none!important}
+    #loading-actions button,#loading-actions a{padding:10px 18px;border:1px solid #547984;border-radius:10px;background:#0b1b29;color:#d6e6ed;font:inherit;text-decoration:none;cursor:pointer}
+    #loading-actions :focus-visible{outline:2px solid #b5dce9;outline-offset:3px}
+    #loading[data-state="error"] .loading-track{opacity:.3}
+  </style>
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
 </head>
 <body>
@@ -192,7 +200,7 @@
 
   <dialog id="source-dialog" class="explorer-dialog source-dialog"><button id="close-source" class="icon-button dialog-close" type="button" aria-label="关闭资料说明"><svg><use href="#i-close"/></svg></button><div class="source-brand-type source-brand-heading"><p class="source-brand-en" lang="en">EXPLORE THE UNIVERSE</p><h2 class="source-brand-cn">探索宇宙科普</h2></div><p class="dialog-intro">一次可交互的宇宙印象，一份写给好奇心的邀请。</p><div class="source-copy"><h3>关于比例与运动</h3><p>为便于观看，场景中的天体大小、距离、轨道和运动速度经过视觉化调整。星系、黑洞、系外行星和航天器为程序生成的科普示意，不提供精密天文定位。感知地球模块可联网读取公开天气模型与热带气旋事件；闪电明确为模拟演示，联网失败会显示错误状态。</p><h3>七大洲</h3><p>采用常见的七大洲分法；大洋洲包含澳大利亚、新西兰及太平洋诸岛，北极不是另一个洲。各洲资料卡附自然地理资料来源。标记和镜头锚点用于浏览，不提供洲界或国界图；天气仅按具体地点坐标查询。</p><h3>地点、四季与月相</h3><p>地点坐标采用精选城市中心或手动点击位置。四季和昼夜使用理想圆球、平行日光与地轴倾角模型；当地太阳时并非当地法定时间，日出日落不包含大气折射与地形。月相采用约 29.53 天的朔望周期示意；「地球所见」固定月面北方朝上，不能代表每个地点当晚的月面朝向或可见时段。月相来自相对位置变化，普通新月和满月并不必然发生日月食。参考 <span class="source-attribution">NASA · Moon Phases</span>。</p><h3>天气资料</h3><p>天气来源为 <span class="source-attribution">Open-Meteo</span> 的模式估计值，按所选经纬度请求附近网格并显示其数据时间；不是地表贴图中的实时云图。天气时间与教学动画相互独立，不读取设备定位。</p><h3>星座星图与资料</h3><p>星座探索首批收录 12 个入门星座，并非完整的 88 星座目录。星点采用 <span class="source-attribution">David Nash · HYG v4.1</span> 的 J2000 赤经、赤纬与视星等，经局部星图投影绘制；星点大小和色彩作显示调整。星表衍生数据依 <span class="source-attribution">CC BY-SA 4.0</span> 提供。连线是自编辨认辅助，装饰背景不用于天文定位。星座是天空中的区域，图案内的恒星不一定相邻；北斗七星是大熊座内的星群。距离为星表估计近似值，不是恒星之间的距离。这里未计算实时天空，所在地与时间观星留待后续扩展。参考 <span class="source-attribution">IAU · 星座</span>。</p><h3>数据注释</h3><p>¹ 太阳的周期指围绕银河系中心运行一周的时间。<br>² 月球与国际空间站的周期指围绕地球运行一周的时间。<br>³ 太阳系概览中的时间指太阳系年龄。<br>⁴ 空间站的尺度指其翼展。</p><p>天体与空间站资料参考 <span class="source-attribution">NASA · Solar System</span>、<span class="source-attribution">NASA · Space Station Facts and Figures</span>；数值取近似值。</p></div><div class="source-signature"><div class="source-brand-mark" aria-hidden="true"><img src="./assets/explore-universe-logo.png" width="2048" height="2048" alt="" decoding="async" draggable="false"></div><div class="source-brand-type"><p class="source-brand-en" lang="en">EXPLORE THE UNIVERSE</p><p class="source-brand-cn">探索宇宙科普</p></div></div></dialog>
 
-  <div id="loading" class="loading-screen"><div class="loading-inner"><div class="loading-orbit"><span></span><i></i></div><span class="loading-brand">UNIVERSE</span><h2>宇宙，即将展开</h2><p id="loading-message">正在点亮星空…</p><div class="loading-track"><div id="loading-progress"></div></div><span class="loading-bottom">从这里，看见更远的世界</span></div></div>
+  <div id="loading" class="loading-screen"><div class="loading-inner"><div class="loading-orbit"><span></span><i></i></div><span class="loading-brand">UNIVERSE</span><h2>宇宙，即将展开</h2><p id="loading-message" role="status" aria-live="polite">正在点亮星空…</p><div class="loading-track"><div id="loading-progress"></div></div><div id="loading-actions" hidden><button id="loading-retry" type="button">重新加载</button><a id="loading-local" href="http://127.0.0.1:4178/" hidden>打开本地预览</a></div><noscript>请允许 JavaScript 运行后重新加载页面。</noscript><span class="loading-bottom">从这里，看见更远的世界</span></div></div>
   <dialog id="author-statement-dialog" class="explorer-dialog" aria-labelledby="author-statement-title">
     <div class="author-statement-heading"><h2 id="author-statement-title">作者声明：</h2><button id="close-author-statement" class="icon-button dialog-close" type="button" aria-label="关闭作者声明"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
     <ol class="author-statement-copy" tabindex="0" aria-label="作者声明内容">
@@ -208,8 +216,69 @@
     <p class="author-statement-contact">联系方式：<a href="mailto:wohelloworld@163.com">wohelloworld@163.com</a></p>
     <div class="author-statement-signature"><div class="author-brand-mark" aria-hidden="true"><img src="./assets/explore-universe-logo.png" width="2048" height="2048" alt="" decoding="async" draggable="false"></div><div class="author-brand-type"><p class="author-brand-en" lang="en">EXPLORE THE UNIVERSE</p><p class="author-brand-cn">探索宇宙科普</p></div></div>
   </dialog>
-  <script type="module" src="./app.js?v=20261024-explore-universe"></script>
-  <script type="module" src="./background-music-init.js"></script>
+<!-- STARTUP BOOTSTRAP -->
+<script>
+(function () {
+  var screen = document.getElementById('loading');
+  var message = document.getElementById('loading-message');
+  var actions = document.getElementById('loading-actions');
+  var retry = document.getElementById('loading-retry');
+  var localLink = document.getElementById('loading-local');
+  var complete = false;
+  var slowTimer, timeoutTimer;
+  function clearTimers() { clearTimeout(slowTimer); clearTimeout(timeoutTimer); }
+  function failure(text) {
+    if (complete) return;
+    clearTimers();
+    screen.dataset.state = 'error';
+    message.textContent = text;
+    actions.hidden = false;
+  }
+  retry.addEventListener('click', function () {
+    var url = new URL(location.href);
+    url.searchParams.set('_reload', Date.now());
+    location.replace(url.href);
+  });
+  if (location.protocol === 'file:') {
+    failure('请通过本地预览服务打开页面。直接双击 index.html 无法加载三维场景。请先运行“启动预览.cmd”，再点击下方按钮。');
+    retry.hidden = true;
+    localLink.hidden = false;
+    return;
+  }
+  var script = document.createElement('script');
+  if (!('noModule' in script)) {
+    failure('当前浏览器版本暂不支持此页面，请升级浏览器后重新打开。');
+    return;
+  }
+  message.textContent = '正在下载场景程序…';
+  screen.dataset.state = 'scripts';
+  document.addEventListener('universe-startup-ready', function () {
+    complete = true;
+    clearTimers();
+    screen.dataset.state = 'ready';
+    actions.hidden = true;
+  }, {once: true});
+  document.addEventListener('universe-startup-error', function (event) {
+    var existing = message.textContent;
+    failure(existing.indexOf('3D 渲染') !== -1 ? existing : '场景启动失败，请重新加载。若仍无法进入，请更新浏览器，或换个网络后再试。');
+    console.error('Universe startup failed', event.detail);
+  }, {once: true});
+  slowTimer = setTimeout(function () {
+    if (screen.dataset.state !== 'scripts') return;
+    message.textContent = '场景程序仍在下载，请稍候；也可以切换网络后重新加载。';
+    actions.hidden = false;
+  }, 15000);
+  timeoutTimer = setTimeout(function () {
+    failure('加载时间较长，可能有文件未能下载。可以继续等待，或切换网络后点击“重新加载”。');
+  }, 60000);
+  script.type = 'module';
+  script.src = './universe-app.bundle.js?v=9a6f9715c729';
+  script.onerror = function () { failure('场景程序未能下载或运行，请重新加载。若多次失败，请检查网络或更新浏览器。'); };
+  document.body.appendChild(script);
+}());
+
+</script>
+<!-- END STARTUP BOOTSTRAP -->
 </body>
 </html>
 
