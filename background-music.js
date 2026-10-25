@@ -1,18 +1,18 @@
 import { getNarrationPlayer } from './local-narration.js';
 
-// Playback is intentionally attempted once at startup. A browser may require a
-// real user gesture before allowing audio; that decision stays with the browser.
-export function createBackgroundMusic({audio,button,tracks=[],narration=getNarrationPlayer()}){
+// Callers can defer the first download until the opening video releases music.
+// A browser may still require a real user gesture before allowing playback.
+export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narration=getNarrationPlayer()}){
   if(!audio||!button)throw new TypeError('Background music requires an audio element and a button.');
   const doc=button.ownerDocument;
   const playlist=tracks.length?[...tracks]:[audio.getAttribute('src')||audio.src].filter(Boolean);
   const labels={loading:'正在加载背景音乐，点击取消',playing:'暂停背景音乐',paused:'播放背景音乐',blocked:'点击播放背景音乐',error:'背景音乐加载失败，点击重试'};
   let state='paused',wantsPlay=true,version=0,pending=null,disposed=false,reloadNeeded=false,gestureArmed=false,gestureUsed=false,trackIndex=0;
-  let suspended=false,suspendedState='paused';
+  let suspended=false,suspendedState='paused',sourceAssigned=false;
   // Native looping would repeat just one source and prevent the ended event.
   audio.loop=false;
   audio.volume=.25;
-  if(playlist.length)audio.src=playlist[0];
+  audio.preload='none';
 
   function render(next){
     state=next;
@@ -67,6 +67,10 @@ export function createBackgroundMusic({audio,button,tracks=[],narration=getNarra
     pending=attempt;
     render('loading');
     try{
+      if(!sourceAssigned){
+        if(playlist.length)audio.src=playlist[trackIndex];
+        sourceAssigned=true;
+      }
       if(advance){
         if(playlist.length){
           trackIndex=(trackIndex+1)%playlist.length;
@@ -158,7 +162,7 @@ export function createBackgroundMusic({audio,button,tracks=[],narration=getNarra
   // All narration owners (including dynamically created constellation cards)
   // share this state. Changing volume never overrides the user's play intent.
   const unsubscribeNarration=narration.subscribe(({active})=>{audio.volume=active ? .03 : .25;});
-  requestPlay();
+  if(autoplay)requestPlay();else render('paused');
 
   return {
     getState:()=>state,

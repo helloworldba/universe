@@ -1,38 +1,79 @@
-// A stalled image must not prevent the entire explorer from opening. Keep a
-// stable fallback texture so a late successful download can update existing meshes.
-export async function loadStartupTextures({names, loader, textures, configure, fallback, onProgress, onFailure, onRecovery, timeout = 25000}) {
-  let completed = 0;
-  await Promise.all(names.map(name => new Promise(resolve => {
-    let settled = false, placeholder = null;
-    const finish = () => {
-      if (settled) return;
-      settled = true;
+// Every material keeps one texture object, including before its download starts.
+// Updating that object in place also repairs scenes created while a file is slow.
+export function createTextureQueue({names, loader, textures, configure, fallback, onFailure = () => {}, onRecovery = () => {}, onLoaded = () => {}, timeout = 25000, concurrency = 2}) {
+  const entries = new Map(), queue = [];
+  const limit = Math.max(1, Math.floor(concurrency));
+  let active = 0;
+  for (const name of new Set(names)) {
+    const texture = fallback(name);
+    configure(texture);
+    textures[name] = texture;
+    let resolve;
+    const promise = new Promise(done => { resolve = done; });
+    entries.set(name, {name, texture, promise, resolve, state:'idle', settled:false, received:false});
+  }
+  function pump() {
+    while (active < limit && queue.length) start(queue.shift());
+  }
+  function start(entry) {
+    active++;
+    entry.state = 'loading';
+    let timer;
+    function finish() {
+      if (entry.settled) return;
+      entry.settled = true;
       clearTimeout(timer);
-      onProgress(++completed, names.length);
-      resolve();
-    };
-    const fail = () => {
-      if (settled) return;
-      placeholder = fallback(name);
-      textures[name] = placeholder;
-      onFailure(name);
+      active--;
+      entry.resolve();
+      pump();
+    }
+    function fail() {
+      if (entry.settled) return;
+      entry.state = 'failed';
+      onFailure(entry.name);
       finish();
-    };
-    const timer = setTimeout(fail, timeout);
+    }
+    timer = setTimeout(fail, timeout);
     try {
-      loader.load(`./assets/${name}`, texture => {
+      loader.load(`./assets/${entry.name}`, texture => {
+        if (entry.received) { texture.dispose(); return; }
         configure(texture);
-        if (placeholder) {
-          placeholder.image = texture.image;
-          placeholder.anisotropy = texture.anisotropy;
-          placeholder.needsUpdate = true;
-          texture.dispose();
-          onRecovery(name);
-        } else {
-          textures[name] = texture;
-          finish();
-        }
+        const recovering = entry.state === 'failed';
+        entry.received = true;
+        entry.texture.image = texture.image;
+        entry.texture.anisotropy = texture.anisotropy;
+        entry.texture.colorSpace = texture.colorSpace;
+        entry.texture.needsUpdate = true;
+        texture.dispose();
+        entry.state = 'ready';
+        if (recovering) onRecovery(entry.name);
+        onLoaded(entry.name);
+        finish();
       }, undefined, fail);
     } catch { fail(); }
-  })));
+  }
+  function load(requested, {priority = false, onProgress = () => {}} = {}) {
+    const selected = [...new Set(requested)].map(name => entries.get(name)).filter(Boolean);
+    const pending = [];
+    for (const entry of selected) {
+      if (entry.state === 'idle') {
+        entry.state = 'queued';
+        pending.push(entry);
+      } else if (priority && entry.state === 'queued') {
+        queue.splice(queue.indexOf(entry), 1);
+        pending.push(entry);
+      }
+    }
+    if (priority) queue.unshift(...pending); else queue.push(...pending);
+    let completed = 0;
+    const done = Promise.all(selected.map(entry => entry.promise.then(() => onProgress(++completed, selected.length))));
+    pump();
+    return done;
+  }
+  return {load};
+}
+
+export async function loadStartupTextures(options) {
+  const queue = createTextureQueue(options);
+  await queue.load(options.names, {onProgress:options.onProgress});
 }

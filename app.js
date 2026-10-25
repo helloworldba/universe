@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { loadStartupTextures } from './startup-textures.js';
+import { createTextureQueue } from './startup-textures.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { createGuide } from './guided-tour.js?v=20261024-phone-landscape-startup';
 import { CATALOG } from './catalog.js';
@@ -193,14 +193,24 @@ function fallbackTexture(color) {
 }
 const textureNames=[...new Set(Object.values(DATA).map(d=>d.texture)),'earth-night.jpg','earth-clouds.png','saturn-ring.png'];
 const loader=new THREE.TextureLoader();
-await loadStartupTextures({
-  names:textureNames,loader,textures,
+const textureQueue=createTextureQueue({
+  names:textureNames,loader,textures,timeout:12000,
   configure:t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());},
   fallback:name=>fallbackTexture(name.includes('night')?'#000000':name.endsWith('.png')?'rgba(0,0,0,0)':'#6c7781'),
   onFailure:name=>state.textureFailures.push(name),
-  onRecovery:name=>{state.textureFailures=state.textureFailures.filter(item=>item!==name);invalidate();},
+  onRecovery:name=>{state.textureFailures=state.textureFailures.filter(item=>item!==name);},
+  onLoaded:invalidate,
+});
+// Only the opening Earth view blocks startup. Other maps keep stable placeholders
+// until the introductory video finishes or closes; visible destinations get priority.
+const openingTextures=['earth-day.jpg','earth-night.jpg','earth-clouds.png','moon.jpg'];
+await textureQueue.load(openingTextures,{
   onProgress:(completed,total)=>{$('loading-progress').style.width=`${completed/total*100}%`;$('loading-message').textContent=`正在准备星空 · ${completed} / ${total}`;}
 });
+let secondarySceneReady=false;
+document.addEventListener('universe-load-secondary',()=>{
+  void textureQueue.load(textureNames).then(()=>{secondarySceneReady=true;invalidate();});
+},{once:true});
 $('loading').dataset.state='scene';
 $('loading-message').textContent='正在展开宇宙…';
 
@@ -541,6 +551,7 @@ function solarFocusOffset(id){
 }
 function setMode(mode) {
   if(!['earth','solar','galaxy','atlas','constellation','blackholes'].includes(mode))return;
+  if(mode==='solar')void textureQueue.load(textureNames,{priority:true});
   state.solarNearOrbit=false;
   if(!earthSessionTransition)discardEarthSession();
   if(mode==='blackholes'){openBlackHole(blackHoleId);return;}
@@ -556,6 +567,7 @@ function setMode(mode) {
   startFlight(target,offset,1800,changed);showObjectInfo(mode);
 }
 function goTo(id,{mode}={}) {
+  if(DATA[id])void textureQueue.load([DATA[id].texture,...(id==='saturn'?['saturn-ring.png']:[])],{priority:true});
   if(typeof id==='string'&&id.startsWith('blackhole:')){openBlackHole(id.slice(10));return;}
   // Sagittarius A* keeps its original galaxy detail view; the top-level black-hole topic is separate.
   if(!state.guide&&id!=='sagittarius-a'&&catalog[id]?.kind==='blackhole'){openBlackHole(catalog[id].blackHoleId,{overview:true});return;}
@@ -1066,7 +1078,7 @@ function updateMotion(dt) {
     moon.visible=!earthLesson;moonOrbit.visible=state.orbits&&!earthLesson;
     const orbitTime=t+(earthEnvironment?.getStatus().rotationOffset||0)/EARTH_ROTATION_RATE;
     const ma=orbitTime*.017+.63;moon.position.set(Math.cos(ma)*10.8,0,-Math.sin(ma)*10.8).applyQuaternion(moonOrbit.quaternion);moon.lookAt(earth.position);
-    nearEarth.update(orbitTime,{orbits:state.orbits,selected:state.target,visible:!earthLesson});
+    nearEarth.update(orbitTime,{orbits:state.orbits,selected:state.target,visible:!earthLesson,loadModels:secondarySceneReady});
   }
   if(solarRoot.visible){
     const referenceView=state.mode==='solar'&&!state.guide;

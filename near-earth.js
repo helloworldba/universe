@@ -281,12 +281,12 @@ export function createNearEarth({ THREE, earthRadius = 3, mobile = false, loadHu
     for (const record of records) { record.orbit.geometry.dispose(); record.orbit.material.dispose(); }
     pickables.length = labels.length = records.length = 0; objects.clear(); root.clear(); root.removeFromParent();
   }
-  function update(elapsed, { orbits = true, selected = 'earth', visible = true } = {}) {
+  function update(elapsed, { orbits = true, selected = 'earth', visible = true, loadModels = true } = {}) {
     if (disposed) return;
     root.visible = !!visible;
     // The overview uses the same official model as close-up observation. Load once
     // when the orbital layer is shown; a failed load waits for an explicit retry.
-    if (root.visible && hubbleState === 'idle') ensureHubbleModel();
+    if (root.visible && loadModels && hubbleState === 'idle') ensureHubbleModel();
     // Time is owned by the app: pausing or restoring it always restores identical transforms.
     const time = Number.isFinite(elapsed) ? elapsed : 0;
     for (const record of records) {
