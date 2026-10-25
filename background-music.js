@@ -1,14 +1,15 @@
 import { getNarrationPlayer } from './local-narration.js';
 
-// Callers can defer the first download until the opening video releases music.
+// Optional interaction gating defers the first download until a real page gesture.
 // A browser may still require a real user gesture before allowing playback.
-export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narration=getNarrationPlayer()}){
+export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,requireInteraction=false,narration=getNarrationPlayer()}){
   if(!audio||!button)throw new TypeError('Background music requires an audio element and a button.');
   const doc=button.ownerDocument;
   const playlist=tracks.length?[...tracks]:[audio.getAttribute('src')||audio.src].filter(Boolean);
   const labels={loading:'正在加载背景音乐，点击取消',playing:'暂停背景音乐',paused:'播放背景音乐',blocked:'点击播放背景音乐',error:'背景音乐加载失败，点击重试'};
   let state='paused',wantsPlay=true,version=0,pending=null,disposed=false,reloadNeeded=false,gestureArmed=false,gestureUsed=false,trackIndex=0;
   let suspended=false,suspendedState='paused',sourceAssigned=false;
+  let interactionReceived=!requireInteraction;
   // Native looping would repeat just one source and prevent the ended event.
   audio.loop=false;
   audio.volume=.25;
@@ -21,6 +22,24 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
     button.setAttribute('aria-label',labels[next]);
     button.setAttribute('title',labels[next]);
     button.setAttribute('aria-busy',String(next==='loading'));
+  }
+  function removeInteraction(){
+    doc?.removeEventListener('click',onFirstInteraction,true);
+    doc?.removeEventListener('keydown',onFirstInteraction,true);
+  }
+  function acceptInteraction(event){
+    if(interactionReceived)return true;
+    if(!event?.isTrusted||event.defaultPrevented||event.repeat)return false;
+    if(event.type==='keydown'&&!['Enter',' ','Spacebar','Escape'].includes(event.key))return false;
+    interactionReceived=true;
+    removeInteraction();
+    return true;
+  }
+  function onFirstInteraction(event){
+    if(disposed||!acceptInteraction(event))return;
+    // A close-button gesture unlocks music here; resume() starts it only after
+    // the video has closed. The music button keeps ownership of its own click.
+    if(!suspended&&wantsPlay&&!button.contains(event.target))requestPlay();
   }
   function removeGesture(){
     if(!gestureArmed)return;
@@ -61,7 +80,7 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
     }
   }
   function requestPlay({advance=false}={}){
-    if(disposed||suspended)return;
+    if(disposed||suspended||!interactionReceived)return;
     wantsPlay=true;
     const attempt=++version;
     pending=attempt;
@@ -101,8 +120,8 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
     audio.pause();
     render('paused');
   }
-  function onClick(){
-    if(suspended)return;
+  function onClick(event){
+    if(suspended||!acceptInteraction(event))return;
     gestureUsed=true;
     removeGesture();
     if(state==='error')requestPlay();
@@ -150,6 +169,7 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
     if(disposed||!suspended)return;
     suspended=false;
     if(!wantsPlay){render('paused');return;}
+    if(!interactionReceived){render('paused');return;}
     // A failed file still needs an explicit music-button retry. Temporary
     // suspension must not silently turn a loading failure into an auto-retry.
     if(suspendedState==='error'||state==='error'||audio.error){render('error');return;}
@@ -162,7 +182,11 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
   // All narration owners (including dynamically created constellation cards)
   // share this state. Changing volume never overrides the user's play intent.
   const unsubscribeNarration=narration.subscribe(({active})=>{audio.volume=active ? .03 : .25;});
-  if(autoplay)requestPlay();else render('paused');
+  if(!interactionReceived){
+    render('paused');
+    doc?.addEventListener('click',onFirstInteraction,true);
+    doc?.addEventListener('keydown',onFirstInteraction,true);
+  }else if(autoplay)requestPlay();else render('paused');
 
   return {
     getState:()=>state,
@@ -171,6 +195,7 @@ export function createBackgroundMusic({audio,button,tracks=[],autoplay=true,narr
     dispose(){
       if(disposed)return;
       disposed=true;
+      removeInteraction();
       pause();
       unsubscribeNarration();
       button.removeEventListener('click',onClick);
