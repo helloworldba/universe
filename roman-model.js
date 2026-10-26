@@ -1,6 +1,6 @@
-// NASA's original Roman Observatory GLB is kept byte-for-byte on disk.
+// NASA Roman GLB with only two unused UV streams removed; rendered data is unchanged.
 // Fetch is lazy; only the downloaded bytes are shared, never decoded GPU resources.
-const modelURL = new URL('./assets/models/roman-nasa.glb', import.meta.url);
+const modelURL = new URL('./assets/models/roman-nasa.glb?v=20261026-unused-uv', import.meta.url);
 let bufferPromise;
 
 function modelBytes() {

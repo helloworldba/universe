@@ -122,7 +122,9 @@ The selected region uses a translucent spherical fill and coastline/region outli
 assets/models/roman-nasa.glb (2026-10-19): Nancy Grace Roman Space Telescope, NASA / Goddard Space Flight Center. Official Roman Observatory model selected by the user.
 Source page: https://science.nasa.gov/mission/roman-space-telescope/roman-observatory/
 Original downloaded file: https://assets.science.nasa.gov/content/dam/science/missions/rst/spacecraft-illustrations/Large%20new%20RST_Model_V004.glb
-Original GLB retained unchanged: 29655668 bytes (28.28 MiB), SHA256 a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce.
+Original NASA GLB: 29655668 bytes, SHA256 a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce.
+Local optimized GLB (2026-10-26): 24736232 bytes (23.59 MiB), SHA256 f8b7aa8247ffa62b1294401e7fe13a316b8eebe6a91ed06833d48cd922581c1b.
+Only two unused UV-coordinate streams were removed. All rendered geometry, materials and embedded texture bytes remain unchanged; no additional decoder is required.
 The model includes 16 embedded textures and requires no external decoder or texture downloads. Display-only preparation in roman-model.js centers and scales the geometry, aligns its axes, and assigns an original local metallic reflection while retaining NASA's PBR parameters and surface maps. Loaded only when requested. The procedural placeholder is an original simplified teaching preview used only in the Earth overview; the dedicated Roman view shows a loading message until the official model is ready.
 The transfer path and Sun-Earth L2 halo are target-orbit illustrations, not measured current positions. Object scale, motion, and lighting are illustrative; no NASA endorsement is implied. Additional source metadata is in assets/models/roman-nasa-source.json.
 

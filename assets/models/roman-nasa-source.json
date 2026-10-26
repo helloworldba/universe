@@ -6,10 +6,10 @@
   "sourcePage": "https://science.nasa.gov/mission/roman-space-telescope/roman-observatory/",
   "originalModelURL": "https://assets.science.nasa.gov/content/dam/science/missions/rst/spacecraft-illustrations/Large%20new%20RST_Model_V004.glb",
   "localFile": "roman-nasa.glb",
-  "bytes": 29655668,
-  "sha256": "a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce",
+  "bytes": 24736232,
+  "sha256": "f8b7aa8247ffa62b1294401e7fe13a316b8eebe6a91ed06833d48cd922581c1b",
   "retrieved": "2026-10-19",
-  "assetModification": "Original GLB retained byte-for-byte. Display wrapper centers geometry, normalizes longest edge to 18 units, rotates the original -X aperture to +Z, and adds a generated local metallic reflection while retaining original PBR properties and textures. Model is loaded lazily.",
+  "assetModification": "Removed only unused TEXCOORD_1 and TEXCOORD_2 from mesh 44, primitive 0, and their unreferenced accessors/bufferViews; repacked GLB on 2026-10-26. All positions, normals, triangle indices, used UV coordinates, embedded image bytes, materials and scene transforms are unchanged. No quantization, decimation, texture recompression or additional decoder. Display wrapper and lazy loading remain unchanged. The original GLB is backed up outside the published site.",
   "thumbnail": {
     "sourcePage": "https://science.nasa.gov/gallery/roman-space-telescope-illustrations/",
     "sourceURL": "https://assets.science.nasa.gov/dynamicimage/assets/science/missions/rst/spacecraft-illustrations/Roman-transparent.png?fit=clip&w=512",
@@ -34,5 +34,20 @@
     ],
     "noExternalTextures": true,
     "gpuVisualVerified": false
+  },
+  "originalAsset": {
+    "bytes": 29655668,
+    "sha256": "a873fc95945ed0992c552c2a97fc6c5cd0bf7f5519df0040d5a299b03bae67ce"
+  },
+  "optimization": {
+    "date": "2026-10-26",
+    "removedUnusedAttributes": [
+      "TEXCOORD_1",
+      "TEXCOORD_2"
+    ],
+    "mesh": 44,
+    "primitive": 0,
+    "savedBytes": 4919436,
+    "retainedBufferViewsByteIdentical": true
   }
 }
